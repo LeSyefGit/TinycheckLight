@@ -1,0 +1,15 @@
+ipwhois
+M2Crypto
+pyOpenSSL
+pydig
+netaddr
+pyyaml
+flask
+flask_httpauth
+pyjwt
+sqlalchemy
+psutil
+pyudev
+wifi
+qrcode
+netifaces
