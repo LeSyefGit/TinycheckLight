@@ -128,10 +128,10 @@ On the [Suricata](https://suricata-ids.org/) part, the network capture is analys
 ### Special thanks
 
 **Guys who provided some IOCs**
-- Cian Heasley for his android stalkerwares IOC repo, available here: https://github.com/diskurse/android-stalkerware
-- Te-k for his stalkerwares awesome IOCs repo, available here: https://github.com/Te-k/stalkerware-indicators
-- Emilien for his Stratum rules, available here: https://github.com/kwouffe/cryptonote-hunt
-- Costin Raiu for his tracker domains, available here: https://github.com/craiu/mobiletrackers/blob/master/list.txt
+- [Cian Heasley](https://twitter.com/nscrutables) for his android stalkerwares IOC repo, available here: https://github.com/diskurse/android-stalkerware
+- [Te-k](https://twitter.com/tenacioustek) for his stalkerwares awesome IOCs repo, available here: https://github.com/Te-k/stalkerware-indicators
+- [Emilien](https://twitter.com/__Emilien__) for his Stratum rules, available here: https://github.com/kwouffe/cryptonote-hunt
+- [Costin Raiu](https://twitter.com/craiu) for his geo-tracker domains, available here: https://github.com/craiu/mobiletrackers/blob/master/list.txt
 
 **Code review**
 - Dan Demeter
