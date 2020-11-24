@@ -68,6 +68,6 @@ network:
 #
 watchers:
   iocs:
-  - https://raw.githubusercontent.com/KasperskyLab/TinyCheck/assets/iocs.json
+  - https://raw.githubusercontent.com/KasperskyLab/TinyCheck/main/assets/iocs.json
   whitelists:
-  - https://raw.githubusercontent.com/KasperskyLab/TinyCheck/assets/whitelist.json
+  - https://raw.githubusercontent.com/KasperskyLab/TinyCheck/main/assets/whitelist.json
