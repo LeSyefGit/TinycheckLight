@@ -143,5 +143,5 @@ On the [Suricata](https://suricata-ids.org/) part, the network capture is analys
 **Others**
 - GReAT colleagues.
 - Zeek and Suricata awesome maintainers.
-- virtual-keyboard.js.org guys.
-- Loading.io guys.
+- virtual-keyboard.js.org & loading.io guys.
+- Yan Zhu for his awesome Spectre CSS lib (https://picturepan2.github.io/spectre/)
