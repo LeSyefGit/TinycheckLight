@@ -85,7 +85,7 @@ Once installed, you can connect yourself to the TinyCheck backend by browsing th
 
 ![Backend](/assets/backend.png)
 
-The backend allows you to edit the configuration of TinyCheck, add extended IOCs and whitelisted elements in order to prevent false positives. Several IOCs are already stored in the database such as few suricata rules, FreeDNS, Name servers, CIDRs known to host malicious servers and so on. In term of extended IOCs, this first version of TinyCheck includes:
+The backend allows you to edit the configuration of TinyCheck, add extended IOCs and whitelisted elements in order to prevent false positives. Several IOCs are already provided such as few suricata rules, FreeDNS, Name servers, CIDRs known to host malicious servers and so on. In term of extended IOCs, this first version of TinyCheck includes:
 
 - Suricata rules
 - CIDRs
@@ -134,9 +134,9 @@ On the [Suricata](https://suricata-ids.org/) part, the network capture is analys
 - [Costin Raiu](https://twitter.com/craiu) for his geo-tracker domains, available here: https://github.com/craiu/mobiletrackers/blob/master/list.txt
 
 **Code review**
-- Dan Demeter
+- Dan Demeter [@_xdanx](https://twitter.com/_xdanx)
 - Maxime Granier
-- Florian Pires
+- Florian Pires [@Florian_Pires](https://twitter.com/Florian_Pires)
 
 **Others**
 - GReAT colleagues.
