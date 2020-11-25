@@ -117,6 +117,12 @@ On the [Suricata](https://suricata-ids.org/) part, the network capture is analys
 - Device name exfiltred in clear-text;
 - Access point SSID exfiltred in clear-text;
 
+### Watchers?
+
+In order to keep IOCs and whitelist updated constantly, TinyCheck integrates something called "watchers". It is a very simple service with few lines of Python which grabs new formated IOCs or whitelist elements from public URLs. As of today, TinyCheck integrates two urls, one for the whitelist and one for the IOCs (The formated files are present in the assets folder). 
+
+If you have seen something very suspicious and/or needs to be investigated/integrated in one of these two lists, don't hesitate to ping us. You can also do you own watcher. Remember, sharing is caring. 
+
 ### Possible updates for next releases
 
 - Centralized server for IOC/whitelist management (aka. Remote Analysis).
