@@ -47,7 +47,7 @@ TinyCheck is divided in three independent parts:
 
 The backend and the frontend are quite similar. Both consist of a [VueJS](https://vuejs.org/) application (sources stored under `/app/`) and an API endpoint developed in [Flask](https://flask.palletsprojects.com/) (stored under `/server/`). The data shared between the backend and the frontend are stored under the `config.yaml` file for configuration and `tinycheck.sqlite3` database for the whitelist/IOCs.
 
-It is worthy to note that not all configuration options are editable from the frontend (such as default ports, Free certificates issuers etc.). Don't hesitate to take a look at the `config.yaml` file to tweak some configuration options.
+It is worthy to note that not all configuration options are editable from the backend (such as default ports, Free certificates issuers etc.). Don't hesitate to take a look at the `config.yaml` file to tweak some configuration options.
 
 ### Installation
 
@@ -121,9 +121,10 @@ On the [Suricata](https://suricata-ids.org/) part, the network capture is analys
 
 - Centralized server for IOC/whitelist management (aka. Remote Analysis).
 - Possibility to add watchers from the backend interface.
-- Encryption of reports.
+- Encryption of ZIPed reports.
 - Better frontend GUI/JS (use of websockets / better animations).
-- More OpSec (TOR integration etc.)
+- More OpSec (TOR integration, IP randomization etc.)
+- 3d template for kiosks ?
 
 ### Special thanks
 
@@ -137,6 +138,7 @@ On the [Suricata](https://suricata-ids.org/) part, the network capture is analys
 - Dan Demeter [@_xdanx](https://twitter.com/_xdanx)
 - Maxime Granier
 - Florian Pires [@Florian_Pires](https://twitter.com/Florian_Pires)
+- Ivan Kwiatkowski [@JusticeRage](https://twitter.com/JusticeRage)
 
 **Others**
 - GReAT colleagues.
