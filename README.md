@@ -10,7 +10,7 @@ In order to make it working, you need a computer with a Debian-like operating sy
 
 ### History
 
-The idea of TinyCheck came to me in a meeting about stalkerwares with a [French women's shelter](https://www.centre-hubertine-auclert.fr). During this meeting we talked about how to easily detect easily [stalkerwares](https://stopstalkerware.org/) without installing very technical apps nor doing forensic analysis on them. The initial concept was to develop a tiny kiosk device based on Raspberry Pi which can be used by non-tech people to test their smartphones against malicious communications issued by stalkerwares or any spyware.
+The idea of TinyCheck came to me in a meeting about stalkerware with a [French women's shelter](https://www.centre-hubertine-auclert.fr). During this meeting we talked about how to easily detect easily [stalkerware](https://stopstalkerware.org/) without installing very technical apps nor doing forensic analysis on them. The initial concept was to develop a tiny kiosk device based on Raspberry Pi which can be used by non-tech people to test their smartphones against malicious communications issued by stalkerware or any spyware.
 
 Of course, TinyCheck can also be used to spot any malicious communications from cybercrime or state-sponsored implants. It allows the end-user to push his own extended Indicators of Compromise via a backend in order to detect some ghosts over the wire.
 
@@ -128,7 +128,7 @@ If you have seen something very suspicious and/or needs to be investigated/integ
 ### Q&As
 
 **Your project seem very cool, does it send data to Kaspersky or any telemetry server?**<br /><br />
-No, at all. You can look to the sources, the only data sent by TinyCheck is an HTTP GET request to a website that you can specify in the config, as well as the watchers URLs. Kaspersky don't - and will not - receive any telemetry from your TinyCheck device.<br /><br /><br />
+No, at all. You can look to the sources, the only data sent by TinyCheck is an HTTP GET request to a website that you can specify in the config, as well as the watchers URLs. Kaspersky don't - and will not - receive any telemetry from your TinyCheck device.<br /><br />
 **I'm not very confortable with the concept of "watchers" as the IOCs downloaded are public. Do you plan to develop a server to centralize AMBER/RED IOCs?**<br /><br />
 Yes, if the demand is felt by NGOs (contact us!). Is it possible to develop this kind of thing, allowing you to centralize your IOCs and managing your fleet of TinyCheck instances on a server that you host. The server can also embed better detection rules thanks to the telemetry that it will receive from devices.<br />
 
