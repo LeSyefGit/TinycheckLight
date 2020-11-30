@@ -160,6 +160,7 @@ Yes, if the demand is felt by NGOs (contact us!). Is it possible to develop this
 
 **Others**
 - GReAT colleagues.
+- Tatyana, Kristina, Christina and Arnaud from Kaspersky (Support and IOCs)
 - Zeek and Suricata awesome maintainers.
 - virtual-keyboard.js.org & loading.io guys.
 - Yan Zhu for his awesome Spectre CSS lib (https://picturepan2.github.io/spectre/)
