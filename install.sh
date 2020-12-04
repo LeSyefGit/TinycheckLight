@@ -38,19 +38,6 @@ check_operating_system() {
    fi
 }
 
-check_connection() {
-   # Checking internet connectivity to install
-   # TinyCheck dependencies
-
-   echo -e "\e[39m[+] Checking internet connectivity to install dependencies\e[39m"
-   if nc -zw1 example.com 443; then
-       echo -e "\e[92m    [✔] Internet link is connected\e[39m"
-   else
-       echo -e "\e[91m    [✘] No internet connection, exiting.\e[39m"
-       exit 1
-   fi
-}
-
 create_directory() {
     # Create the TinyCheck directory and move the whole stuff there.
     echo -e "[+] Creating TinyCheck folder under /usr/share/"
@@ -345,7 +332,6 @@ if [[ $EUID -ne 0 ]]; then
 else
     welcome_screen
     check_operating_system
-    check_connection
     check_wlan_interfaces
     create_directory
     check_dependencies
