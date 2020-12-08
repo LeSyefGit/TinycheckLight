@@ -74,7 +74,7 @@ EOL
     echo -e "\e[92m    [✔] Creating backend service\e[39m"
     cat >/lib/systemd/system/tinycheck-backend.service <<EOL
 [Unit]
-Description=TinyCheck frontend service
+Description=TinyCheck backend service
 
 [Service]
 Type=simple
