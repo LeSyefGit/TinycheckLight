@@ -83,7 +83,7 @@ The frontend - which can be accessed from `http://tinycheck.local` - is a kind o
 
 ### Meet the backend
 
-Once installed, you can connect yourself to the TinyCheck backend by browsing the URL `https://tinycheck.local` and accepting the SSL self-signed certificate. The default credentials are `tinycheck` / `tinycheck`. 
+Once installed, you can connect yourself to the TinyCheck backend by browsing the URL `https://tinycheck.local` and accepting the SSL self-signed certificate. 
 
 ![Backend](/assets/backend.png)
 
