@@ -62,7 +62,7 @@ if __name__ == '__main__':
     ssl_key = "{}/{}".format(path[0], 'key.pem')
 
     if read_config(("backend", "remote_access")):
-        app.run(host="0.0.0.0", debug=True, port=443,
+        app.run(host="0.0.0.0", port=443,
                 ssl_context=(ssl_cert, ssl_key))
     else:
-        app.run(port=443, debug=True, ssl_context=(ssl_cert, ssl_key))
+        app.run(port=443, ssl_context=(ssl_cert, ssl_key))

@@ -23,8 +23,8 @@ class Analysis(object):
 
         if self.token is not None:
             parent = "/".join(sys.path[0].split("/")[:-2])
-            sp.Popen("{} {}/analysis/analysis.py /tmp/{}".format(sys.executable,
-                                                                 parent, self.token), shell=True)
+            sp.Popen(
+                [sys.executable, "{}/analysis/analysis.py".format(parent), "/tmp/{}".format(self.token)])
             return {"status": True,
                     "message": "Analysis started",
                     "token": self.token}

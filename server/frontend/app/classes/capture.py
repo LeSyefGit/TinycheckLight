@@ -45,8 +45,8 @@ class Capture(object):
         mkdir(self.working_dir)
 
         try:
-            sp.Popen(
-                "tshark -i {} -w {} -f \"tcp or udp\" ".format(self.iface, self.pcap), shell=True)
+            sp.Popen(["tshark",  "-i", self.iface, "-w",
+                      self.pcap, "-f", "tcp or udp"])
             return {"status": True,
                     "message": "Capture started",
                     "capture_token": self.capture_token}

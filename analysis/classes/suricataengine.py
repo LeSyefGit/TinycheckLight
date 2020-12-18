@@ -28,8 +28,8 @@ class SuricataEngine():
 
         # Generate the rule file an launch suricata.
         if self.generate_rule_file():
-            sp.Popen("suricata -S {} -r {} -l /tmp/".format(self.rules_file,
-                                                            self.pcap_path), shell=True).wait()
+            sp.Popen(["suricata", "-S", self.rules_file, "-r",
+                      self.pcap_path, "-l", "/tmp/"]).wait()
 
         # Let's parse the log file.
         for line in open("/tmp/fast.log", "r").readlines():

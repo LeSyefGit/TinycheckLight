@@ -40,13 +40,21 @@ class Config(object):
             Write a new value in the configuration
             :return: bool, operation status
         """
+
         config = yaml.load(
             open(os.path.join(self.dir, "config.yaml"), "r"), Loader=yaml.SafeLoader)
-        config[cat][key] = value if key != "password" else self.make_password(
-            value)
 
-        if cat == "network" and key == "in":
-            self.edit_configuration_files(value)
+        if cat == "network" and key in ["in", "out"]:
+            if re.match("^wlan[0-9]{1}$", value):
+                if key == "in":
+                    self.edit_configuration_files(value)
+                config[cat][key] = value
+            else:
+                return False
+        elif cat == "backend" and key == "password":
+            config[cat][key] = self.make_password(value)
+        else:
+            config[cat][key] = value
 
         with open(os.path.join(self.dir, "config.yaml"), "w") as yaml_file:
             yaml_file.write(yaml.dump(config, default_flow_style=False))

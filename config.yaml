@@ -29,8 +29,8 @@ analysis:
 # access to it from remote location. 
 #
 backend:
-  login: tinycheck
-  password: 2de5a04967d6cffd33243bb226db194b97e1d6d1331eea3ad1e8c5e9f6e58315
+  login: userlogin
+  password: userpassword
   remote_access: true
 
 # FRONTEND -
@@ -41,7 +41,7 @@ frontend:
   download_links: false
   hide_mouse: true
   kiosk_mode: true
-  remote_access: false
+  remote_access: true
   sparklines: true
   virtual_keyboard: true
 

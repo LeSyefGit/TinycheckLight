@@ -132,17 +132,15 @@ class Network(object):
 
     def wifi_connect(self):
         """
-            Connect to one of the WiFi networks present in the 
-            WPA_CONF_PERSIT_FILE.
-
+            Connect to one of the WiFi networks present in the wpa_supplicant.conf.
             :return: dict containing the TinyCheck <-> AP status.
         """
 
         # Kill wpa_supplicant instances, if any.
         terminate_process("wpa_supplicant")
         # Launch a new instance of wpa_supplicant.
-        sp.Popen("wpa_supplicant -B -i {} -c {}".format(self.iface_out,
-                                                        "/etc/wpa_supplicant/wpa_supplicant.conf"), shell=True).wait()
+        sp.Popen(["wpa_supplicant", "-B", "-i", self.iface_out, "-c",
+                  "/etc/wpa_supplicant/wpa_supplicant.conf"]).wait()
         # Check internet status
         for _ in range(1, 40):
             if self.check_internet():
@@ -235,9 +233,9 @@ class Network(object):
         # Kill potential zombies of hostapd
         terminate_process("hostapd")
 
-        sp.Popen("ifconfig {} up".format(self.iface_in), shell=True).wait()
+        sp.Popen(["ifconfig", self.iface_in, "up"]).wait()
         sp.Popen(
-            "/usr/sbin/hostapd {} > /tmp/hostapd.log".format("/tmp/hostapd.conf"), shell=True)
+            "/usr/sbin/hostapd /tmp/hostapd.conf > /tmp/hostapd.log", shell=True)
 
         while True:
             if path.isfile("/tmp/hostapd.log"):
@@ -293,8 +291,8 @@ class Network(object):
         try:
             sp.Popen("echo 1 > /proc/sys/net/ipv4/ip_forward",
                      shell=True).wait()
-            sp.Popen("iptables -A POSTROUTING -t nat -o {} -j MASQUERADE".format(
-                self.iface_out), shell=True).wait()
+            sp.Popen(["iptables", "-A", "POSTROUTING", "-t", "nat", "-o",
+                      self.iface_out, "-j", "MASQUERADE"]).wait()
             return True
         except:
             return False
@@ -304,8 +302,8 @@ class Network(object):
             This enable interfaces, with a simple check. 
             :return: bool if everything goes well 
         """
-        sh = sp.Popen("ifconfig {} ".format(iface),
-                      stdout=sp.PIPE, stderr=sp.PIPE, shell=True)
+        sh = sp.Popen(["ifconfig", iface],
+                      stdout=sp.PIPE, stderr=sp.PIPE)
         sh = sh.communicate()
 
         if b"<UP," in sh[0]:
@@ -313,7 +311,7 @@ class Network(object):
         elif sh[1]:
             return False  # The interface doesn't exists (most of the cases).
         else:
-            sp.Popen("ifconfig {} up".format(iface), shell=True).wait()
+            sp.Popen(["ifconfig", iface, "up"]).wait()
             return True
 
     def check_internet(self):
