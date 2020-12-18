@@ -138,6 +138,7 @@ Yes, if the demand is felt by NGOs (contact us!). Is it possible to develop this
 
 - Centralized server for IOC/whitelist management (aka. Remote Analysis).
 - Implement Ethernet use.
+- PDF reports.
 - Possibility to add watchers from the backend interface.
 - Encryption of ZIPed reports.
 - Better frontend GUI/JS (use of websockets / better animations).
