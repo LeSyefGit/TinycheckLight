@@ -38,6 +38,29 @@ check_operating_system() {
    fi
 }
 
+set_credentials() {
+    # Set the credentials to access to the backend.
+    echo -e "\e[39m[+] Setting the backend credentials...\e[39m"
+    echo -n "    Please choose a username for TinyCheck's backend: "
+    read login
+    echo -n "    Please choose a password for TinyCheck's backend: "
+    read -s password1
+    echo ""
+    echo -n "    Please confirm the password: "
+    read -s password2
+    echo ""
+
+    if [ $password1 = $password2 ]; then
+        password=$(echo -n "$password1" | sha256sum | cut -d" " -f1)
+        sed -i "s/userlogin/$login/g" /usr/share/tinycheck/config.yaml
+        sed -i "s/userpassword/$password/g" /usr/share/tinycheck/config.yaml
+        echo -e "\e[92m    [✔] Credentials saved successfully!\e[39m"
+    else
+        echo -e "\e[91m    [✘] The passwords aren't equal, please retry.\e[39m"
+        set_credentials
+    fi
+}
+
 create_directory() {
     # Create the TinyCheck directory and move the whole stuff there.
     echo -e "[+] Creating TinyCheck folder under /usr/share/"
@@ -275,7 +298,7 @@ cleaning() {
     systemctl disable suricata.service &> /dev/null
 
     # Removing some useless dependencies.
-    sudo apt autoremove -y
+    sudo apt autoremove -y &> /dev/null 
 }
 
 check_wlan_interfaces() {
@@ -334,6 +357,7 @@ else
     check_operating_system
     check_wlan_interfaces
     create_directory
+    set_credentials
     check_dependencies
     configure_dnsmask
     configure_dhcpcd
