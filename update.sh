@@ -10,9 +10,9 @@ cd /tmp/ && git clone https://github.com/KasperskyLab/TinyCheck
 
 # Deleteing the current folders.
 echo "[+] Deleting the current TinyCheck folders"
-rm -rf /usr/share/TinyCheck/app/
-rm -rf /usr/share/TinyCheck/server/
-rm -rf /usr/share/TinyCheck/analysis/
+rm -rf /usr/share/tinycheck/app/
+rm -rf /usr/share/tinycheck/server/
+rm -rf /usr/share/tinycheck/analysis/
 
 # Copying the folders.
 echo "[+] Copying the new version"
@@ -26,6 +26,6 @@ cd /tmp/TinyCheck && python3 -m pip install -r assets/requirements.txt
 
 # Back to the VueJS projects and reinstalling all the stuff
 echo "[+] Building new interfaces..."
-cd /usr/share/TinyCheck/app/frontend/ && npm install && npm run build
-cd /usr/share/TinyCheck/app/backend/ && npm install && npm run build
+cd /usr/share/tinycheck/app/frontend/ && npm install && npm run build
+cd /usr/share/tinycheck/app/backend/ && npm install && npm run build
 echo "[+] TinyCheck updated!"
