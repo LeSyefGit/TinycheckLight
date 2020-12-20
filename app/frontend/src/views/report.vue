@@ -17,7 +17,7 @@
             </div>
             <div v-else-if="alerts.low.length >= 1" class="low-wrapper">
                 <div class="center">
-                    <h1 class="warning-title">You have ony {{ nb_translate(alerts.moderate.low) }} low alerts,<br /> don't hesitate to check them.</h1>
+                    <h1 class="warning-title">You have only {{ nb_translate(alerts.moderate.low) }} low alerts,<br /> don't hesitate to check them.</h1>
                     <button class="btn btn-report-low-light" v-on:click="new_capture()">Start a new capture</button>
                     <button class="btn btn-report-low" @click="show_report=true;results=false;">Show the full report</button>
                 </div>
