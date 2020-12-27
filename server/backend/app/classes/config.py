@@ -44,21 +44,55 @@ class Config(object):
         config = yaml.load(
             open(os.path.join(self.dir, "config.yaml"), "r"), Loader=yaml.SafeLoader)
 
+        # Some checks prior configuration changes.
+        if cat not in config:
+            return {"status": False,
+                    "message": "Wrong category specified"}
+
+        if key not in config[cat]:
+            return {"status": False,
+                    "message": "Wrong key specified"}
+
+        # Changes for network interfaces.
         if cat == "network" and key in ["in", "out"]:
             if re.match("^wlan[0-9]{1}$", value):
                 if key == "in":
                     self.edit_configuration_files(value)
                 config[cat][key] = value
             else:
-                return False
+                return {"status": False,
+                        "message": "Wrong value specified"}
+
+        # Changes for network SSIDs.
+        elif cat == "network" and key == "ssids":
+            ssids = list(set(value.split("|"))) if "|" in value else [value]
+            if len(ssids):
+                config[cat][key] = ssids
+
+        # Changes for watchers.
+        elif cat == "watchers" and key in ["iocs", "whitelists"]:
+            urls = []
+            values = list(set(value.split("|"))) if "|" in value else [value]
+            for value in values:  # Preventing SSRF based on watchers URLs.
+                if "https://raw.githubusercontent.com" in value[0:33]:
+                    urls.append(value)
+            if len(urls):
+                config[cat][key] = urls
+
+        # Changes for backend password.
         elif cat == "backend" and key == "password":
             config[cat][key] = self.make_password(value)
+
+        # Changes for anything not specified.
+        # Warning: can break your config if you play with it (eg. arrays, ints & bools).
         else:
-            config[cat][key] = value
+            if len(value):
+                config[cat][key] = value
 
         with open(os.path.join(self.dir, "config.yaml"), "w") as yaml_file:
             yaml_file.write(yaml.dump(config, default_flow_style=False))
-            return True
+            return {"status": True,
+                    "message": "Configuration updated"}
 
     def make_password(self, clear_text):
         """
@@ -86,7 +120,7 @@ class Config(object):
         try:
             return [i for i in os.listdir("/sys/class/net/") if i.startswith("wlan")]
         except:
-            return ["Fake iface1", "Fake iface 2"]
+            return ["Interface not found", "Interface not found"]
 
     def edit_configuration_files(self, iface):
         """
@@ -103,6 +137,7 @@ class Config(object):
                         content[i] = "interface {}\n".format(iface)
                 with open("/etc/dhcpcd.conf", 'w') as file:
                     file.writelines(content)
+
                 # Edit of DNSMASQ.conf
                 with open("/etc/dnsmasq.conf", 'r') as file:
                     content = file.readlines()
