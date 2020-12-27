@@ -69,6 +69,6 @@ network:
 watchers:
   iocs:
   - https://raw.githubusercontent.com/KasperskyLab/TinyCheck/main/assets/iocs.json
-  - https://github.com/Te-k/stalkerware-indicators/raw/master/indicators-for-tinycheck.json
+  - https://raw.githubusercontent.com/Te-k/stalkerware-indicators/master/indicators-for-tinycheck.json
   whitelists:
   - https://raw.githubusercontent.com/KasperskyLab/TinyCheck/main/assets/whitelist.json
