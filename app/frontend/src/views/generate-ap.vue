@@ -60,7 +60,7 @@ export default {
         generate_ap: function() {
             clearInterval(this.interval)
             this.ssid_name = false
-            axios.get(`/api/network/ap/start`, { timeout: 30000 })
+            axios.get(`/api/network/ap/start`, { timeout: 70000 })
                 .then(response => (this.show_ap(response.data)))
         },
         show_ap: function(data) {
