@@ -20,6 +20,7 @@ elif [ $PWD = "/tmp/tinycheck" ]; then
     rm -rf /usr/share/tinycheck/analysis/
     rm /usr/share/tinycheck/update.sh
     rm /usr/share/tinycheck/kiosk.sh
+    rm /usr/share/tinycheck/uninstall.sh
 
     echo "[+] Copying the new TinyCheck version"
     cp -R app/ /usr/share/tinycheck/app/
@@ -27,6 +28,7 @@ elif [ $PWD = "/tmp/tinycheck" ]; then
     cp -R analysis/ /usr/share/tinycheck/analysis/
     cp update.sh /usr/share/tinycheck/update.sh
     cp kiosk.sh /usr/share/tinycheck/kiosk.sh
+    cp uninstall.sh /usr/share/tinycheck/uninstall.sh
 
     echo "[+] Retoring the backend's SSL configuration from /tmp/"
     mv /tmp/*.pem /usr/share/tinycheck/server/backend/
