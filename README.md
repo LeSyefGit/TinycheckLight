@@ -8,6 +8,8 @@ TinyCheck allows you to easily capture network communications from a smartphone 
 
 In order to make it working, you need a computer with a Raspberry Pi OS (or other Debian-like operating system - without warranty of working) and two Wi-Fi interfaces. The best choice is to use a [Raspberry Pi (3+)](https://www.raspberrypi.org) with a Wi-Fi dongle and a small touch screen. This tiny configuration (for less than \$50) allows you to tap any Wi-Fi device, anywhere.
 
+*If you have any question about the projet. Want to contribute or just send your feedbacks, don't hesitate to contact us at tinycheck[@]kaspersky[.]com.*
+
 ### History
 
 The idea of TinyCheck came to me in a meeting about stalkerware with a [French women's shelter](https://www.centre-hubertine-auclert.fr). During this meeting we talked about how to easily detect [stalkerware](https://stopstalkerware.org/) without installing very technical apps nor doing forensic analysis on them. The initial concept was to develop a tiny kiosk device based on Raspberry Pi which can be used by non-tech people to test their smartphones against malicious communications issued by stalkerware or any spyware.
@@ -83,7 +85,7 @@ The frontend - which can be accessed from `http://tinycheck.local` or `http://12
 
 ### Meet the backend
 
-Once installed, you can connect yourself to the TinyCheck backend by browsing the URL `https://tinycheck.local` or if you are running it locallyand accepting the SSL self-signed certificate. 
+Once installed, you can connect yourself to the TinyCheck backend by browsing the URL `https://tinycheck.local` or  `http://127.0.0.1` if you are running it locally and accepting the SSL self-signed certificate. 
 
 ![Backend](/assets/backend.png)
 
@@ -144,6 +146,10 @@ Yes, if the demand is felt by NGOs (contact us!). Is it possible to develop this
 - Better frontend GUI/JS (use of websockets / better animations).
 - More OpSec (TOR integration, Local IP randomization etc.)
 - 3d template for kiosks ?
+
+### Contact
+
+If you have any question about the projet. Want to contribute or just send your feedbacks, don't hesitate to contact us at tinycheck[@]kaspersky[.]com. 
 
 ### Special thanks
 
