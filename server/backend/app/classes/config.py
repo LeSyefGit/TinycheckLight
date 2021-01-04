@@ -86,7 +86,9 @@ class Config(object):
         # Changes for anything not specified.
         # Warning: can break your config if you play with it (eg. arrays, ints & bools).
         else:
-            if len(value):
+            if isinstance(value, bool):
+                config[cat][key] = value
+            elif len(value):
                 config[cat][key] = value
 
         with open(os.path.join(self.dir, "config.yaml"), "w") as yaml_file:
