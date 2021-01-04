@@ -6,7 +6,7 @@ TinyCheck allows you to easily capture network communications from a smartphone 
 
 ![Architecture](/assets/network-home.png)
 
-In order to make it working, you need a computer with a Debian-like operating system and two Wi-Fi interfaces. The best choice is to use a [Raspberry Pi (3+)](https://www.raspberrypi.org) with a Wi-Fi dongle and a small touch screen. This tiny configuration (for less than \$50) allows you to tap any Wi-Fi device, anywhere.
+In order to make it working, you need a computer with a Raspberry Pi OS (or other Debian-like operating system - without warranty of working) and two Wi-Fi interfaces. The best choice is to use a [Raspberry Pi (3+)](https://www.raspberrypi.org) with a Wi-Fi dongle and a small touch screen. This tiny configuration (for less than \$50) allows you to tap any Wi-Fi device, anywhere.
 
 ### History
 
@@ -77,13 +77,13 @@ Once installed, the operating system is going to reboot.
 
 ### Meet the frontend
 
-The frontend - which can be accessed from `http://tinycheck.local` - is a kind of tunnel which help the user throughout the process of network capture and reporting. It allows the user to setup a Wi-Fi connection to an existing Wi-Fi network, create an ephemeral Wi-Fi network, capture the communications and show a report to the user... in less than one minute, 5 clicks and without any technical knowledge. 
+The frontend - which can be accessed from `http://tinycheck.local` or `http://127.0.0.1` if you are running it locally - is a kind of tunnel which help the user throughout the process of network capture and reporting. It allows the user to setup a Wi-Fi connection to an existing Wi-Fi network, create an ephemeral Wi-Fi network, capture the communications and show a report to the user... in less than one minute, 5 clicks and without any technical knowledge. 
 
 ![Frontend](/assets/frontend.png)
 
 ### Meet the backend
 
-Once installed, you can connect yourself to the TinyCheck backend by browsing the URL `https://tinycheck.local` and accepting the SSL self-signed certificate. 
+Once installed, you can connect yourself to the TinyCheck backend by browsing the URL `https://tinycheck.local` or if you are running it locallyand accepting the SSL self-signed certificate. 
 
 ![Backend](/assets/backend.png)
 
