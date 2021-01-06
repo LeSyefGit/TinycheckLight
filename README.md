@@ -39,7 +39,7 @@ TinyCheck can be used in several ways by individuals and entities:
 6. **Analyze the capture** <br/>
    Analyze the captured communication, enjoy (or not).
 7. **Save the capture** <br/>
-   Save the capture on an USB key or by direct download.
+   Save the capture and the PDF report on an USB key or by direct download.
 
 ### Architecture
 
