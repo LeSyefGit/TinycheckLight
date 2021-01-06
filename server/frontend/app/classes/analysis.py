@@ -44,13 +44,13 @@ class Analysis(object):
         device, alerts = {}, {}
 
         # Getting device configuration.
-        if os.path.isfile("/tmp/{}/device.json".format(self.token)):
-            with open("/tmp/{}/device.json".format(self.token), "r") as f:
+        if os.path.isfile("/tmp/{}/assets/device.json".format(self.token)):
+            with open("/tmp/{}/assets/device.json".format(self.token), "r") as f:
                 device = json.load(f)
 
         # Getting alerts configuration.
-        if os.path.isfile("/tmp/{}/alerts.json".format(self.token)):
-            with open("/tmp/{}/alerts.json".format(self.token), "r") as f:
+        if os.path.isfile("/tmp/{}/assets/alerts.json".format(self.token)):
+            with open("/tmp/{}/assets/alerts.json".format(self.token), "r") as f:
                 alerts = json.load(f)
 
         if device != {} and alerts != {}:

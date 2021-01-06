@@ -13,3 +13,4 @@ pyudev
 wifi
 qrcode
 netifaces
+weasyprint

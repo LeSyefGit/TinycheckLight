@@ -15,7 +15,8 @@ import re
 class Capture(object):
 
     def __init__(self):
-        self.working_dir = False
+        self.capture_dir = False
+        self.assets_dir = False
         self.capture_token = False
         self.random_choice_alphabet = "ABCDEF1234567890"
 
@@ -33,16 +34,18 @@ class Capture(object):
         # Few context variable assignment
         self.capture_token = "".join(
             [random.choice(self.random_choice_alphabet) for i in range(8)])
-        self.working_dir = "/tmp/{}/".format(self.capture_token)
-        self.pcap = self.working_dir + "capture.pcap"
+        self.capture_dir = "/tmp/{}/".format(self.capture_token)
+        self.assets_dir = "/tmp/{}/assets/".format(self.capture_token)
+        self.pcap = self.capture_dir + "capture.pcap"
         self.iface = read_config(("network", "in"))
 
         # For packets monitoring
         self.list_pkts = []
         self.last_pkts = 0
 
-        # Make the capture directory
-        mkdir(self.working_dir)
+        # Make the capture and the assets directory
+        mkdir(self.capture_dir)
+        mkdir(self.assets_dir)
 
         try:
             sp.Popen(["tshark",  "-i", self.iface, "-w",

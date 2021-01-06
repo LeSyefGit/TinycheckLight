@@ -3,6 +3,7 @@
 
 from classes.zeekengine import ZeekEngine
 from classes.suricataengine import SuricataEngine
+from classes.report import Report
 from multiprocessing import Process, Manager
 import sys
 import re
@@ -20,14 +21,23 @@ if __name__ == "__main__":
         capture_directory = sys.argv[1]
         if os.path.isdir(capture_directory):
 
-            # Alerts bucket.
             manager = Manager()
             alerts = manager.dict()
 
             def zeekengine(alerts):
                 zeek = ZeekEngine(capture_directory)
                 zeek.start_zeek()
-                alerts["zeek"] = zeek.get_alerts()
+                alerts["zeek"] = zeek.retrieve_alerts()
+
+                # whitelist.json writing.
+                with open(os.path.join(capture_directory, "assets/whitelist.json"), "w") as f:
+                    f.write(json.dumps(zeek.retrieve_whitelist(),
+                                       indent=4, separators=(',', ': ')))
+
+                # conns.json writing.
+                with open(os.path.join(capture_directory, "assets/conns.json"), "w") as f:
+                    f.write(json.dumps(zeek.retrieve_conns(),
+                                       indent=4, separators=(',', ': ')))
 
             def snortengine(alerts):
                 suricata = SuricataEngine(capture_directory)
@@ -45,7 +55,7 @@ if __name__ == "__main__":
             p2.join()
 
             # Some formating and alerts.json writing.
-            with open(os.path.join(capture_directory, "alerts.json"), "w") as f:
+            with open(os.path.join(capture_directory, "assets/alerts.json"), "w") as f:
                 report = {"high": [], "moderate": [], "low": []}
                 for alert in (alerts["zeek"] + alerts["suricata"]):
                     if alert["level"] == "High":
@@ -54,7 +64,11 @@ if __name__ == "__main__":
                         report["moderate"].append(alert)
                     if alert["level"] == "Low":
                         report["low"].append(alert)
-                f.write(json.dumps(report))
+                f.write(json.dumps(report, indent=4, separators=(',', ': ')))
+
+            # Generate the report
+            report = Report(capture_directory)
+            report.generate_report()
         else:
             print("The directory doesn't exist.")
     else:

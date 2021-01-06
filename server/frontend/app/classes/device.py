@@ -20,13 +20,13 @@ class Device(object):
 
             :return: dict containing device properties.
         """
-        if not os.path.isfile("/tmp/{}/device.json".format(self.token)):
+        if not os.path.isfile("/tmp/{}/assets/device.json".format(self.token)):
             device = self.read_leases()
             if device["status"] != False:
-                with open("/tmp/{}/device.json".format(self.token), "w") as f:
+                with open("/tmp/{}/assets/device.json".format(self.token), "w") as f:
                     f.write(json.dumps(device))
         else:
-            with open("/tmp/{}/device.json".format(self.token)) as f:
+            with open("/tmp/{}/assets/device.json".format(self.token)) as f:
                 device = json.load(f)
         return device
 
