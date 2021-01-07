@@ -6,7 +6,7 @@ TinyCheck allows you to easily capture network communications from a smartphone 
 
 ![Architecture](/assets/network-home.png)
 
-In order to make it working, you need a computer with a Raspberry Pi OS (or other Debian-like operating system - without warranty of working) and two Wi-Fi interfaces. The best choice is to use a [Raspberry Pi (3+)](https://www.raspberrypi.org) with a Wi-Fi dongle and a small touch screen. This tiny configuration (for less than \$50) allows you to tap any Wi-Fi device, anywhere.
+In order to make it working, you need a computer with a Raspberry Pi OS (or other Debian-like operating system - without warranty of working) and two Wi-Fi interfaces. The best choice is to use a [Raspberry Pi (3+)](https://www.raspberrypi.org) with a Wi-Fi dongle accepting AP mode and a small touch screen. This tiny configuration (for less than \$50) allows you to tap any Wi-Fi device, anywhere.
 
 *If you have any question about the projet. Want to contribute or just send your feedbacks, don't hesitate to contact us at tinycheck[@]kaspersky[.]com.*
 
@@ -98,7 +98,7 @@ The backend allows you to edit the configuration of TinyCheck, add extended IOCs
 - Certificates sha1
 - Nameservers
 - FreeDNS
-- Fancy TLDs
+- Fancy TLDs (eg. xyz, .top etc.)
 
 ### Meet the analysis engine
 
@@ -121,7 +121,7 @@ On the [Suricata](https://suricata-ids.org/) part, the network capture is analys
 - Device name exfiltred in clear-text;
 - Access point SSID exfiltred in clear-text;
 
-### Watchers?
+### Watchers concept
 
 In order to keep IOCs and whitelist updated constantly, TinyCheck integrates something called "watchers". It is a very simple service with few lines of Python which grabs new formated IOCs or whitelist elements from public URLs. As of today, TinyCheck integrates two urls, one for the whitelist and one for the IOCs (The formated files are present in the assets folder). 
 
