@@ -138,16 +138,16 @@ Yes, if the demand is felt by NGOs (contact us!). Is it possible to develop this
 
 ### Possible updates for next releases
 
-- Centralized server for IOC/whitelist management (aka. Remote Analysis).
 - Implement Ethernet / Non internet use.
-- Possibility to add watchers from the backend interface.
-- Encryption of ZIPed reports.
-- Better frontend GUI/JS (use of websockets / better animations).
 - More OpSec (TOR integration, Local IP randomization etc.)
+- Possibility to add watchers from the backend interface.
+- Centralized server for IOC/whitelist management (aka. Remote Analysis).
+- Better frontend GUI/JS (use of websockets / better animations).
+- Encryption of ZIPed reports.
 
 ### Contact
 
-If you have any question about the projet. Want to contribute or just send your feedbacks, don't hesitate to contact us at tinycheck[@]kaspersky[.]com. 
+If you have any question about the projet. Want to contribute or just send your feedbacks/success stories, don't hesitate to contact us at tinycheck[@]kaspersky[.]com. 
 
 ### Special thanks
 
