@@ -20,7 +20,8 @@ class Report(object):
             capture_directory, "assets/conns.json"))
         self.device = self.read_json(os.path.join(
             capture_directory, "assets/device.json"))
-
+        self.capinfos = self.read_json(os.path.join(
+            capture_directory, "assets/capinfos.json"))
         try:
             with open(os.path.join(self.capture_directory, "capture.pcap"), "rb") as f:
                 self.capture_sha1 = hashlib.sha1(f.read()).hexdigest()
@@ -184,7 +185,10 @@ class Report(object):
             self.device["mac_address"])
         header += "Report generated on {}<br />".format(
             datetime.now().strftime("%d/%m/%Y at %H:%M:%S"))
-
+        header += "Capture duration: {}<br />".format(
+            self.capinfos["Capture duration"])
+        header += "Number of packets: {}<br />".format(
+            self.capinfos["Number of packets"])
         header += "Capture SHA1: {}<br />".format(self.capture_sha1)
         header += "</p>"
         header += "</div>"

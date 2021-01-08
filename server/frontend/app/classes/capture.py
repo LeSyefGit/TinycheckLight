@@ -7,6 +7,7 @@ from os import mkdir, path
 from flask import send_file, jsonify
 import datetime
 import shutil
+import json
 import random
 import sys
 import re
@@ -15,9 +16,6 @@ import re
 class Capture(object):
 
     def __init__(self):
-        self.capture_dir = False
-        self.assets_dir = False
-        self.capture_token = False
         self.random_choice_alphabet = "ABCDEF1234567890"
 
     def start_capture(self):
@@ -98,14 +96,33 @@ class Capture(object):
 
     def stop_capture(self):
         """
-            Stoping tshark if any instance present.
+            Stop tshark if any instance present & ask create_capinfos.
             :return: dict as a small confirmation.
         """
-
-        # Kill instance of tshark if any.
         if terminate_process("tshark"):
+            self.create_capinfos()
             return {"status": True,
                     "message": "Capture stopped"}
         else:
             return {"status": False,
                     "message": "No active capture"}
+
+    def create_capinfos(self):
+        """
+            Creates a capinfo json file.
+            :return: dict as a small confirmation.
+        """
+        infos = sp.Popen(["capinfos", self.pcap],
+                         stdout=sp.PIPE, stderr=sp.PIPE)
+        infos = infos.communicate()[0]
+        data = {}
+        for l in infos.decode().splitlines():
+            try:
+                l = l.split(": ") if ": " in l else l.split("= ")
+                if len(l[0]) and len(l[1]):
+                    data[l[0].strip()] = l[1].strip()
+            except:
+                continue
+        with open("{}capinfos.json".format(self.assets_dir), 'w') as f:
+            json.dump(data, f)
+            return True
