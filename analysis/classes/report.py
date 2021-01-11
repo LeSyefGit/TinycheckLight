@@ -59,11 +59,11 @@ class Report(object):
             :return: str
         """
         if len(self.alerts["high"]):
-            return "<div class=\"warning high\">Your device seems to be compromised as you have {} high alerts.</div>".format(self.nb_translate(len(self.alerts["high"])))
+            return "<div class=\"warning high\">Your device seems to be compromised as you have {} high alert(s).</div>".format(self.nb_translate(len(self.alerts["high"])))
         elif len(self.alerts["moderate"]):
-            return "<div class=\"warning moderate\">You have {} moderate alerts, your device might be compromised. Please look at them carefully.</div>".format(self.nb_translate(len(self.alerts["moderate"])))
+            return "<div class=\"warning moderate\">You have {} moderate alert(s), your device might be compromised. Please look at them carefully.</div>".format(self.nb_translate(len(self.alerts["moderate"])))
         elif len(self.alerts["low"]):
-            return "<div class=\"warning low\">You have only {} low alerts, don't hesitate to check them.</div>".format(self.nb_translate(len(self.alerts["low"])))
+            return "<div class=\"warning low\">You have only {} low alert(s), don't hesitate to check them.</div>".format(self.nb_translate(len(self.alerts["low"])))
         else:
             return "<div class=\"warning low\">Everything looks fine, zero alerts. Don't hesitate to check the uncategorized communications, if any.</div>"
 
@@ -185,7 +185,7 @@ class Report(object):
             self.device["mac_address"])
         header += "Report generated on {}<br />".format(
             datetime.now().strftime("%d/%m/%Y at %H:%M:%S"))
-        header += "Capture duration: {}<br />".format(
+        header += "Capture duration: {}s<br />".format(
             self.capinfos["Capture duration"])
         header += "Number of packets: {}<br />".format(
             self.capinfos["Number of packets"])
