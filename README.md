@@ -127,7 +127,7 @@ In order to keep IOCs and whitelist updated constantly, TinyCheck integrates som
 
 If you have seen something very suspicious and/or needs to be investigated/integrated in one of these two lists, don't hesitate to ping us. You can also do you own watcher. Remember, sharing is caring. 
 
-### Q&As
+### Questions & Answers
 
 **Your project seem very cool, does it send data to Kaspersky or any telemetry server?**<br /><br />
 No, at all. You can look to the sources, the only data sent by TinyCheck is an HTTP GET request to a website that you can specify in the config, as well as the watchers URLs. Kaspersky don't - and will not - receive any telemetry from your TinyCheck device.<br /><br />
