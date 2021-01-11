@@ -36,6 +36,18 @@
                     <i class="form-icon"></i> Use virtual keyboard (for touch screen)
                 </label>
                 <label class="form-switch">
+                    <input type="checkbox" @change="switch_config('frontend', 'reboot_option')" v-model="config.frontend.reboot_option">
+                    <i class="form-icon"></i> Allow the end-user to reboot the device from the interface.
+                </label>
+                <label class="form-switch">
+                    <input type="checkbox" @change="switch_config('frontend', 'shutdown_option')" v-model="config.frontend.shutdown_option">
+                    <i class="form-icon"></i> Allow the end-user to shutdown the device from the interface.
+                </label>
+                <label class="form-switch">
+                    <input type="checkbox" @change="switch_config('frontend', 'quit_option')" v-model="config.frontend.quit_option">
+                    <i class="form-icon"></i> Allow the end-user to quit the interface
+                </label>
+                <label class="form-switch">
                     <input type="checkbox" @change="switch_config('frontend', 'hide_mouse')" v-model="config.frontend.hide_mouse">
                     <i class="form-icon"></i> Hide mouse (for touch screen)
                 </label>

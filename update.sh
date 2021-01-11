@@ -45,5 +45,18 @@ elif [ $PWD = "/tmp/tinycheck" ]; then
     service tinycheck-frontend restart
     service tinycheck-watchers restart
 
+    # Updating configuration with new key-val pairs.
+    if ! grep -q reboot_option /usr/share/tinycheck/config.yaml; then
+        sed -i 's/frontend:/frontend:\n  reboot_option: true/g' /usr/share/tinycheck/config.yaml
+    fi
+    
+    if ! grep -q shutdown_option /usr/share/tinycheck/config.yaml; then
+        sed -i 's/frontend:/frontend:\n  shutdown_option: true/g' /usr/share/tinycheck/config.yaml
+    fi
+
+    if ! grep -q quit_option /usr/share/tinycheck/config.yaml; then
+        sed -i 's/frontend:/frontend:\n  quit_option: true/g' /usr/share/tinycheck/config.yaml
+    fi
+
     echo "[+] TinyCheck updated!"
 fi

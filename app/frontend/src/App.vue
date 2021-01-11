@@ -1,8 +1,11 @@
 <template>
   <div id="app">
-    <transition name="fade" mode="out-in">
-      <router-view />
-    </transition>
+    <div class="wrapper">
+      <Controls />
+      <transition name="fade" mode="out-in">
+        <router-view />
+      </transition>
+    </div>
   </div>
 </template>
 
@@ -26,5 +29,13 @@
 
 <script>
   document.title = 'TinyCheck Frontend'
+  import Controls from "@/components/Controls.vue"
+
+  export default {
+    name: 'app',
+    components: {
+        Controls
+    }
+  }
 </script>
 
