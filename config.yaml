@@ -38,6 +38,9 @@ backend:
 # you can change them via the backend. 
 #
 frontend:
+  shutdown_option: false
+  reboot_option: false
+  quit_option: true
   download_links: false
   hide_mouse: true
   kiosk_mode: true
