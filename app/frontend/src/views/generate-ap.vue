@@ -53,12 +53,13 @@ export default {
             capture_start: false,
             interval: false,
             error: false,
-            reboot_option: false
+            reboot_option: false,
+            attempts: 3
         }
     },
     methods: {
         generate_ap: function() {
-            clearInterval(this.interval)
+            clearInterval(this.interval);
             this.ssid_name = false
             axios.get(`/api/network/ap/start`, { timeout: 30000 })
                 .then(response => (this.show_ap(response.data)))
@@ -70,7 +71,12 @@ export default {
                 this.ssid_qr = data.qrcode
                 this.start_capture() // Start the capture before client connect.
             } else {
-                this.error = true
+                if(this.attempts != 0){
+                    setTimeout(function () { this.generate_ap() }.bind(this), 10000)
+                    this.attempts -= 1;
+                } else {
+                    this.error = true
+                }
             }
         },
         start_capture: function() {
