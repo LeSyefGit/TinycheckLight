@@ -242,7 +242,6 @@ class Network(object):
                 with open("/tmp/hostapd.log", "r") as f:
                     log = f.read()
                     err = ["Could not configure driver mode",
-                           "Could not connect to kernel driver",
                            "driver initialization failed"]
                     if not any(e in log for e in err):
                         if "AP-ENABLED" in log:
@@ -302,9 +301,6 @@ class Network(object):
             This enable interfaces, with a simple check. 
             :return: bool if everything goes well 
         """
-        sh = sp.Popen(["ifconfig", iface],
-                      stdout=sp.PIPE, stderr=sp.PIPE)
-        sh = sh.communicate()
 
         if b"<UP," in sh[0]:
             return True  # The interface is up.
