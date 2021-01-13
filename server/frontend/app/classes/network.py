@@ -301,7 +301,9 @@ class Network(object):
             This enable interfaces, with a simple check. 
             :return: bool if everything goes well 
         """
-
+        sh = sp.Popen(["ifconfig", iface],
+                      stdout=sp.PIPE, stderr=sp.PIPE)
+        sh = sh.communicate()
         if b"<UP," in sh[0]:
             return True  # The interface is up.
         elif sh[1]:
