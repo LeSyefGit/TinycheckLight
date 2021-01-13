@@ -109,7 +109,7 @@ class Network(object):
                         "key_mgmt": "WPA-PSK"
                     })
 
-            with open("/etc/wpa_supplicant/wpa_supplicant.conf", "r+") as f:
+            with open("/etc/wpa_supplicant/wpa_supplicant.conf", "w+") as f:
                 content = header
                 for network in networks:
                     net = "network={\n"
