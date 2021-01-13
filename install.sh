@@ -4,6 +4,7 @@ ifaces=()
 rfaces=()
 CURRENT_USER="${SUDO_USER}"
 SCRIPT_PATH="$( cd "$(dirname "$0")" ; pwd -P )"
+HOST="$( hostname )"
 
 welcome_screen() {
 cat << "EOF"
@@ -203,7 +204,7 @@ change_hostname() {
    # Changing the hostname to tinycheck
    echo -e "[+] Changing the hostname to tinycheck"
    echo "tinycheck" > /etc/hostname
-   sed -i 's/raspberrypi/tinycheck/g' /etc/hosts
+   sed -i "s/$HOST/tinycheck/g" /etc/hosts
 }
 
 install_package() {
