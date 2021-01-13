@@ -159,7 +159,6 @@ configure_dnsmask() {
 
     echo -e "\e[39m[+] Configuring dnsmasq\e[39m"
     echo -e "\e[92m    [✔] Changing dnsmasq configuration\e[39m"
-    rand=$(head /dev/urandom | tr -dc a-z | head -c 13)
 
     if [[ -f "/etc/dnsmasq.conf" ]]; then
         cat >>/etc/dnsmasq.conf <<EOL
@@ -168,8 +167,6 @@ configure_dnsmask() {
 
 interface=${ifaces[-1]}
 dhcp-range=192.168.100.2,192.168.100.3,255.255.255.0,24h
-domain=local
-address=/$rand.local/192.168.100.1
 EOL
     else 
         echo -e "\e[91m    [✘] /etc/dnsmasq.conf doesn't exist, configuration not updated.\e[39m"
