@@ -24,7 +24,7 @@ TinyCheck can be used in several ways by individuals and entities:
 
 - Over a network - TinyCheck is installed on a network and can be accessed from a workstation via a browser.
 - In kiosk mode - TinyCheck can be used as a kiosk to allow visitors to test their own devices.
-- Fully standalone - By using a powerbank, you can tap any device anywhere.
+- Fully standalone - By using a powerbank and a small screen, [like in this video](https://twitter.com/felixaime/status/1331535790392946689), you can tap any device anywhere.
 
 ### Few steps to analyze your smartphone
 
