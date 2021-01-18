@@ -117,7 +117,7 @@ class ZeekEngine(object):
                 # Check for use of HTTP.
                 if c["service"] == "http" and c["port_dst"] == http_default_port:
                     c["alert_tiggered"] = True
-                    self.alerts.append({"title": "HTTP communications been done to the host {}".format(c["resolution"]),
+                    self.alerts.append({"title": "HTTP communications have been done to the host {}".format(c["resolution"]),
                                         "description": "Your device exchanged with the host {} by using HTTP, an unencrypted protocol. ".format(c["resolution"])
                                         + "Even if this behavior is not malicious by itself, it is unusual to see HTTP communications issued from smartphone applications "
                                         + "running in the background. Please check the host reputation by searching it on the internet.",
@@ -203,7 +203,7 @@ class ZeekEngine(object):
                         c["alert_tiggered"] = True
                         self.alerts.append({"title": "A DNS request have been done to the domain {} which is a Free DNS.".format(c["resolution"]),
                                             "description": "The domain name {} is using a Free DNS service. This kind of service is commonly used by cybercriminals ".format(c["resolution"])
-                                            + "or state-sponsored threat actors during their operations.",
+                                            + "or state-sponsored threat actors during their operations. It is very suspicious that an application running in background use this kind of service, please investigate.",
                                             "host": c["resolution"],
                                             "level": "Moderate",
                                             "id": "IOC-04"})
@@ -232,7 +232,8 @@ class ZeekEngine(object):
                             c["alert_tiggered"] = True
                             self.alerts.append({"title": "The domain {} is using a suspect nameserver ({}).".format(c["resolution"], name_servers[0]),
                                                 "description": "The domain name {} is using a nameserver that has been explicitly tagged to be associated to malicious activities. ".format(c["resolution"])
-                                                + "Many cybercriminals and state-sponsored threat actors are using this kind of registrars because they allow cryptocurrencies and anonymous payments.",
+                                                + "Many cybercriminals and state-sponsored threat actors are using this kind of registrars because they allow cryptocurrencies and anonymous payments. It"
+                                                + " is adviced to investigate on this domain and the associated running application by doing a forensic analysis of the phone.",
                                                 "host": c["resolution"],
                                                 "level": "Moderate",
                                                 "id": "IOC-06"})
@@ -305,7 +306,7 @@ class ZeekEngine(object):
                         # Check for non generic SSL port.
                         if cert["port"] not in ssl_default_ports:
                             c["alert_tiggered"] = True
-                            self.alerts.append({"title": "SSL connection done on an non standart port ({}) to {}".format(cert["port"], host),
+                            self.alerts.append({"title": "SSL connection done on a non standard port ({}) to {}".format(cert["port"], host),
                                                 "description": "It is not common to see SSL connections issued from smartphones using non-standard ports. Even this can be totally legit,"
                                                 + " we recommend to check the reputation of {}, by looking at its WHOIS record, the associated autonomus system, its creation date, and ".format(host)
                                                 + " by searching it the internet.",
