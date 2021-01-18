@@ -335,6 +335,8 @@ footer {
     color: #4c4c4c;
     background:#f7f8f9;
     border: 1px solid #4c4c4c;
+    padding: .4rem .7rem;
+    line-height: normal;
 }
 
 .btn:hover {
