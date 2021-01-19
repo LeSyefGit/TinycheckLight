@@ -42,8 +42,8 @@ frontend:
   reboot_option: false
   quit_option: true
   download_links: false
-  hide_mouse: true
-  kiosk_mode: true
+  hide_mouse: false
+  kiosk_mode: false
   remote_access: true
   sparklines: true
   virtual_keyboard: true
