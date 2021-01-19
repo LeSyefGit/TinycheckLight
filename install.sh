@@ -307,7 +307,7 @@ check_wlan_interfaces() {
    # Check if they are recognized by ifconfig, if not unblock them with rfkill.
    echo -e "\e[39m[+] Checking your wireless interfaces"
 
-   for iface in $(ifconfig | grep -oE wlan[0-9]); do ifaces+=("$iface"); done
+   for iface in $(ifconfig | grep -oE "(wlan[0-9]|wlx[a-f0-9]{12})"; do ifaces+=("$iface"); done
    for iface in $(rfkill list | grep -oE phy[0-9]); do rfaces+=("$iface"); done
 
    if [[ "${#rfaces[@]}" > 1 ]]; then

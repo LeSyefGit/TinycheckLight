@@ -55,7 +55,7 @@ class Config(object):
 
         # Changes for network interfaces.
         if cat == "network" and key in ["in", "out"]:
-            if re.match("^wlan[0-9]{1}$", value):
+            if re.match("^(wlan[0-9]|wlx[a-f0-9]{12})$", value):
                 if key == "in":
                     self.edit_configuration_files(value)
                 config[cat][key] = value
@@ -120,7 +120,7 @@ class Config(object):
             :return: list of the interfaces
         """
         try:
-            return [i for i in os.listdir("/sys/class/net/") if i.startswith("wlan")]
+            return [i for i in os.listdir("/sys/class/net/") if i.startswith(("wlan", "wlx"))]
         except:
             return ["Interface not found", "Interface not found"]
 
@@ -130,7 +130,7 @@ class Config(object):
             :return: nothing.
         """
         try:
-            if re.match("^wlan[0-9]{1}$", iface):
+            if re.match("^(wlan[0-9]|wlx[a-f0-9]{12})$", iface):
                 # Edit of DHCPD.conf
                 with open("/etc/dhcpcd.conf", 'r') as file:
                     content = file.readlines()
