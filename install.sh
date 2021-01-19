@@ -217,6 +217,9 @@ install_package() {
        if [[ $distrib == "debian" || $distrib == "ubuntu" ]]; then
          echo "deb http://download.opensuse.org/repositories/security:/zeek/Debian_$version/ /" > /etc/apt/sources.list.d/security:zeek.list
          wget -nv "https://download.opensuse.org/repositories/security:zeek/Debian_$version/Release.key" -O Release.key
+       elif [[ $distrib == "ubuntu" ]]; then
+         echo "deb http://download.opensuse.org/repositories/security:/zeek/xUbuntu_$version/ /" > /etc/apt/sources.list.d/security:zeek.list
+         wget -nv "https://download.opensuse.org/repositories/security:zeek/xUbuntu_$version/Release.key" -O Release.key
        elif [[ $distrib == "raspbian" ]]; then
          echo "deb http://download.opensuse.org/repositories/security:/zeek/Raspbian_$version/ /" > /etc/apt/sources.list.d/security:zeek.list
          wget -nv "https://download.opensuse.org/repositories/security:zeek/Raspbian_$version/Release.key" -O Release.key
