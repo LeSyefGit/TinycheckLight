@@ -12,7 +12,7 @@
             <p>This little backend allows you to manage the configuration of your TinyCheck instance. You can push some IOCs for detection and whitelist elements which can be seen during legit communications in order to prevent false positives.</p>
           </div>
           <div class="backend-footer container grid-lg" id="copyright">
-             <p>Created with <span class="text-error">&hearts;</span> by <a href="https://twitter.com/felixaime" target="_blank">Félix Aimé</a>.</p>
+             <p>For any question, bug report or feedback, please contact the <a href="mailto:tinycheck@kaspersky.com" target="_blank">TinyCheck's Team</a> <span class="text-error">&hearts;</span>.</p>
           </div>
       </div>
     </div>
