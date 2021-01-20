@@ -45,7 +45,7 @@ elif [ $PWD = "/tmp/tinycheck" ]; then
     service tinycheck-frontend restart
     service tinycheck-watchers restart
 
-    # Updating configuration with new key-val pairs.
+    # Updating configuration with new values.
     if ! grep -q reboot_option /usr/share/tinycheck/config.yaml; then
         sed -i 's/frontend:/frontend:\n  reboot_option: true/g' /usr/share/tinycheck/config.yaml
     fi
@@ -56,6 +56,10 @@ elif [ $PWD = "/tmp/tinycheck" ]; then
 
     if ! grep -q quit_option /usr/share/tinycheck/config.yaml; then
         sed -i 's/frontend:/frontend:\n  quit_option: true/g' /usr/share/tinycheck/config.yaml
+    fi
+
+    if ! grep -q "CN=R3,O=Let's Encrypt,C=US" /usr/share/tinycheck/config.yaml; then
+        sed -i "s/free_issuers:/free_issuers:\n  - CN=R3,O=Let's Encrypt,C=US/g" /usr/share/tinycheck/config.yaml
     fi
 
     echo "[+] TinyCheck updated!"
