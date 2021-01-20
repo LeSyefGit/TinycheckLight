@@ -1,12 +1,13 @@
 # ANALYSIS -
 # All the things related to the analysis engine.
-# Some configuration keys aren't accessible from the backend 
+# Some configuration keys aren't accessible from the backend
 # but can be edited here...
 #
 analysis:
   free_issuers:
   - CN=Let's Encrypt Authority X3,O=Let's Encrypt,C=US
   - CN=ZeroSSL RSA Domain Secure Site CA,O=ZeroSSL,C=AT
+  - CN=R3,O=Let's Encrypt,C=US
   heuristics: true
   http_default_port: 80
   iocs: true
@@ -25,8 +26,8 @@ analysis:
   whitelist: true
 
 # BACKEND -
-# Backend login / password and the possibility to 
-# access to it from remote location. 
+# Backend login / password and the possibility to
+# access to it from remote location.
 #
 backend:
   login: userlogin
@@ -35,7 +36,7 @@ backend:
 
 # FRONTEND -
 # Some elements related to the frontend configuration & ergonomy
-# you can change them via the backend. 
+# you can change them via the backend.
 #
 frontend:
   shutdown_option: false
@@ -65,7 +66,7 @@ network:
   tokenized_ssids: true
 
 # WATCHERS -
-# They are used to grab automatically new IOCs or whitelisted 
+# They are used to grab automatically new IOCs or whitelisted
 # elements from files containing IOCs export. You can add your
 # own URL and it will be parsed at each TinyCheck reboot.
 #
