@@ -353,6 +353,13 @@ reboot_box() {
 if [[ $EUID -ne 0 ]]; then
     echo "This must be run as root. Type in 'sudo bash $0' to run."
 	exit 1
+elif [[ -f /usr/share/tinycheck/config.yaml ]]; then
+    echo "You have a TinyCheck instance already installed on this box."
+    echo "  - If you want to update the instance, please execute:"
+    echo "      sudo bash /usr/share/tinycheck/update.sh"
+    echo "  - If you want to uninstall the instance, please execute:"
+    echo "      sudo bash /usr/share/tinycheck/uninstall.sh"
+	exit 1
 else
     welcome_screen
     check_operating_system
