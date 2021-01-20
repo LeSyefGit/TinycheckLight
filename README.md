@@ -60,7 +60,7 @@ It is worthy to note that not all configuration options are editable from the ba
 Prior the TinyCheck installation, you need to have:
 
 - A Raspberry Pi with [Raspberry Pi OS](https://www.raspberrypi.org/documentation/installation/installing-images/) (or any computer with a Debian-like system)
-- Two working Wi-Fi interfaces (check their number with `ifconfig | grep wlan | wc -l`).
+- Two working Wi-Fi interfaces (check their number with `iw list | grep Wiphy | wc -l`).
 - A working internet connection
 - (Adviced) A small touchscreen previously installed for the kiosk mode of TinyCheck.
 
