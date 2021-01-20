@@ -317,7 +317,7 @@ check_wlan_interfaces() {
        fi
    else
        echo -e "\e[91m    [✘] Two wireless interfaces are required."
-       echo -e "              Please, plug a WiFi USB dongle and retry the install, exiting.\e[39m"
+       echo -e "              Please, check if you have two Wi-Fi interfaces available (with the command iw list | grep Wiphy).\e[39m"
        exit
    fi
 }
