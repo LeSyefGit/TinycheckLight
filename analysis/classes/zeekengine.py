@@ -135,7 +135,7 @@ class ZeekEngine(object):
                                         "level": "Moderate",
                                         "id": "PROTO-04"})
                 # Check for non-resolved IP address.
-                if c["service"] == c["resolution"]:
+                if c["ip_dst"] == c["resolution"]:
                     c["alert_tiggered"] = True
                     self.alerts.append({"title": "The server {} hasn't been resolved by any DNS query during the session".format(c["ip_dst"]),
                                         "description": "It means that the server {} is likely not resolved by any domain name or the resolution has already been cached by ".format(c["ip_dst"])
