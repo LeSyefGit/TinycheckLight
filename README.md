@@ -6,7 +6,7 @@ TinyCheck allows you to easily capture network communications from a smartphone 
 
 ![Architecture](/assets/network-home.png)
 
-In order to make it working, you need a computer with a Raspberry Pi OS (or other Debian-like operating system - without warranty of working) and two Wi-Fi interfaces. The best choice is to use a [Raspberry Pi (3+)](https://www.raspberrypi.org) with a Wi-Fi dongle accepting AP mode and a small touch screen. This tiny configuration (for less than \$50) allows you to tap any Wi-Fi device, anywhere.
+In order to make it working, you need a computer with a Raspberry Pi OS Buster (or other Debian-like operating system - without warranty of working) and two Wi-Fi interfaces. The best choice is to use a [Raspberry Pi (3+)](https://www.raspberrypi.org) with a Wi-Fi dongle accepting AP mode and a small touch screen. This tiny configuration (for less than \$50) allows you to tap any Wi-Fi device, anywhere.
 
 *If you need more documentation about the internals, don't hesitate to take a look at the [TinyCheck Wiki](https://github.com/KasperskyLab/TinyCheck/wiki).*
 
@@ -59,7 +59,7 @@ It is worthy to note that not all configuration options are editable from the ba
 
 Prior the TinyCheck installation, you need to have:
 
-- A Raspberry Pi with [Raspberry Pi OS](https://www.raspberrypi.org/documentation/installation/installing-images/) (or any computer with a Debian-like system)
+- A Raspberry Pi with [Raspberry Pi OS Buster](https://www.raspberrypi.org/documentation/installation/installing-images/) (or any computer with a Debian-like system)
 - Two working Wi-Fi interfaces (check their number with `iw list | grep Wiphy | wc -l`).
 - A working internet connection
 - (Adviced) A small touchscreen previously installed for the kiosk mode of TinyCheck.
