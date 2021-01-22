@@ -141,7 +141,6 @@ Yes, if the demand is felt by NGOs (contact us!). Is it possible to develop this
 
 ### Possible updates for next releases
 
-- Implement Ethernet / Non internet use.
 - More OpSec (TOR integration, Local IP randomization etc.)
 - Possibility to add watchers from the backend interface.
 - Centralized server for IOC/whitelist management (aka. Remote Analysis).
