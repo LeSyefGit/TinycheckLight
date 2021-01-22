@@ -32,7 +32,8 @@ class Config(object):
         """
         config = yaml.load(
             open(os.path.join(self.dir, "config.yaml"), "r"), Loader=yaml.SafeLoader)
-        config["interfaces"] = self.get_wireless_interfaces()
+        config["ifaces_in"] = self.get_ifaces_in()
+        config["ifaces_out"] = self.get_ifaces_out()
         return config
 
     def write_config(self, cat, key, value):
@@ -55,9 +56,13 @@ class Config(object):
 
         # Changes for network interfaces.
         if cat == "network" and key in ["in", "out"]:
-            if re.match("^(wlan[0-9]|wlx[a-f0-9]{12})$", value):
+            if re.match("^(wlan[0-9]|wl[a-z0-9]{20})$", value):
                 if key == "in":
                     self.edit_configuration_files(value)
+                    config[cat][key] = value
+                if key == "out":
+                    config[cat][key] = value
+            elif re.match("^(eth[0-9]|en[a-z0-9]{20})$", value) and key == "out":
                 config[cat][key] = value
             else:
                 return {"status": False,
@@ -114,15 +119,27 @@ class Config(object):
                 as_attachment=True,
                 attachment_filename='tinycheck-export-db.sqlite')
 
-    def get_wireless_interfaces(self):
+    def get_ifaces_in(self):
         """
-            List the Wireless interfaces installed on the box
+            List the Wireless interfaces on the box
+            which can be used as Access Points.
             :return: list of the interfaces
         """
         try:
-            return [i for i in os.listdir("/sys/class/net/") if i.startswith(("wlan", "wlx"))]
+            return [i for i in os.listdir("/sys/class/net/") if i.startswith("wl")]
         except:
-            return ["Interface not found", "Interface not found"]
+            return ["No wireless interface"]
+
+    def get_ifaces_out(self):
+        """
+            List the network interfaces on the box
+            which can be used to access to Internet.
+            :return: list of the interfaces
+        """
+        try:
+            return [i for i in os.listdir("/sys/class/net/") if i.startswith(("wl", "et"))]
+        except:
+            return ["No network interfaces"]
 
     def edit_configuration_files(self, iface):
         """
