@@ -57,10 +57,12 @@ It is worthy to note that not all configuration options are editable from the ba
 
 ### Installation
 
-Prior the TinyCheck installation, you need to have:
+Prior the TinyCheck installation, you need to understand how it works. It simply does a bridge between the analyzed device and Internet. For that, you need to have two different network interfaces. The first one, which act as a Wifi Access point and the second one, which will be used for the Internet link. This last one can be a second Wi-Fi interface or an Ethernet one. 
+
+To recap', you need to have:
 
 - A Raspberry Pi with [Raspberry Pi OS Buster](https://www.raspberrypi.org/documentation/installation/installing-images/) (or any computer with a Debian-like system)
-- Two working Wi-Fi interfaces (check their number with `iw list | grep Wiphy | wc -l`).
+- At least one Wi-Fi which will be used as an Access Point (check their number with `iw list | grep -E "* AP$" | wc -l`).
 - A working internet connection
 - (Adviced) A small touchscreen previously installed for the kiosk mode of TinyCheck.
 
