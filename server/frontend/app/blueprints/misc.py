@@ -57,5 +57,5 @@ def get_config():
         "quit_option": read_config(("frontend", "quit_option")),
         "shutdown_option": read_config(("frontend", "shutdown_option")),
         "reboot_option": read_config(("frontend", "reboot_option")),
-        "iface_out": read_config(("network", "iface_out"))
+        "iface_out": read_config(("network", "out"))
     })
