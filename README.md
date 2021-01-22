@@ -60,10 +60,10 @@ Prior the TinyCheck installation, you need to understand how it works. It simply
 
 To recap', you need to have:
 
-- A Raspberry Pi with [Raspberry Pi OS Buster](https://www.raspberrypi.org/documentation/installation/installing-images/) (or any computer with a Debian-like system)
-- At least one Wi-Fi which will be used as an Access Point (check their number with `iw list | grep -E "* AP$" | wc -l`).
+- A Raspberry Pi with [Raspberry Pi OS Buster](https://www.raspberrypi.org/documentation/installation/installing-images/)
+- At least one Wi-Fi interface which will be used as an Access Point (check their number with `iw list | grep -E "* AP$" | wc -l`).
 - A working internet connection
-- (Adviced) A small touchscreen previously installed for the kiosk mode of TinyCheck.
+- (Adviced) A small touchscreen for the kiosk mode of TinyCheck.
 
 ```console
 $ cd /tmp/
