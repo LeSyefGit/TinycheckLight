@@ -1,10 +1,11 @@
 #!/bin/bash
 
-ifaces=()
-rfaces=()
 CURRENT_USER="${SUDO_USER}"
 SCRIPT_PATH="$( cd "$(dirname "$0")" ; pwd -P )"
 HOST="$( hostname )"
+IFACES="$( ifconfig -a | grep -Eo '[a-z0-9]{4,14}\: ' | grep -oE [a-z0-9]+ )"
+IFACE_OUT=""
+IFACE_IN=""
 
 welcome_screen() {
 cat << "EOF"
@@ -148,10 +149,10 @@ WantedBy=multi-user.target
 EOL
 
    echo -e "\e[92m    [✔] Enabling services\e[39m"
-   systemctl enable tinycheck-frontend
-   systemctl enable tinycheck-backend
-   systemctl enable tinycheck-kiosk
-   systemctl enable tinycheck-watchers
+   systemctl enable tinycheck-frontend &> /dev/null 
+   systemctl enable tinycheck-backend &> /dev/null 
+   systemctl enable tinycheck-kiosk &> /dev/null 
+   systemctl enable tinycheck-watchers &> /dev/null 
 }
 
 configure_dnsmask() {
@@ -166,7 +167,7 @@ configure_dnsmask() {
 
 ## TinyCheck configuration ##
 
-interface=${ifaces[-1]}
+interface=${IFACE_IN}
 dhcp-range=192.168.100.2,192.168.100.3,255.255.255.0,24h
 EOL
     else 
@@ -185,7 +186,7 @@ configure_dhcpcd() {
 
 ## TinyCheck configuration ##
 
-interface ${ifaces[-1]}
+interface ${IFACE_IN}
    static ip_address=192.168.100.1/24
    nohook wpa_supplicant
 EOL
@@ -196,8 +197,8 @@ EOL
 
 update_config(){
     # Update the configuration
-    sed -i "s/iface_out/${ifaces[0]}/g" /usr/share/tinycheck/config.yaml
-    sed -i "s/iface_in/${ifaces[-1]}/g" /usr/share/tinycheck/config.yaml
+    sed -i "s/iface_out/${IFACE_OUT}/g" /usr/share/tinycheck/config.yaml
+    sed -i "s/iface_in/${IFACE_IN}/g" /usr/share/tinycheck/config.yaml
 }
 
 change_hostname() {
@@ -302,24 +303,71 @@ cleaning() {
     sudo apt autoremove -y &> /dev/null 
 }
 
-check_wlan_interfaces() {
-   # Check the presence of two wireless interfaces by using rfkill.
-   # Check if they are recognized by ifconfig, if not unblock them with rfkill.
-   echo -e "\e[39m[+] Checking your wireless interfaces"
+check_interfaces(){
 
-   for iface in $(ifconfig | grep -oE "(wlan[0-9]|wlx[a-f0-9]{12})"); do ifaces+=("$iface"); done
-   for iface in $(rfkill list | grep -oE phy[0-9]); do rfaces+=("$iface"); done
+    # Get the current connected interface name.
+    for iface in $IFACES;
+    do
+        config="$(ifconfig $iface)"
+        if echo "$config" | grep -q "inet "; then
+            ciface=$iface
+        fi
+    done
 
-   if [[ "${#rfaces[@]}" > 1 ]]; then
-       echo -e "\e[92m    [✔] Two interfaces detected, lets continue!\e[39m"
-       if [[ "${#ifaces[@]}" < 1 ]]; then
-               for iface in rfaces; do rfkill unblock "$iface"; done
-       fi
-   else
-       echo -e "\e[91m    [✘] Two wireless interfaces are required."
-       echo -e "              Please, check if you have two Wi-Fi interfaces available (with the command iw list | grep Wiphy).\e[39m"
-       exit
-   fi
+    # Setup of iface_out which can be any interface, 
+    # but needs to be connected now or in the future.
+    echo -n " [?] The interface $ciface is connected. Do you want to use it as a bridge to Internet (network/out) ? [Yes/No] "
+    read answer
+    if [[ "$answer" =~ ^([yY][eE][sS]|[yY])$ ]]
+    then
+        IFACES=( "${IFACES[@]/$ciface}" ) 
+        IFACE_OUT=$ciface
+        echo -e "\e[92m    [✔] $ciface setted as a bridge to the Internet\e[39m"
+    else
+        IFACES=( "${IFACES[@]/$ciface}" )
+        for iface in $IFACES;
+        do
+            config="$(ifconfig $iface)"
+            echo -n " [?] Do you want to use $iface as a bridge to Internet (network/out) ? [Y/n] "
+            read answer
+            if [[ "$answer" =~ ^([yY][eE][sS]|[yY])$ ]]
+            then
+                IFACE_OUT=$iface
+                IFACES=( "${IFACES[@]/$iface}" ) 
+                echo -e "\e[92m    [✔] $iface setted as a bridge to the Internet\e[39m"
+                break
+            fi
+        done
+    fi
+
+    # Setup of iface_in which can be a only a 
+    # Wi-Fi interface with AP mode available.
+    for iface in $IFACES;
+    do
+        if echo "$iface" | grep -Eq "(wlan[0-9]|wl[a-z0-9]{20})"; then
+            config="$(ifconfig $iface)"                             # Get the iface logic configuration
+            if echo "$config" | grep -qv "inet "; then              # Test if not currently connected
+                hw="$(iw $iface info | grep wiphy | cut -d" " -f2)" # Get the iface hardware id.
+                info="$(iw phy$hw info)"                            # Get the iface hardware infos.
+                if echo "$info" | grep -qE "* AP$"; then            # Know if the iface has the AP mode available.
+                    echo -n " [?] The interface $iface can be used for the Wi-Fi Access Point. Do you want to use it for the TinyCheck Access Point ? [Yes/No] "
+                    read answer
+                    if [[ "$answer" =~ ^([yY][eE][sS]|[yY])$ ]]
+                    then
+                        IFACE_IN="$iface"
+                        echo -e "\e[92m    [✔] $iface setted as an Access Point\e[39m"
+                        break
+                    fi
+                fi
+            fi
+        fi
+    done
+    if [ "${IFACE_IN}" != "" ] && [ "${IFACE_OUT}" != "" ]; then
+        echo -e "\e[92m    [✔] Network configuration setted!\e[39m"
+    else
+        echo -e "\e[91m    [✘] You must select two interfaces, exiting.\e[39m"
+        exit 1
+    fi
 }
 
 create_database() {
@@ -363,7 +411,7 @@ elif [[ -f /usr/share/tinycheck/config.yaml ]]; then
 else
     welcome_screen
     check_operating_system
-    check_wlan_interfaces
+    check_interfaces
     create_directory
     set_credentials
     check_dependencies

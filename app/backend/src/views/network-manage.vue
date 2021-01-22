@@ -7,18 +7,18 @@
             <div class="container interfaces-container">
                 <div class="columns">
                     <div class="column col-6">
-                        <span class="interface-label">First interface</span>
+                        <span class="interface-label">Wireless AP interface</span>
                         <div class="form-group">
                             <div class="btn-group btn-group-block">
-                                <button class="btn btn-sm btn-iface" @click="change_interface('in', iface)" :class="iface == config.network.in ? 'active' : ''" v-for="iface in config.interfaces" :key="iface">{{ iface.toUpperCase() }}</button>
+                                <button class="btn btn-sm btn-iface" @click="change_interface('in', iface)" :class="iface == config.network.in ? 'active' : ''" v-for="iface in config.ifaces_in" :key="iface">{{ iface.toUpperCase() }}</button>
                             </div>
                         </div>
                     </div>
                     <div class="column col-6">
-                        <span class="interface-label">Second interface</span>
+                        <span class="interface-label">Internet link interface</span>
                         <div class="form-group">
                             <div class="btn-group btn-group-block">
-                                <button class="btn btn-sm btn-iface" @click="change_interface('out', iface)" :class="iface == config.network.out ? 'active' : ''" v-for="iface in config.interfaces" :key="iface">{{ iface.toUpperCase() }}</button>
+                                <button class="btn btn-sm btn-iface" @click="change_interface('out', iface)" :class="iface == config.network.out ? 'active' : ''" v-for="iface in config.ifaces_out" :key="iface">{{ iface.toUpperCase() }}</button>
                             </div>
                         </div>
                     </div>

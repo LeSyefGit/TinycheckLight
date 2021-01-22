@@ -56,5 +56,6 @@ def get_config():
         "sparklines": read_config(("frontend", "sparklines")),
         "quit_option": read_config(("frontend", "quit_option")),
         "shutdown_option": read_config(("frontend", "shutdown_option")),
-        "reboot_option": read_config(("frontend", "reboot_option"))
+        "reboot_option": read_config(("frontend", "reboot_option")),
+        "iface_out": read_config(("network", "out"))
     })

@@ -24,7 +24,7 @@ TinyCheck can be used in several ways by individuals and entities:
 
 - Over a network - TinyCheck is installed on a network and can be accessed from a workstation via a browser.
 - In kiosk mode - TinyCheck can be used as a kiosk to allow visitors to test their own devices.
-- Fully standalone - By using a powerbank and a small screen, [like in this video](https://twitter.com/felixaime/status/1331535790392946689), you can tap any device anywhere.
+- Fully standalone - By using a powerbank, two Wi-Fi interfaces or a 4G dongle and a small touch screen [like in this video](https://twitter.com/felixaime/status/1331535790392946689), you can tap any device anywhere.
 
 ### Few steps to analyze your smartphone
 
@@ -57,10 +57,12 @@ It is worthy to note that not all configuration options are editable from the ba
 
 ### Installation
 
-Prior the TinyCheck installation, you need to have:
+Prior the TinyCheck installation, you need to understand how it works. It simply does a bridge between the analyzed device and Internet. For that, you need to have two different network interfaces. The first one, a wireless interface which act as a Wi-Fi Access point and the second one, which will be used for the Internet link. This last one can be a second wireless interface or an Ethernet one. 
+
+To recap', you need to have:
 
 - A Raspberry Pi with [Raspberry Pi OS Buster](https://www.raspberrypi.org/documentation/installation/installing-images/) (or any computer with a Debian-like system)
-- Two working Wi-Fi interfaces (check their number with `iw list | grep Wiphy | wc -l`).
+- At least one Wi-Fi which will be used as an Access Point (check their number with `iw list | grep -E "* AP$" | wc -l`).
 - A working internet connection
 - (Adviced) A small touchscreen previously installed for the kiosk mode of TinyCheck.
 
