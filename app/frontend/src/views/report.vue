@@ -1,11 +1,25 @@
 <template>
     <div>
         <div v-if="results">
-            <div v-if="alerts.high.length >= 1" class="high-wrapper">
+            <div v-if="grep_keyword('STALKERWARE', 'high')" class="high-wrapper">
+                <div class="center">
+                    <h1 class="warning-title">Your device is compromised by<br />a Stalkerware, please check the report.</h1>
+                    <button class="btn btn-report-low-light" v-on:click="new_capture()">Start a new capture</button>
+                    <button class="btn btn-report-high" @click="show_report=true;results=false;">Show the full report</button>
+                </div>
+            </div>
+            <div v-else-if="alerts.high.length >= 1" class="high-wrapper">
                 <div class="center">
                     <h1 class="warning-title">You have {{ nb_translate(alerts.high.length) }} high alert,<br />your device seems to be compromised.</h1>
                     <button class="btn btn-report-low-light" v-on:click="new_capture()">Start a new capture</button>
                     <button class="btn btn-report-high" @click="show_report=true;results=false;">Show the full report</button>
+                </div>
+            </div>
+            <div v-else-if="grep_keyword('TRACKER', 'moderate')" class="med-wrapper">
+                <div class="center">
+                    <h1 class="warning-title">An application is sharing your<br /> current geolocation with a third party.</h1>
+                    <button class="btn btn-report-low-light" v-on:click="new_capture()">Start a new capture</button>
+                    <button class="btn btn-report-moderate" @click="show_report=true;results=false;">Show the full report</button>
                 </div>
             </div>
             <div v-else-if="alerts.moderate.length >= 1" class="med-wrapper">
@@ -108,6 +122,24 @@ export default {
             } catch (error)
             {
                 return x;
+            }
+        },
+        grep_keyword: function(kw, level){
+            try {
+                if(this.alerts[level].length){
+                    var idx;
+                    var found;
+                    this.alerts[level].forEach((a) => { 
+                        idx = a.title.indexOf(kw)
+                        if(!found) found = idx>0;
+                    }); 
+                    return found; 
+                } else {
+                    return false;
+                }
+            } catch (error)
+            {
+                return false;
             }
         }
     }
