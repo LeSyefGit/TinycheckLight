@@ -306,13 +306,7 @@ cleaning() {
 check_interfaces(){
 
     # Get the current connected interface name.
-    for iface in $IFACES;
-    do
-        config="$(ifconfig $iface)"
-        if echo "$config" | grep -q "inet "; then
-            ciface=$iface
-        fi
-    done
+    ciface="$(route | grep default | head -1 | grep -Eo '[a-z0-9]+$')"
 
     # Setup of iface_out which can be any interface, 
     # but needs to be connected now or in the future.
