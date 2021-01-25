@@ -53,29 +53,7 @@ It is worthy to note that not all configuration options are editable from the ba
 
 ### Installation
 
-Prior the TinyCheck installation, you need to understand how it works. It simply does a bridge between the analyzed device and Internet. For that, you need to have two different network interfaces. The first one, a wireless interface which act as a Wi-Fi Access point and the second one, which will be used for the Internet link. This last one can be a second wireless interface or an Ethernet one. 
-
-To recap', you need to have:
-
-- A Raspberry Pi with [Raspberry Pi OS Buster](https://www.raspberrypi.org/documentation/installation/installing-images/)
-- At least one Wi-Fi interface which will be used as an Access Point (check their number with `iw list | grep -E "* AP$" | wc -l`).
-- A working internet connection
-- (Adviced) A small touchscreen for the kiosk mode of TinyCheck.
-
-```console
-$ cd /tmp/
-$ git clone https://github.com/KasperskyLab/TinyCheck
-$ cd TinyCheck
-$ sudo bash install.sh
-```
-
-By executing `install.sh`, all the dependencies associated to the project will be installed and it can take several minutes depending of your internet speed. Four services are going to be created:
-- `tinycheck-backend` executing the backend server & interface;
-- `tinycheck-frontend` executing the frontend server & interface;
-- `tinycheck-kiosk` to handle the kiosk version of TinyCheck;
-- `tinycheck-watchers` to handle the watchers which update automatically IOCs / whitelist from external URLs;
-
-Once installed, the operating system is going to reboot.
+Please check the few steps in the [Wiki's Installation Page](https://github.com/KasperskyLab/TinyCheck/wiki/TinyCheck-installation). 
 
 ### Meet the frontend
 
