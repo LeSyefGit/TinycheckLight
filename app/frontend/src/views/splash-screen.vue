@@ -26,8 +26,8 @@
                     .then(response => {
                         if (response.data.internet){
                             this.internet = true
-                            this.load_config()
                         } 
+                        this.load_config()
                     })
                     .catch(err => (console.log(err)))
             },
