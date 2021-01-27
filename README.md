@@ -8,7 +8,7 @@ The idea of TinyCheck emerged in a meeting about stalkerware with a [French wome
 
 Of course, TinyCheck can also be used to spot any malicious communications from cybercrime to state-sponsored implants. It allows the end-user to push his own extended Indicators of Compromise via a backend in order to detect some ghosts over the wire.
 
-*If you need more documentation on how to install it, use it and the internals, don't hesitate to take a look at the [TinyCheck Wiki](https://github.com/KasperskyLab/TinyCheck/wiki).*
+<p align="center"> *If you need more documentation on how to install it, use it and the internals, don't hesitate to take a look at the [TinyCheck Wiki](https://github.com/KasperskyLab/TinyCheck/wiki).* </p>
 
 *If you have any question about the projet. Want to contribute or just send your feedbacks, don't hesitate to contact us at tinycheck[@]kaspersky[.]com.*
 
