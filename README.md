@@ -10,7 +10,7 @@ Of course, TinyCheck can also be used to spot any malicious communications from 
 
 <p align="center"><strong>If you need more documentation on how to install it, use it and the internals, don't hesitate to take a look at the <a href="https://github.com/KasperskyLab/TinyCheck/wiki">TinyCheck Wiki</a>.</strong></p>
 
-<p align="center">If you have any question about the projet. Want to contribute or just send your feedbacks, don't hesitate to contact us at tinycheck[@]kaspersky[.]com.</p>
+<p align="center">If you have any question about the projet, want to contribute or just send your feedback, <br />don't hesitate to contact us at tinycheck[@]kaspersky[.]com.</p>
 
 ![Architecture](/assets/network-home.png)
 
