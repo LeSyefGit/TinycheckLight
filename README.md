@@ -85,18 +85,6 @@ Unfortunately, we prefer to not promote any hardware/constructor/website on this
 **I'm not very confortable with the concept of "watchers" as the IOCs downloaded are public. Do you plan to develop a server to centralize AMBER/RED IOCs?**<br /><br />
 Yes, if the demand is felt by NGOs (contact us!). Is it possible to develop this kind of thing, allowing you to centralize your IOCs and managing your fleet of TinyCheck instances on a server that you host. The server can also embed better detection rules thanks to the telemetry that it will receive from devices.<br />
 
-### Possible updates for next releases
-
-- More OpSec (TOR integration, Local IP randomization etc.)
-- Possibility to add watchers from the backend interface.
-- Centralized server for IOC/whitelist management (aka. Remote Analysis).
-- Better frontend GUI/JS (use of websockets / better animations).
-- Encryption of ZIPed reports.
-
-### Contact
-
-If you have any question about the projet. Want to contribute or just send your feedbacks/success stories, don't hesitate to contact us at tinycheck[@]kaspersky[.]com. 
-
 ### Special thanks
 
 **Guys who provided some IOCs**
