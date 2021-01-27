@@ -28,13 +28,13 @@ Please check the few steps in the [Wiki's Installation Page](https://github.com/
 
 ### Meet the frontend
 
-The frontend - which can be accessed from `http://tinycheck.local` or `http://127.0.0.1` if you are running it locally - is a kind of tunnel which help the user throughout the process of network capture and reporting. It allows the user to setup a Wi-Fi connection to an existing Wi-Fi network, create an ephemeral Wi-Fi network, capture the communications and show a report to the user... in less than one minute, 5 clicks and without any technical knowledge. 
+The frontend - which can be accessed from `http://tinycheck.local` is a kind of tunnel which help the user throughout the process of network capture and reporting. It allows the user to setup a Wi-Fi connection to an existing Wi-Fi network, create an ephemeral Wi-Fi network, capture the communications and show a report to the user... in less than one minute, 5 clicks and without any technical knowledge. 
 
 ![Frontend](/assets/frontend.png)
 
 ### Meet the backend
 
-Once installed, you can connect yourself to the TinyCheck backend by browsing the URL `https://tinycheck.local` or  `http://127.0.0.1` if you are running it locally and accepting the SSL self-signed certificate. 
+Once installed, you can connect yourself to the TinyCheck backend by browsing the URL `https://tinycheck.local` and accepting the SSL self-signed certificate. 
 
 ![Backend](/assets/backend.png)
 
