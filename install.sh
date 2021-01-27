@@ -206,6 +206,9 @@ change_hostname() {
    echo -e "[+] Changing the hostname to tinycheck"
    echo "tinycheck" > /etc/hostname
    sed -i "s/$HOST/tinycheck/g" /etc/hosts
+
+   # Adding tinycheck.local to the /etc/hosts.
+   echo "127.0.0.1  tinycheck.local" >> /etc/hosts
 }
 
 install_package() {
