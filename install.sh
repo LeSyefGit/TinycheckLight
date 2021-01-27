@@ -265,10 +265,10 @@ check_dependencies() {
 }
 
 compile_vuejs() {
-    # Compile VueJS interfaces.
+    # Installing packages, updating packages and compiling the VueJS interfaces
     echo -e "\e[39m[+] Compiling VueJS projects"
-    cd /usr/share/tinycheck/app/backend/ && npm install && npm run build
-    cd /usr/share/tinycheck/app/frontend/ && npm install && npm run build
+    cd /usr/share/tinycheck/app/backend/ && npm install && npm audit fix && npm run build
+    cd /usr/share/tinycheck/app/frontend/ && npm install && npm audit fix && npm run build
 }
 
 create_desktop() {
