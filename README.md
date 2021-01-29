@@ -38,37 +38,7 @@ Once installed, you can connect yourself to the TinyCheck backend by browsing th
 
 ![Backend](/assets/backend.png)
 
-The backend allows you to edit the configuration of TinyCheck, add extended IOCs and whitelisted elements in order to prevent false positives. Several IOCs are already provided such as few suricata rules, FreeDNS, Name servers, CIDRs known to host malicious servers and so on. In term of extended IOCs, this first version of TinyCheck includes:
-
-- Suricata rules
-- CIDRs
-- Domains & FQDNs (named generically "Domains")
-- IPv4 / IPv6 Addresses
-- Certificates sha1
-- Nameservers
-- FreeDNS
-- Fancy TLDs (eg. xyz, .top etc.)
-
-### Meet the analysis engine
-
-The analysis engine is pretty straightforward. For this first version, the network communications are not analyzed in real time during the capture. The engine executes Zeek and Suricata against the previously saved network capture. [Zeek](https://zeek.org/) is a well-known network dissector which stores in several logs the captured session. 
-
-Once saved, these logs are analysed to find extended IOCs (listed above) or to match heuristics rules (which can be deactivated through the backend). The heuristics rules are hardcoded in `zeekengine.py`, and they are listed below. As only one device is analyzed at a time, there is a low probability to see heuristic alerts leveraged.
-
-- UDP/ICMP going outside the local network
-- UDP/TCP connection with a destination port >1024
-- Remote host not resolved by DNS during the session
-- Use of self-signed certificate by the remote host
-- SSL connection done on a non standard port
-- Use of specific SSL certificates issuers by the remote host (such as Let's Encrypt)
-- HTTP requests done during the session
-- HTTP requests done on a non standard port
-- ...
-
-On the [Suricata](https://suricata-ids.org/) part, the network capture is analysed against suricata rules saved as IOCs. Few rules are dynamics such as:
-
-- Device name exfiltred in clear-text;
-- Access point SSID exfiltred in clear-text;
+The backend allows you to edit the configuration of TinyCheck, add extended IOCs and whitelisted elements in order to prevent false positives. Several IOCs are already provided such as few suricata rules, FreeDNS, Name servers, CIDRs known to host malicious servers and so on.
 
 ### Watchers concept
 
