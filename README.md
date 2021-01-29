@@ -40,12 +40,6 @@ Once installed, you can connect yourself to the TinyCheck backend by browsing th
 
 The backend allows you to edit the configuration of TinyCheck, add extended IOCs and whitelisted elements in order to prevent false positives. Several IOCs are already provided such as few suricata rules, FreeDNS, Name servers, CIDRs known to host malicious servers and so on.
 
-### Watchers concept
-
-In order to keep IOCs and whitelist updated constantly, TinyCheck integrates something called "watchers". It is a very simple service with few lines of Python which grabs new formated IOCs or whitelist elements from public URLs. As of today, TinyCheck integrates two urls, one for the whitelist and one for the IOCs (The formated files are present in the assets folder). 
-
-If you have seen something very suspicious and/or needs to be investigated/integrated in one of these two lists, don't hesitate to ping us. You can also do you own watcher. Remember, sharing is caring. 
-
 ### Questions & Answers
 
 **Your project seem very cool, does it send data to Kaspersky or any telemetry server?**<br /><br />
