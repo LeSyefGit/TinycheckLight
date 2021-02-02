@@ -1,5 +1,7 @@
 # TinyCheck
 
+![Architecture](/assets/network-home.png)
+
 ### Description
 
 TinyCheck allows you to easily capture network communications from a smartphone or any device which can be associated to a Wi-Fi access point in order to quickly analyze them. This can be used to check if any suspect or malicious communication is outgoing from a smartphone, by using heuristics or specific Indicators of Compromise (IoCs).
@@ -11,8 +13,6 @@ Of course, TinyCheck can also be used to spot any malicious communications from 
 <p align="center"><strong>If you need more documentation on how to install it, use it and the internals, don't hesitate to take a look at the <a href="https://github.com/KasperskyLab/TinyCheck/wiki">TinyCheck Wiki</a>.</strong></p>
 
 <p align="center">If you have any question about the projet, want to contribute or just send your feedback, <br />don't hesitate to contact us at tinycheck[@]kaspersky[.]com.</p>
-
-![Architecture](/assets/network-home.png)
 
 ### Use cases
 
