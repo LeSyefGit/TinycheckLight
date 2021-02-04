@@ -62,7 +62,7 @@ def get_config():
     })
 
 
-@app.route("/get-lang", methods=["GET"])
+@misc_bp.route("/get-lang", methods=["GET"])
 def get_lang():
     """
         Get the user lang defined in the config.yaml
