@@ -9,7 +9,7 @@
             "description": "Des connexions {} vers {} ont été vues utilisant le port {}. L'utilisation d'un numéro de port non standard peut être associé à des activités malveillantes. Nous recommandons de vérifier si ce serveur possède une bonne réputation en regardant les autres alertes et en le cherchant sur Internet."
         },
         "PROTO-03": {
-            "title": "Des communications HTTP on été réalisées vers {}",
+            "title": "Des communications HTTP ont été réalisées vers {}",
             "description": "Votre appareil a communiqué avec le serveur {} en utilisant HTTP, un protocole non chiffré. Même si ce n'est pas malveillant en tant que tel, il est rare de voir des communications HTTP issues d'applications installées sur des smartphones exécutées en arrière plan. Il est conseillé de vérifier la réputation du serveur en le recherchant sur Internet."
         },
         "PROTO-04": {
