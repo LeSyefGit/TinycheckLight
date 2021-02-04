@@ -26,8 +26,8 @@
     },
     "report": {
         "show_full_report": "Afficher le rapport complet",
-        "start_new_capture": "Lancer une nouvelle capture",
-        "save_capture": "Sauvegarder la capture",
+        "start_new_capture": "Nouvelle capture",
+        "save_capture": "Sauvegarder",
         "numbers": [
             "zéro",
             "une",
@@ -42,7 +42,7 @@
             "dix",
             "onze"
         ],
-        "stalkerware_msg": "Votre smartphone est compromis<br /> par un Stalkerware, affichez le rapport.",
+        "stalkerware_msg": "Votre smartphone est compromis<br /> par un Stalkerware, lisez le rapport.",
         "location_msg": "Une application dévoile votre<br /> géo-localisation actelle.",
         "fine_msg": "Tout semble OK, vous avez aucue alerte.",
         "high_msg": "Vous avez {nb} alerte(s) élevée(s),<br />votre appareil semble être compromis.",
@@ -50,8 +50,8 @@
         "low_msg": "Vous avez uniquement {nb} alerte(s) basse(s)<br /> n'hésitez pas à les lire.",
         "save_report": "Sauvegarder le rapport",
         "report_of": "Rapport de",
-        "ip_address": "Adresse IP ",
-        "mac_address": "Adresse MAC",
+        "ip_address": "Adresse IP :",
+        "mac_address": "Adresse MAC :",
         "high": "elevee",
         "moderate": "moyenne",
         "low": "base"

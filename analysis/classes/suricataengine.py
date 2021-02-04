@@ -7,6 +7,7 @@ import os
 import subprocess as sp
 import re
 import json
+import sys
 
 
 class SuricataEngine():
