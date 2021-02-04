@@ -9,29 +9,29 @@
                         </div>
                         <div class="divider-vert white-bg" data-content="OR"></div>
                         <div class="column col-5"><br />
-                            <span class="light-grey">Network name: </span><br />
+                            <span class="light-grey">{{ translation.network_name }}</span><br />
                             <h4>{{ ssid_name }}</h4>
-                            <span class="light-grey">Network password: </span><br />
+                            <span class="light-grey">{{ translation.network_password }}</span><br />
                             <h4>{{ ssid_password }}</h4>
                         </div>
                     </div>
                 </div>
                 <br /><br /><br /><br /> <br /><br /><br /><br /><br /><br />
                 <!-- Requite a CSS MEME for that shit :) -->
-                <span class="legend">Tap the white frame to generate a new network.</span>
+                <span class="legend">{{ translation.tap_msg }}</span>
             </div>
             <div v-else>
                 <img src="@/assets/loading.svg"/>
-                <p class="legend">We generate an ephemeral network for you.</p>
+                <p class="legend">{{ translation.generate_ap_msg }}</p>
             </div>
         </div>
         <div v-else>
             <p>
-                <strong>Unfortunately, we got some issues <br />during the AP creation.</strong>
+                <strong v-html="translation.error_msg1"></strong>
                 <br /><br />
-                Please verify that you've two WiFi interfaces on your device<br /> and try again by restarting it.<br /><br /> 
+                <span v-html="translation.error_msg2"></span><br /><br /> 
             </p>
-            <button v-if="reboot_option" class="btn" v-on:click="reboot()">Restart the device</button>
+            <button v-if="reboot_option" class="btn" v-on:click="reboot()">{{ translation.restart_btn }}</button>
         </div>
     </div>
     
@@ -54,7 +54,8 @@ export default {
             interval: false,
             error: false,
             reboot_option: false,
-            attempts: 3
+            attempts: 3,
+            translation: {}
         }
     },
     methods: {
@@ -116,7 +117,7 @@ export default {
                 });
             }
         },
-        load_config: function() {
+        get_config: function() {
             axios.get(`/api/misc/config`, { timeout: 60000 })
                 .then(response => {
                     this.reboot_option = response.data.reboot_option
@@ -127,7 +128,8 @@ export default {
         },
     },
     created: function() {
-        this.load_config()
+        this.translation  = window.translation[this.$route.name]
+        this.get_config();
         this.generate_ap();
     }
 }

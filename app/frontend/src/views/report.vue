@@ -3,69 +3,69 @@
         <div v-if="results">
             <div v-if="grep_keyword('STALKERWARE', 'high')" class="high-wrapper">
                 <div class="center">
-                    <h1 class="warning-title">Your device is compromised by<br />a Stalkerware, please check the report.</h1>
-                    <button class="btn btn-report-low-light" v-on:click="new_capture()">Start a new capture</button>
-                    <button class="btn btn-report-high" @click="show_report=true;results=false;">Show the full report</button>
+                    <h1 class="warning-title" v-html="translation.stalkerware_msg"></h1>
+                    <button class="btn btn-report-low-light" v-on:click="new_capture()">{{ translation.start_new_capture }}</button>
+                    <button class="btn btn-report-high" @click="show_report=true;results=false;">{{ translation.show_full_report }}</button>
                 </div>
             </div>
             <div v-else-if="alerts.high.length >= 1" class="high-wrapper">
                 <div class="center">
-                    <h1 class="warning-title">You have {{ nb_translate(alerts.high.length) }} high alert,<br />your device seems to be compromised.</h1>
-                    <button class="btn btn-report-low-light" v-on:click="new_capture()">Start a new capture</button>
-                    <button class="btn btn-report-high" @click="show_report=true;results=false;">Show the full report</button>
+                    <h1 class="warning-title" v-html="translation.high_msg"></h1>
+                    <button class="btn btn-report-low-light" v-on:click="new_capture()">{{ translation.start_new_capture }}</button>
+                    <button class="btn btn-report-high" @click="show_report=true;results=false;">{{ translation.show_full_report }}</button>
                 </div>
             </div>
             <div v-else-if="grep_keyword('TRACKER', 'moderate')" class="med-wrapper">
                 <div class="center">
-                    <h1 class="warning-title">An application is sharing your<br /> current geolocation with a third party.</h1>
-                    <button class="btn btn-report-low-light" v-on:click="new_capture()">Start a new capture</button>
-                    <button class="btn btn-report-moderate" @click="show_report=true;results=false;">Show the full report</button>
+                    <h1 class="warning-title" v-html="translation.location_msg"></h1>
+                    <button class="btn btn-report-low-light" v-on:click="new_capture()">{{ translation.start_new_capture }}</button>
+                    <button class="btn btn-report-moderate" @click="show_report=true;results=false;">{{ translation.show_full_report }}</button>
                 </div>
             </div>
             <div v-else-if="alerts.moderate.length >= 1" class="med-wrapper">
                 <div class="center">
-                    <h1 class="warning-title">You have {{ nb_translate(alerts.moderate.length) }} moderate alerts,<br />your device might be compromised.</h1>
-                    <button class="btn btn-report-low-light" v-on:click="new_capture()">Start a new capture</button>
-                    <button class="btn btn-report-moderate" @click="show_report=true;results=false;">Show the full report</button>
+                    <h1 class="warning-title" v-html="translation.moderate_msg"></h1>
+                    <button class="btn btn-report-low-light" v-on:click="new_capture()">{{ translation.start_new_capture }}</button>
+                    <button class="btn btn-report-moderate" @click="show_report=true;results=false;">{{ translation.show_full_report }}</button>
                 </div>
             </div>
             <div v-else-if="alerts.low.length >= 1" class="low-wrapper">
                 <div class="center">
-                    <h1 class="warning-title">You have only {{ nb_translate(alerts.moderate.low) }} low alerts,<br /> don't hesitate to check them.</h1>
-                    <button class="btn btn-report-low-light" v-on:click="new_capture()">Start a new capture</button>
-                    <button class="btn btn-report-low" @click="show_report=true;results=false;">Show the full report</button>
+                    <h1 class="warning-title" v-html="translation.low_msg"></h1>
+                    <button class="btn btn-report-low-light" v-on:click="new_capture()">{{ translation.start_new_capture }}</button>
+                    <button class="btn btn-report-low" @click="show_report=true;results=false;">{{ translation.show_full_report }}</button>
                 </div>
             </div>
             <div v-else  class="none-wrapper">
                 <div class="center">
-                    <h1 class="warning-title">Everything looks fine, zero alerts.</h1>
-                    <button class="btn btn-report-low-light" v-on:click="save_capture()">Save the capture</button>
-                    <button class="btn btn-report-low" v-on:click="new_capture()">Start a new capture</button>
+                    <h1 class="warning-title" v-html="translation.fine_msg">
+                    <button class="btn btn-report-low-light" v-on:click="save_capture()">{{ translation.save_capture }}</button>
+                    <button class="btn btn-report-low" v-on:click="new_capture()">{{ translation.start_new_capture }}</button>
                 </div>
             </div>
         </div>
         <div v-else-if="show_report" class="report-wrapper">
             <div class="device-ctx">
-                <h3 style="margin: 0;">Report for {{device.name}}</h3>
-                IP Address: {{device.ip_address}}<br />Mac Address: {{device.mac_address}}
+                <h3 style="margin: 0;">{{ translation.report_of }} {{ device.name }}</h3>
+                {{ translation.ip_address }} {{device.ip_address}}<br />{{ translation.mac_address }} {{device.mac_address}}
             </div>
             <ul class="alerts">
                 <li class="alert" v-for="alert in alerts.high" :key="alert.message">
-                    <span class="high-label">High</span><span class="alert-id">{{ alert.id }}</span> 
+                    <span class="high-label">{{ translation.high }}</span><span class="alert-id">{{ alert.id }}</span> 
                     <div class="alert-body">
                         <span class="title">{{ alert.title }}</span>
                         <p class="description">{{ alert.description }}</p>
                     </div>
                 </li>
                 <li class="alert" v-for="alert in alerts.moderate" :key="alert.message">
-                    <span class="moderate-label">Moderate</span><span class="alert-id">{{ alert.id }}</span> 
+                    <span class="moderate-label">{{ translation.moderate }}</span><span class="alert-id">{{ alert.id }}</span> 
                     <div class="alert-body">
                         <span class="title">{{ alert.title }}</span>
                         <p class="description">{{ alert.description }}</p>
                     </div>
                 </li>
                 <li class="alert" v-for="alert in alerts.low" :key="alert.message">
-                    <span class="low-label">Low</span><span class="alert-id">{{ alert.id }}</span> 
+                    <span class="low-label">{{ translation.low }}</span><span class="alert-id">{{ alert.id }}</span> 
                     <div class="alert-body">
                         <span class="title">{{ alert.title }}</span>
                         <p class="description">{{ alert.description }}</p>
@@ -74,11 +74,11 @@
             </ul>
             <div class="columns" id="controls-analysis">
                     <div class="column col-5">
-                        <button class="btn width-100" @click="$router.push('generate-ap')">Start a capture</button>
+                        <button class="btn width-100" @click="$router.push('generate-ap')">{{ translation.start_new_capture }}</button>
                     </div>
                     <div class="divider-vert column col-2" data-content="OR"></div>
                     <div class="column col-5">
-                        <button class="btn btn btn-primary width-100" v-on:click="save_capture()">Save the report</button>
+                        <button class="btn btn btn-primary width-100" v-on:click="save_capture()">{{ translation.save_report }}</button>
                     </div>
             </div>
         </div>
@@ -100,6 +100,7 @@ export default {
     data() {
         return {
             results: true,
+            translation: {}
         }
     },
     props: {
@@ -116,7 +117,7 @@ export default {
             router.push({ name: 'generate-ap' })
         },
         nb_translate: function(x) {
-            var nbs = ['zero','one','two','three','four', 'five','six','seven','eight','nine', 'ten', 'eleven']
+            var nbs = this.translation["numbers"]
             try {
                 return nbs[x];
             } catch (error)
@@ -142,6 +143,12 @@ export default {
                 return false;
             }
         }
+    },
+    created: function() {
+        this.translation = window.translation[this.$route.name]
+        this.translation["high_msg"] = this.translation["high_msg"].replace("{nb}", this.nb_translate(this.alerts.high.length))
+        this.translation["moderate_msg"] = this.translation["moderate_msg"].replace("{nb}", this.nb_translate(this.alerts.moderate.length))
+        this.translation["low_msg"] = this.translation["low_msg"].replace("{nb}", this.nb_translate(this.alerts.low.length))
     }
 }
 </script>

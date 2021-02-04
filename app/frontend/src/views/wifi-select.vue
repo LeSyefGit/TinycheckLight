@@ -2,41 +2,41 @@
     <div :class="[ keyboard == false ? 'center' : '' ]">
         <div v-if="keyboard == false">
             <div v-if="have_internet">
-                <p>You seem to be already connected to a network.<br />Do you want to use the current connection?</p>
+                <p v-html="translation.already_connected_question"></p>
                 <div class="empty-action">
-                    <button class="btn" @click="have_internet = false">No, use another</button> <button class="btn" :class="[ connecting ? 'loading' : '', success ? 'btn-success' : 'btn-primary', ]" @click="$router.push({ name: 'generate-ap' })">Yes, use it.</button>
+                    <button class="btn" @click="have_internet = false">{{ translation.no_btn }}</button> <button class="btn" :class="[ connecting ? 'loading' : '', success ? 'btn-success' : 'btn-primary', ]" @click="$router.push({ name: 'generate-ap' })">{{ translation.yes_btn }}</button>
                 </div>
             </div>
             <div v-else>
                 <div v-if="enter_creds" class="wifi-login">
                     <div class="form-group">
                         <select class="form-select" id="ssid-select" v-model="ssid">
-                            <option value="" selected>Wifi name</option>
+                            <option value="" selected>{{ translation.wifi_name }}</option>
                             <option v-for="ssid in ssids" v-bind:key="ssid.ssid">
                                 {{ ssid.ssid }}
                             </option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <input class="form-input" type="password" id="password" v-model="password" placeholder="Wifi password" v-on:click="keyboard = (virtual_keyboard)? true : false">
+                        <input class="form-input" type="password" id="password" v-model="password" :placeholder="translation.wifi_password" v-on:click="keyboard = (virtual_keyboard)? true : false">
                     </div>
                     <div class="form-group">
                         <button class="btn width-100" :class="[ connecting ? 'loading' : '', success ? 'btn-success' : 'btn-primary', ]" v-on:click="wifi_setup()">{{ btnval }}</button>
                     </div>
                     <div class="form-group">
-                        <button class="btn width-100" :class="[ refreshing ? 'loading' : '' ]" v-on:click="refresh_wifi_list()">Refresh networks list</button>
+                        <button class="btn width-100" :class="[ refreshing ? 'loading' : '' ]" v-on:click="refresh_wifi_list()">{{ translation.refresh_btn }}</button>
                     </div>
                 </div>
                 <div v-else>
-                    <p><strong>You seem to not be connected to Internet.</strong><br />Please configure the Wi-Fi connection.</p>
+                    <p><strong>{{ translation.not_connected }}</strong><br />{{ translation.please_config }}</p>
                     <div class="empty-action">
-                        <button class="btn btn-primary" @click="enter_creds = true">Ok, let's do that.</button>
+                        <button class="btn btn-primary" @click="enter_creds = true">{{ translation.lets_do_btn }}</button>
                     </div>
                 </div>
             </div>
         </div>
         <div v-else>
-            <input :value="input" class="keyboardinput" @input="onInputChange" placeholder="Tap on the virtual keyboard to start">
+            <input :value="input" class="keyboardinput" @input="onInputChange" :placeholder="translation.tap_keyboard">
             <SimpleKeyboard @onChange="onChange" @onKeyPress="onKeyPress" :input="input" />
         </div>
     </div>
@@ -63,7 +63,7 @@ export default {
             connecting: false,
             error: false,
             success: false,
-            btnval: "Connect to it.",
+            btnval: "",
             ssid: "",
             selected_ssid: false,
             password: "",
@@ -73,7 +73,8 @@ export default {
             have_internet: false,
             enter_creds: false,
             virtual_keyboard: false,
-            refreshing: false
+            refreshing: false,
+            translation: {}
         }
     },
     props: {
@@ -88,10 +89,10 @@ export default {
                     if (response.data.status) {
                         this.success = true
                         this.connecting = false
-                        this.btnval = "Wifi connected!"
+                        this.btnval = this.translation.wifi_connected
                         setTimeout(() => router.push('generate-ap'), 1000);
                     } else {
-                        this.btnval = "Wifi not connected. Please retry."
+                        this.btnval = this.translation["wifi_not_connected"]
                         this.connecting = false
                     }
                 })
@@ -115,7 +116,7 @@ export default {
                     });
             }
         },
-        load_config: function() {
+        get_config: function() {
             axios.get(`/api/misc/config`, { timeout: 60000 })
                 .then(response => {
                     this.virtual_keyboard = response.data.virtual_keyboard
@@ -146,12 +147,14 @@ export default {
                      this.append_ssids(response.data.networks)
                  }).catch(error => {
                      this.refreshing = false
-                    console.log(error)
+                     console.log(error)
             });
         }
     },
     created: function() {
-        this.load_config()
+        this.translation = window.translation[this.$route.name]
+        this.btnval = this.translation.connect_to_it
+        this.get_config()
 
         this.have_internet = (this.internet) ? true : false
         this.keyboard = false

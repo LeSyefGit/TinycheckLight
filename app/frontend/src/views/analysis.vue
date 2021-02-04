@@ -1,15 +1,15 @@
 <template>
     <div class="center">
         <div v-if="question">
-            <p>Do you want to analyze the captured communications?</p>
+            <p>{{ translation.question }}</p>
             <div class="empty-action">
-                <button class="btn" v-on:click="save_capture()">No, just save them</button>  <button class="btn btn-primary" v-on:click="start_analysis()">Yes, let's do it</button>
+                <button class="btn" v-on:click="save_capture()">{{ translation.no_btn }}</button> <button class="btn btn-primary" v-on:click="start_analysis()">{{ translation.yes_btn }}</button>
             </div>
         </div>
         <div v-else-if="running">
             <img src="@/assets/loading.svg"/>
-            <p class="legend" v-if="!long_waiting">Please wait during the analysis...</p>
-            <p class="legend fade-in" v-if="long_waiting">Yes, it can take some time...</p>
+            <p class="legend" v-if="!long_waiting">{{ translation.please_wait_msg }}</p>
+            <p class="legend fade-in" v-if="long_waiting">{{ translation.some_time_msg }}</p>
         </div>
     </div>
 </template>
@@ -25,7 +25,8 @@ export default {
             question: true,
             running: false,
             check_alerts: false,
-            long_waiting: false
+            long_waiting: false,
+            translation: {}
         }
     },
     props: {
@@ -65,6 +66,9 @@ export default {
             var capture_token = this.capture_token
             router.replace({ name: 'save-capture', params: { capture_token: capture_token } });
         }
+    },
+    created: function() {
+        this.translation  = window.translation[this.$route.name]
     }
 }
 </script>

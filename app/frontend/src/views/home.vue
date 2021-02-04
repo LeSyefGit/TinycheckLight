@@ -1,8 +1,8 @@
 <template>
     <div class="center">
-        <h3 class="lobster">Welcome to TinyCheck.</h3>
-        <p>We are going to help you to check your device.</p>
-        <button class="btn btn-primary" v-on:click="next()">Let's start!</button>
+        <h3 class="lobster">{{ translation.welcome_msg }}</h3>
+        <p>{{ translation.help_msg }}</p>
+        <button class="btn btn-primary" v-on:click="next()">{{ translation.start_btn }}</button>
     </div>
 </template>
 
@@ -12,12 +12,16 @@ import router from '../router'
 export default {
     name: 'home',
     props: { saved_ssid: String, iface_out: String, list_ssids: Array, internet: Boolean },
+     data() {
+        return {
+            translation: {},
+        }
+    },
     methods: {
         next: function() {
             var saved_ssid = this.saved_ssid
             var list_ssids = this.list_ssids
             var internet = this.internet
-            console.log(this.iface_out)
             if (this.iface_out.charAt(0) == "e"){
                 router.push({ name: 'generate-ap' });
             } else {
@@ -26,7 +30,10 @@ export default {
                                         list_ssids: list_ssids, 
                                         internet:internet } });
             }
-               }
+        }
+    },
+    created: function() {
+        this.translation  = window.translation[this.$route.name]
     }
 }
 </script>

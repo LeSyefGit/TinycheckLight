@@ -6,14 +6,14 @@
             <div class="icon-usb"></div>
             <div class="icon-usb-plug"></div> 
         </div>
-        <p class="legend" v-if="!saved && !usb"><br />Please connect a USB key to save your capture.</p>
-        <p class="legend" v-if="!saved && usb"><br />We are saving your capture.</p>
-        <p class="legend" v-if="saved"><br />You can tap the USB key to start a new capture.</p>
+        <p class="legend" v-if="!saved && !usb"><br />{{ translation.please_connect }}</p>
+        <p class="legend" v-if="!saved && usb"><br />{{ translation.we_are_saving }}</p>
+        <p class="legend" v-if="saved"><br />{{ translation.tap_msg }}</p>
     </div>
     <div class="center" v-else-if="!save_usb && init">
         <div>
-            <p class="legend">The capture download is going to start...<br /><br /><br /></p>
-            <button class="btn btn-primary" v-on:click="new_capture()">Start another capture</button>
+            <p class="legend">{{ translation.catpure_download }}<br /><br /><br /></p>
+            <button class="btn btn-primary" v-on:click="new_capture()">{{ translation.start_capture_btn }}</button>
             <iframe :src="download_url" class="frame-download"></iframe>
         </div>
     </div>
@@ -144,7 +144,8 @@ export default {
             usb: false,
             saved: false,
             save_usb: false,
-            init: false
+            init: false,
+            translation: {}
         }
     },
     props: {
@@ -194,6 +195,7 @@ export default {
         }
     },
     created: function() {
+        this.translation = window.translation[this.$route.name]
         this.load_config()
     }
 }
