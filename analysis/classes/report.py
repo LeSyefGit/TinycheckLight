@@ -31,7 +31,7 @@ class Report(object):
         except:
             self.capture_sha1 = "N/A"
 
-        self.userlang = get_config(("frontend", "userlang"))
+        self.userlang = get_config(("frontend", "user_lang"))
 
         # Load template language
         if not re.match("^[a-z]{2}$", self.userlang):

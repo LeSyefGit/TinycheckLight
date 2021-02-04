@@ -6,7 +6,7 @@
     },
     "analysis": {
         "question": "Voulez-vous analyser les communications capturées ?",
-        "no_btn": "Non, enregistrez-les directement.",
+        "no_btn": "Non, enregistrez-les.",
         "yes_btn": "Oui, allons-y !",
         "please_wait_msg": "Merci d'attendre pendant l'analyse...",
         "some_time_msg": "Oui, cela peut prendre du temps..."
@@ -42,11 +42,11 @@
             "dix",
             "onze"
         ],
-        "stalkerware_msg": "Votre smartphone est compromis<br /> par un Stalkerware, merci de regarder le rapport.",
+        "stalkerware_msg": "Votre smartphone est compromis<br /> par un Stalkerware, affichez le rapport.",
         "location_msg": "Une application dévoile votre<br /> géo-localisation actelle.",
         "fine_msg": "Tout semble OK, vous avez aucue alerte.",
         "high_msg": "Vous avez {nb} alerte(s) élevée(s),<br />votre appareil semble être compromis.",
-        "moderate_msg": "Vous avez {nb} alerte(s) moyenne(s),<br />votre appareil peut être compromis.",
+        "moderate_msg": "Vous avez {nb} alerte(s) moyenne(s),<br />votre appareil est peut-être compromis.",
         "low_msg": "Vous avez uniquement {nb} alerte(s) basse(s)<br /> n'hésitez pas à les lire.",
         "save_report": "Sauvegarder le rapport",
         "report_of": "Rapport de",

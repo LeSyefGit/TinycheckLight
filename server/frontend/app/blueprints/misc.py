@@ -5,6 +5,8 @@ import subprocess as sp
 from flask import Blueprint, jsonify
 from app.utils import read_config
 import re
+import sys
+import os
 
 misc_bp = Blueprint("misc", __name__)
 
@@ -70,8 +72,8 @@ def get_lang():
     """
     lang = read_config(("frontend", "user_lang"))
     if re.match("^[a-z]{2,3}$", lang):
-        with open("app/assets/lang/{}.json".format(lang), "r") as f:
+        with open(os.path.join(os.path.dirname(os.path.realpath(sys.argv[0])), "app/assets/lang/{}.json".format(lang)), "r") as f:
             return(f.read())
     else:
-        with open("app/assets/lang/en.json", "r") as f:
+        with open(os.path.join(os.path.dirname(os.path.realpath(sys.argv[0])), "app/assets/lang/en.json"), "r") as f:
             return(f.read())
