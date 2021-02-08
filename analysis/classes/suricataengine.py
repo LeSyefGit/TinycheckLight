@@ -26,7 +26,7 @@ class SuricataEngine():
         # Load template language
         if not re.match("^[a-z]{2,3}$", self.userlang):
             self.userlang = "en"
-        with open(os.path.join(os.path.dirname(os.path.realpath(sys.argv[0])), "lang/{}.json".format(self.userlang))) as f:
+        with open(os.path.join(os.path.dirname(os.path.realpath(sys.argv[0])), "locales/{}.json".format(self.userlang))) as f:
             self.template = json.load(f)["alerts"]
 
     def start_suricata(self):

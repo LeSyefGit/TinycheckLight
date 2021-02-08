@@ -451,7 +451,7 @@ class Report(object):
                                     color:#CCC;
                                 }
                                 @bottom-center { 
-                                    content: REPORT_FOOTER;
+                                    content: "REPORT_FOOTER";
                                     font-size:12px;  
                                     color:#CCC;
                                 }
