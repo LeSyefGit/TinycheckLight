@@ -19,7 +19,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <input class="form-input" type="password" id="password" v-model="password" :placeholder="$t('wifi-select.wifi_password')" v-on:click="keyboard = (window.config.virtual_keyboard)? true : false">
+                        <input class="form-input" type="password" id="password" v-model="password" :placeholder="$t('wifi-select.wifi_password')" v-on:click="keyboard = (virtual_keyboard)? true : false">
                     </div>
                     <div class="form-group">
                         <button class="btn width-100" :class="[ connecting ? 'loading' : '', success ? 'btn-success' : 'btn-primary', ]" v-on:click="wifi_setup()">{{ btnval }}</button>
@@ -71,6 +71,7 @@ export default {
             keyboard: false,
             input: "",
             ssids: [],
+            virtual_keyboard: window.config.virtual_keyboard,
             have_internet: false,
             enter_creds: false,
             refreshing: false,
