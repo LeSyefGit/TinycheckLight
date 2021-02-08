@@ -29,24 +29,37 @@
 
 <script>
   import axios from 'axios'
-  document.title = 'TinyCheck Frontend'
   import Controls from "@/components/Controls.vue"
   
+  document.title = 'TinyCheck Frontend'
+
   export default {
     name: 'app',
     components: {
         Controls
     },
     methods: {
-        get_lang: function() {
-            axios.get(`/api/misc/get-lang`, { timeout: 60000 })
-                .then(response => { window.translation = response.data; })
-                .catch(error => { console.log(error) });
+        set_lang: function() {
+            if (window.config.user_lang) {
+                var lang = window.config.user_lang
+                if (Object.keys(this.$i18n.messages).includes(lang)) {
+                    this.$i18n.locale = lang
+                    document.querySelector('html').setAttribute('lang', lang)
+                }
+            }
+        },
+        get_config: function() {
+            axios.get('/api/misc/config', { timeout: 60000 })
+            .then(response => { 
+              this.set_lang();
+              window.config = response.data 
+            })
+            .catch(error => { console.log(error) });
         }
     },
     created: function() {
-        window.translation = {}
-        this.get_lang()
+        window.config = {}
+        this.get_config();
     }
   }
 </script>
