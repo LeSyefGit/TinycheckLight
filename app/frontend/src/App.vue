@@ -51,8 +51,8 @@
         get_config: function() {
             axios.get('/api/misc/config', { timeout: 60000 })
             .then(response => { 
-              this.set_lang();
               window.config = response.data 
+              this.set_lang();
             })
             .catch(error => { console.log(error) });
         }
