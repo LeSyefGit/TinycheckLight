@@ -4,14 +4,17 @@
 import subprocess as sp
 from flask import Blueprint, jsonify
 from app.utils import read_config
+import re
+import sys
+import os
 
 misc_bp = Blueprint("misc", __name__)
 
 
 @misc_bp.route("/reboot", methods=["GET"])
 def api_reboot():
-    """ 
-        Reboot the device 
+    """
+        Reboot the device
     """
     if read_config(("frontend", "reboot_option")):
         sp.Popen("shutdown -r now", shell=True)
@@ -22,8 +25,8 @@ def api_reboot():
 
 @misc_bp.route("/quit", methods=["GET"])
 def api_quit():
-    """ 
-        Quit the interface (Chromium browser) 
+    """
+        Quit the interface (Chromium browser)
     """
     if read_config(("frontend", "quit_option")):
         sp.Popen('pkill -INT -f "chromium-browser"', shell=True)
@@ -34,8 +37,8 @@ def api_quit():
 
 @misc_bp.route("/shutdown", methods=["GET"])
 def api_shutdown():
-    """ 
-        Reboot the device 
+    """
+        Reboot the device
     """
     if read_config(("frontend", "shutdown_option")):
         sp.Popen("shutdown -h now", shell=True)
@@ -46,8 +49,8 @@ def api_shutdown():
 
 @misc_bp.route("/config", methods=["GET"])
 def get_config():
-    """ 
-        Get configuration keys relative to the GUI 
+    """
+        Get configuration keys relative to the GUI
     """
     return jsonify({
         "virtual_keyboard": read_config(("frontend", "virtual_keyboard")),
@@ -57,5 +60,6 @@ def get_config():
         "quit_option": read_config(("frontend", "quit_option")),
         "shutdown_option": read_config(("frontend", "shutdown_option")),
         "reboot_option": read_config(("frontend", "reboot_option")),
-        "iface_out": read_config(("network", "out"))
+        "iface_out": read_config(("network", "out")),
+        "user_lang": read_config(("frontend", "user_lang"))
     })

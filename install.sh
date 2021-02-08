@@ -6,6 +6,7 @@ HOST="$( hostname )"
 IFACES="$( ifconfig -a | grep -Eo '[a-z0-9]{4,14}\: ' | grep -oE [a-z0-9]+ )"
 IFACE_OUT=""
 IFACE_IN=""
+LOCALES=(en fr)
 
 welcome_screen() {
 cat << "EOF"
@@ -38,6 +39,22 @@ check_operating_system() {
        echo -e "$error"
        exit 1
    fi
+}
+
+set_userlang() {
+    # Set the user language.
+    echo -e "\e[39m[+] Setting the user language...\e[39m"
+    printf -v joined '%s/' "${LOCALES[@]}"
+    echo -n "    Please choose a language for the reports and the interface (${joined%/}): "
+    read lang
+
+    if [[ " ${LOCALES[@]} " =~ " ${lang} " ]]; then
+        sed -i "s/userlang/${lang}/g" /usr/share/tinycheck/config.yaml
+        echo -e "\e[92m    [✔] User language setted!\e[39m"
+    else 
+        echo -e "\e[91m    [✘] You must choose between the languages proposed, let's retry.\e[39m"
+        set_userlang
+    fi
 }
 
 set_credentials() {
@@ -410,6 +427,7 @@ else
     check_operating_system
     check_interfaces
     create_directory
+    set_userlang
     set_credentials
     check_dependencies
     configure_dnsmask

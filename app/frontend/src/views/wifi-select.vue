@@ -2,41 +2,42 @@
     <div :class="[ keyboard == false ? 'center' : '' ]">
         <div v-if="keyboard == false">
             <div v-if="have_internet">
-                <p>You seem to be already connected to a network.<br />Do you want to use the current connection?</p>
+                <p v-html="$t('wifi-select.already_connected_question')"></p>
                 <div class="empty-action">
-                    <button class="btn" @click="have_internet = false">No, use another</button> <button class="btn" :class="[ connecting ? 'loading' : '', success ? 'btn-success' : 'btn-primary', ]" @click="$router.push({ name: 'generate-ap' })">Yes, use it.</button>
+                    <button class="btn" @click="have_internet = false">{{ $t("wifi-select.no_btn") }}</button> &nbsp;
+                    <button class="btn" :class="[ connecting ? 'loading' : '', success ? 'btn-success' : 'btn-primary', ]" @click="$router.push({ name: 'generate-ap' })">{{ $t("wifi-select.yes_btn") }}</button>
                 </div>
             </div>
             <div v-else>
                 <div v-if="enter_creds" class="wifi-login">
                     <div class="form-group">
                         <select class="form-select" id="ssid-select" v-model="ssid">
-                            <option value="" selected>Wifi name</option>
+                            <option value="" selected>{{ $t("wifi-select.wifi_name") }}</option>
                             <option v-for="ssid in ssids" v-bind:key="ssid.ssid">
                                 {{ ssid.ssid }}
                             </option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <input class="form-input" type="password" id="password" v-model="password" placeholder="Wifi password" v-on:click="keyboard = (virtual_keyboard)? true : false">
+                        <input class="form-input" type="password" id="password" v-model="password" :placeholder="$t('wifi-select.wifi_password')" v-on:click="keyboard = (virtual_keyboard)? true : false">
                     </div>
                     <div class="form-group">
                         <button class="btn width-100" :class="[ connecting ? 'loading' : '', success ? 'btn-success' : 'btn-primary', ]" v-on:click="wifi_setup()">{{ btnval }}</button>
                     </div>
                     <div class="form-group">
-                        <button class="btn width-100" :class="[ refreshing ? 'loading' : '' ]" v-on:click="refresh_wifi_list()">Refresh networks list</button>
+                        <button class="btn width-100" :class="[ refreshing ? 'loading' : '' ]" v-on:click="refresh_wifi_list()">{{ $t("wifi-select.refresh_btn") }}</button>
                     </div>
                 </div>
                 <div v-else>
-                    <p><strong>You seem to not be connected to Internet.</strong><br />Please configure the Wi-Fi connection.</p>
+                    <p><strong>{{ $t("wifi-select.not_connected") }}</strong><br />{{ $t("wifi-select.please_config") }}</p>
                     <div class="empty-action">
-                        <button class="btn btn-primary" @click="enter_creds = true">Ok, let's do that.</button>
+                        <button class="btn btn-primary" @click="enter_creds = true">{{ $t("wifi-select.lets_do_btn") }}</button>
                     </div>
                 </div>
             </div>
         </div>
         <div v-else>
-            <input :value="input" class="keyboardinput" @input="onInputChange" placeholder="Tap on the virtual keyboard to start">
+            <input :value="input" class="keyboardinput" @input="onInputChange" :placeholder="$t('wifi-select.tap_keyboard')">
             <SimpleKeyboard @onChange="onChange" @onKeyPress="onKeyPress" :input="input" />
         </div>
     </div>
@@ -63,17 +64,18 @@ export default {
             connecting: false,
             error: false,
             success: false,
-            btnval: "Connect to it.",
+            btnval: this.$t("wifi-select.connect_to_it"),
             ssid: "",
             selected_ssid: false,
             password: "",
             keyboard: false,
             input: "",
             ssids: [],
+            virtual_keyboard: window.config.virtual_keyboard,
             have_internet: false,
             enter_creds: false,
-            virtual_keyboard: false,
-            refreshing: false
+            refreshing: false,
+            translation: {}
         }
     },
     props: {
@@ -83,15 +85,15 @@ export default {
     },
     methods: {
         wifi_connect: function() {
-            axios.get(`/api/network/wifi/connect`, { timeout: 60000 })
+            axios.get('/api/network/wifi/connect', { timeout: 60000 })
                 .then(response => {
                     if (response.data.status) {
                         this.success = true
                         this.connecting = false
-                        this.btnval = "Wifi connected!"
+                        this.btnval = this.$t('wifi-select.wifi_connected')
                         setTimeout(() => router.push('generate-ap'), 1000);
                     } else {
-                        this.btnval = "Wifi not connected. Please retry."
+                        this.btnval = this.$t('wifi-select.wifi_not_connected')
                         this.connecting = false
                     }
                 })
@@ -101,7 +103,7 @@ export default {
         },
         wifi_setup: function() {
             if (this.ssid.length && this.password.length >= 8 ){
-                axios.post(`/api/network/wifi/setup`, { ssid: this.ssid, password: this.password }, { timeout: 60000 })
+                axios.post('/api/network/wifi/setup', { ssid: this.ssid, password: this.password }, { timeout: 60000 })
                     .then(response => {
                         if(response.data.status) {
                             this.connecting = true
@@ -114,15 +116,6 @@ export default {
                         console.log(error)
                     });
             }
-        },
-        load_config: function() {
-            axios.get(`/api/misc/config`, { timeout: 60000 })
-                .then(response => {
-                    this.virtual_keyboard = response.data.virtual_keyboard
-                })
-                .catch(error => {
-                    console.log(error)
-            });
         },
         onChange(input) {
             this.input = input
@@ -140,23 +133,22 @@ export default {
         },
         refresh_wifi_list: function(){
             this.refreshing = true
-            axios.get(`/api/network/wifi/list`, { timeout: 10000 })
-                 .then(response => { 
-                     this.refreshing = false
-                     this.append_ssids(response.data.networks)
-                 }).catch(error => {
-                     this.refreshing = false
-                    console.log(error)
+            axios.get('/api/network/wifi/list', { timeout: 10000 })
+            .then(response => { 
+                this.refreshing = false
+                this.append_ssids(response.data.networks)
+            }).catch(error => {
+                this.refreshing = false
+                console.log(error)
             });
         }
     },
     created: function() {
-        this.load_config()
 
         this.have_internet = (this.internet) ? true : false
         this.keyboard = false
 
-        if (typeof this.list_ssids == "object" && this.list_ssids.length != 0){
+        if (typeof this.list_ssids == 'object' && this.list_ssids.length != 0){
             this.ssids = this.list_ssids
         } else {
             this.refresh_wifi_list()

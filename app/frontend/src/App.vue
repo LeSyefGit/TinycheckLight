@@ -28,13 +28,38 @@
 </style>
 
 <script>
-  document.title = 'TinyCheck Frontend'
+  import axios from 'axios'
   import Controls from "@/components/Controls.vue"
+  
+  document.title = 'TinyCheck Frontend'
 
   export default {
     name: 'app',
     components: {
         Controls
+    },
+    methods: {
+        set_lang: function() {
+            if (window.config.user_lang) {
+                var lang = window.config.user_lang
+                if (Object.keys(this.$i18n.messages).includes(lang)) {
+                    this.$i18n.locale = lang
+                    document.querySelector('html').setAttribute('lang', lang)
+                }
+            }
+        },
+        get_config: function() {
+            axios.get('/api/misc/config', { timeout: 60000 })
+            .then(response => { 
+              window.config = response.data 
+              this.set_lang();
+            })
+            .catch(error => { console.log(error) });
+        }
+    },
+    created: function() {
+        window.config = {}
+        this.get_config();
     }
   }
 </script>
