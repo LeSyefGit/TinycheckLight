@@ -31,7 +31,7 @@
             </div>
             <div v-else-if="alerts.low.length >= 1" class="low-wrapper">
                 <div class="center">
-                    <h1 class="warning-title" v-html="$t('report.low_msg', { nb: $i18n.messages[$i18n.locale].report.numbers[alerts.moderate.low] })"></h1>
+                    <h1 class="warning-title" v-html="$t('report.low_msg', { nb: $i18n.messages[$i18n.locale].report.numbers[alerts.low.length] })"></h1>
                     <button class="btn btn-report-low-light" v-on:click="new_capture()">{{ $t("report.start_new_capture") }}</button>
                     <button class="btn btn-report-low" @click="show_report=true;results=false;">{{ $t("report.show_full_report") }}</button>
                 </div>
