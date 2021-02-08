@@ -49,7 +49,7 @@ set_userlang() {
     read lang
 
     if [[ " ${LOCALES[@]} " =~ " ${lang} " ]]; then
-        sed -i "s/userlang/${$lang}/g" /usr/share/tinycheck/config.yaml
+        sed -i "s/userlang/${lang}/g" /usr/share/tinycheck/config.yaml
         echo -e "\e[92m    [✔] User language setted!\e[39m"
     else 
         echo -e "\e[91m    [✘] You must choose between the languages proposed, let's retry.\e[39m"
