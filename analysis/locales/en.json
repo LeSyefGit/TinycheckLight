@@ -38,7 +38,7 @@
         },
         "IOC-05": {
             "title": "A DNS request have been done to the domain {} which is a Free DNS.",
-            "description": "The domain name {} is using a Free DNS service. This kind of service is commonly used by cybercriminals or state-sponsored threat actors during their operations. It is very suspicious that an application running in background use this kind of service, please investigate.",
+            "description": "The domain name {} is using a Free DNS service. This kind of service is commonly used by cybercriminals or state-sponsored threat actors during their operations. It is very suspicious that an application running in background use this kind of service, please investigate."
         },
         "IOC-06": {
             "title": "A DNS request have been done to the domain {} which contains a suspect TLD.",
@@ -54,7 +54,7 @@
         },
         "SSL-01": {
             "title": "SSL connection done on a non standard port ({}) to {}",
-            "description": "It is not common to see SSL connections issued from smartphones using non-standard ports. Even this can be totally legit, we recommend to check the reputation of {}, by looking at its WHOIS record, the associated autonomus system, its creation date, and by searching it the internet.",
+            "description": "It is not common to see SSL connections issued from smartphones using non-standard ports. Even this can be totally legit, we recommend to check the reputation of {}, by looking at its WHOIS record, the associated autonomus system, its creation date, and by searching it the internet."
         },
         "SSL-02": {
             "title": "An SSL connection to {} is using a free certificate.",
@@ -71,7 +71,7 @@
         "SNORT-01": {
             "title": "Suricata rule tiggered: {}",
             "description": "A network detection rule has been triggered. It's likely that your device has been compromised or have some suspect behaviour."
-        },
+        }
     },
     "report": {
         "numbers": [
