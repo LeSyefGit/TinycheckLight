@@ -3467,6 +3467,2650 @@
         {
             "type": "domain",
             "element": "lencr.org"
+        },
+        {
+            "type": "domain",
+            "element": "isnssdk.com"
+        },
+        {
+            "type": "domain",
+            "element": "pstatp.com"
+        },
+        {
+            "type": "domain",
+            "element": "safebrowsing.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "nflximg.com"
+        },
+        {
+            "type": "domain",
+            "element": "windowsupdate.com"
+        },
+        {
+            "type": "domain",
+            "element": "update.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "clientservices.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "www.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "play.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "google-analytics.com"
+        },
+        {
+            "type": "domain",
+            "element": "gvt2.com"
+        },
+        {
+            "type": "domain",
+            "element": "googlesyndication.com"
+        },
+        {
+            "type": "domain",
+            "element": "fonts.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "youtubei.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "ggpht.com"
+        },
+        {
+            "type": "domain",
+            "element": "android.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "microsoftonline.com"
+        },
+        {
+            "type": "domain",
+            "element": "googletagmanager.com"
+        },
+        {
+            "type": "domain",
+            "element": "opendns.com"
+        },
+        {
+            "type": "domain",
+            "element": "windows.com"
+        },
+        {
+            "type": "domain",
+            "element": "oauthaccountmanager.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "amazon.com"
+        },
+        {
+            "type": "domain",
+            "element": "office365.com"
+        },
+        {
+            "type": "domain",
+            "element": "windows.net"
+        },
+        {
+            "type": "domain",
+            "element": "content-autofill.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "storage.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "netflix.net"
+        },
+        {
+            "type": "domain",
+            "element": "facebook.net"
+        },
+        {
+            "type": "domain",
+            "element": "tiktokv.com"
+        },
+        {
+            "type": "domain",
+            "element": "nflxso.net"
+        },
+        {
+            "type": "domain",
+            "element": "cloudflare.com"
+        },
+        {
+            "type": "domain",
+            "element": "tiktokcdn.com"
+        },
+        {
+            "type": "domain",
+            "element": "gvt1.com"
+        },
+        {
+            "type": "domain",
+            "element": "taobao.com"
+        },
+        {
+            "type": "domain",
+            "element": "googletagservices.com"
+        },
+        {
+            "type": "domain",
+            "element": "gmail.com"
+        },
+        {
+            "type": "domain",
+            "element": "twitter.com"
+        },
+        {
+            "type": "domain",
+            "element": "firebaseremoteconfig.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "akamaihd.net"
+        },
+        {
+            "type": "domain",
+            "element": "people-pa.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "akamaized.net"
+        },
+        {
+            "type": "domain",
+            "element": "hola.org"
+        },
+        {
+            "type": "domain",
+            "element": "userlocation.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "adsrvr.org"
+        },
+        {
+            "type": "domain",
+            "element": "office.net"
+        },
+        {
+            "type": "domain",
+            "element": "ampproject.org"
+        },
+        {
+            "type": "domain",
+            "element": "rubiconproject.com"
+        },
+        {
+            "type": "domain",
+            "element": "2mdn.net"
+        },
+        {
+            "type": "domain",
+            "element": "alicdn.com"
+        },
+        {
+            "type": "domain",
+            "element": "firebaseinstallations.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "ajax.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "firebaselogging-pa.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "zaloapp.com"
+        },
+        {
+            "type": "domain",
+            "element": "outlook.com"
+        },
+        {
+            "type": "domain",
+            "element": "e2ro.com"
+        },
+        {
+            "type": "domain",
+            "element": "datasaver.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "google.com.vn"
+        },
+        {
+            "type": "domain",
+            "element": "growth-pa.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "moatads.com"
+        },
+        {
+            "type": "domain",
+            "element": "openx.net"
+        },
+        {
+            "type": "domain",
+            "element": "demdex.net"
+        },
+        {
+            "type": "domain",
+            "element": "rlcdn.com"
+        },
+        {
+            "type": "domain",
+            "element": "azureedge.net"
+        },
+        {
+            "type": "domain",
+            "element": "dns.google"
+        },
+        {
+            "type": "domain",
+            "element": "android.com"
+        },
+        {
+            "type": "domain",
+            "element": "pki.goog"
+        },
+        {
+            "type": "domain",
+            "element": "alibaba.com"
+        },
+        {
+            "type": "domain",
+            "element": "bidswitch.net"
+        },
+        {
+            "type": "domain",
+            "element": "byteoversea.com"
+        },
+        {
+            "type": "domain",
+            "element": "linkedin.com"
+        },
+        {
+            "type": "domain",
+            "element": "tiktokcdn-in.com"
+        },
+        {
+            "type": "domain",
+            "element": "oppomobile.com"
+        },
+        {
+            "type": "domain",
+            "element": "huawei.com"
+        },
+        {
+            "type": "domain",
+            "element": "sharepoint.com"
+        },
+        {
+            "type": "domain",
+            "element": "taboola.com"
+        },
+        {
+            "type": "domain",
+            "element": "heytapmobi.com"
+        },
+        {
+            "type": "domain",
+            "element": "imasdk.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "fbsbx.com"
+        },
+        {
+            "type": "domain",
+            "element": "mzstatic.com"
+        },
+        {
+            "type": "domain",
+            "element": "advertising.com"
+        },
+        {
+            "type": "domain",
+            "element": "optimizationguide-pa.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "bluekai.com"
+        },
+        {
+            "type": "domain",
+            "element": "zadn.vn"
+        },
+        {
+            "type": "domain",
+            "element": "quantserve.com"
+        },
+        {
+            "type": "domain",
+            "element": "zalo.me"
+        },
+        {
+            "type": "domain",
+            "element": "agkn.com"
+        },
+        {
+            "type": "domain",
+            "element": "mathtag.com"
+        },
+        {
+            "type": "domain",
+            "element": "intel.com"
+        },
+        {
+            "type": "domain",
+            "element": "everesttech.net"
+        },
+        {
+            "type": "domain",
+            "element": "t.co"
+        },
+        {
+            "type": "domain",
+            "element": "playatoms-pa.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "agafurretor.com"
+        },
+        {
+            "type": "domain",
+            "element": "adsafeprotected.com"
+        },
+        {
+            "type": "domain",
+            "element": "live.net"
+        },
+        {
+            "type": "domain",
+            "element": "dbankcloud.com"
+        },
+        {
+            "type": "domain",
+            "element": "nist.gov"
+        },
+        {
+            "type": "domain",
+            "element": "amap.com"
+        },
+        {
+            "type": "domain",
+            "element": "adjust.com"
+        },
+        {
+            "type": "domain",
+            "element": "crwdcntrl.net"
+        },
+        {
+            "type": "domain",
+            "element": "twimg.com"
+        },
+        {
+            "type": "domain",
+            "element": "myqcloud.com"
+        },
+        {
+            "type": "domain",
+            "element": "zemanta.com"
+        },
+        {
+            "type": "domain",
+            "element": "uc.cn"
+        },
+        {
+            "type": "domain",
+            "element": "vungle.com"
+        },
+        {
+            "type": "domain",
+            "element": "adgrx.com"
+        },
+        {
+            "type": "domain",
+            "element": "media-amazon.com"
+        },
+        {
+            "type": "domain",
+            "element": "pippio.com"
+        },
+        {
+            "type": "domain",
+            "element": "imrworldwide.com"
+        },
+        {
+            "type": "domain",
+            "element": "qcloud.com"
+        },
+        {
+            "type": "domain",
+            "element": "webex.com"
+        },
+        {
+            "type": "domain",
+            "element": "secureworks.com"
+        },
+        {
+            "type": "domain",
+            "element": "ibyteimg.com"
+        },
+        {
+            "type": "domain",
+            "element": "sohu.com"
+        },
+        {
+            "type": "domain",
+            "element": "telephony.goog"
+        },
+        {
+            "type": "domain",
+            "element": "cofile.net"
+        },
+        {
+            "type": "domain",
+            "element": "adblockplus.org"
+        },
+        {
+            "type": "domain",
+            "element": "supersonicads.com"
+        },
+        {
+            "type": "domain",
+            "element": "cootek.com"
+        },
+        {
+            "type": "domain",
+            "element": "root-servers.net"
+        },
+        {
+            "type": "domain",
+            "element": "line-apps.com"
+        },
+        {
+            "type": "domain",
+            "element": "gravatar.com"
+        },
+        {
+            "type": "domain",
+            "element": "yandex.ru"
+        },
+        {
+            "type": "domain",
+            "element": "dieka123.com"
+        },
+        {
+            "type": "domain",
+            "element": "fontawesome.com"
+        },
+        {
+            "type": "domain",
+            "element": "y80s.com"
+        },
+        {
+            "type": "domain",
+            "element": "27k.cc"
+        },
+        {
+            "type": "domain",
+            "element": "deviceintegritytokens-pa.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "dbankcloud.eu"
+        },
+        {
+            "type": "domain",
+            "element": "peoplestack-pa.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "weathercn.com"
+        },
+        {
+            "type": "domain",
+            "element": "heytapmobile.com"
+        },
+        {
+            "type": "domain",
+            "element": "braze.com"
+        },
+        {
+            "type": "domain",
+            "element": "emxdgt.com"
+        },
+        {
+            "type": "domain",
+            "element": "gvt3.com"
+        },
+        {
+            "type": "domain",
+            "element": "atdmt.com"
+        },
+        {
+            "type": "domain",
+            "element": "12178.com"
+        },
+        {
+            "type": "domain",
+            "element": "shuangliangreli.com"
+        },
+        {
+            "type": "domain",
+            "element": "slatic.net"
+        },
+        {
+            "type": "domain",
+            "element": "liadm.com"
+        },
+        {
+            "type": "domain",
+            "element": "adobedtm.com"
+        },
+        {
+            "type": "domain",
+            "element": "sitescout.com"
+        },
+        {
+            "type": "domain",
+            "element": "lazada.sg"
+        },
+        {
+            "type": "domain",
+            "element": "heytapdl.com"
+        },
+        {
+            "type": "domain",
+            "element": "bidr.io"
+        },
+        {
+            "type": "domain",
+            "element": "instantmessaging-pa.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "ksmobile.com"
+        },
+        {
+            "type": "domain",
+            "element": "vivoglobal.com"
+        },
+        {
+            "type": "domain",
+            "element": "tremorhub.com"
+        },
+        {
+            "type": "domain",
+            "element": "secomtrust.net"
+        },
+        {
+            "type": "domain",
+            "element": "fbpigeon.com"
+        },
+        {
+            "type": "domain",
+            "element": "unrulymedia.com"
+        },
+        {
+            "type": "domain",
+            "element": "mozilla.net"
+        },
+        {
+            "type": "domain",
+            "element": "gtimg.cn"
+        },
+        {
+            "type": "domain",
+            "element": "media.net"
+        },
+        {
+            "type": "domain",
+            "element": "platform-lookaside.fbsbx.com"
+        },
+        {
+            "type": "domain",
+            "element": "aliyun.com"
+        },
+        {
+            "type": "domain",
+            "element": "contextweb.com"
+        },
+        {
+            "type": "domain",
+            "element": "reddit.com"
+        },
+        {
+            "type": "domain",
+            "element": "53jianzhi.net"
+        },
+        {
+            "type": "domain",
+            "element": "1010jz.com"
+        },
+        {
+            "type": "domain",
+            "element": "nijianzhi.com"
+        },
+        {
+            "type": "domain",
+            "element": "simpli.fi"
+        },
+        {
+            "type": "domain",
+            "element": "rfihub.com"
+        },
+        {
+            "type": "domain",
+            "element": "bigo.sg"
+        },
+        {
+            "type": "domain",
+            "element": "mobilemaps.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "snssdk.com"
+        },
+        {
+            "type": "domain",
+            "element": "w55c.net"
+        },
+        {
+            "type": "domain",
+            "element": "adobe.io"
+        },
+        {
+            "type": "domain",
+            "element": "giphy.com"
+        },
+        {
+            "type": "domain",
+            "element": "macromedia.com"
+        },
+        {
+            "type": "domain",
+            "element": "pushimg.com"
+        },
+        {
+            "type": "domain",
+            "element": "hotjar.com"
+        },
+        {
+            "type": "domain",
+            "element": "smartcloudcon.com"
+        },
+        {
+            "type": "domain",
+            "element": "go-mpulse.net"
+        },
+        {
+            "type": "domain",
+            "element": "globalsign.net"
+        },
+        {
+            "type": "domain",
+            "element": "bugsnag.com"
+        },
+        {
+            "type": "domain",
+            "element": "crashlyticsreports-pa.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "omtrdc.net"
+        },
+        {
+            "type": "domain",
+            "element": "zoom.us"
+        },
+        {
+            "type": "domain",
+            "element": "infinitedata-pa.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "geomobileservices-pa.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "weather.com"
+        },
+        {
+            "type": "domain",
+            "element": "360.cn"
+        },
+        {
+            "type": "domain",
+            "element": "teads.tv"
+        },
+        {
+            "type": "domain",
+            "element": "w.org"
+        },
+        {
+            "type": "domain",
+            "element": "1rx.io"
+        },
+        {
+            "type": "domain",
+            "element": "onesignal.com"
+        },
+        {
+            "type": "domain",
+            "element": "applovin.com"
+        },
+        {
+            "type": "domain",
+            "element": "dotomi.com"
+        },
+        {
+            "type": "domain",
+            "element": "doubleverify.com"
+        },
+        {
+            "type": "domain",
+            "element": "translate.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "onenote.net"
+        },
+        {
+            "type": "domain",
+            "element": "mgid.com"
+        },
+        {
+            "type": "domain",
+            "element": "ibytedtos.com"
+        },
+        {
+            "type": "domain",
+            "element": "cdn-apple.com"
+        },
+        {
+            "type": "domain",
+            "element": "mopub.com"
+        },
+        {
+            "type": "domain",
+            "element": "mozilla.org"
+        },
+        {
+            "type": "domain",
+            "element": "alibabausercontent.com"
+        },
+        {
+            "type": "domain",
+            "element": "cameraddns.net"
+        },
+        {
+            "type": "domain",
+            "element": "mookie1.com"
+        },
+        {
+            "type": "domain",
+            "element": "junwonsil.com"
+        },
+        {
+            "type": "domain",
+            "element": "icloud-content.com"
+        },
+        {
+            "type": "domain",
+            "element": "coloros.com"
+        },
+        {
+            "type": "domain",
+            "element": "qlogo.cn"
+        },
+        {
+            "type": "domain",
+            "element": "exelator.com"
+        },
+        {
+            "type": "domain",
+            "element": "zdn.vn"
+        },
+        {
+            "type": "domain",
+            "element": "ntp.org.cn"
+        },
+        {
+            "type": "domain",
+            "element": "dropbox.com"
+        },
+        {
+            "type": "domain",
+            "element": "mobilenetworkscoring-pa.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "footprints-pa.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "turn.com"
+        },
+        {
+            "type": "domain",
+            "element": "creativecdn.com"
+        },
+        {
+            "type": "domain",
+            "element": "krupdapp.com"
+        },
+        {
+            "type": "domain",
+            "element": "heycould.com"
+        },
+        {
+            "type": "domain",
+            "element": "yimg.com"
+        },
+        {
+            "type": "domain",
+            "element": "xboxlive.com"
+        },
+        {
+            "type": "domain",
+            "element": "krxd.net"
+        },
+        {
+            "type": "domain",
+            "element": "lijit.com"
+        },
+        {
+            "type": "domain",
+            "element": "spotxchange.com"
+        },
+        {
+            "type": "domain",
+            "element": "jquery.com"
+        },
+        {
+            "type": "domain",
+            "element": "nr-data.net"
+        },
+        {
+            "type": "domain",
+            "element": "zing.vn"
+        },
+        {
+            "type": "domain",
+            "element": "garena.com"
+        },
+        {
+            "type": "domain",
+            "element": "shopeemobile.com"
+        },
+        {
+            "type": "domain",
+            "element": "bootstrapcdn.com"
+        },
+        {
+            "type": "domain",
+            "element": "addthis.com"
+        },
+        {
+            "type": "domain",
+            "element": "sogou.com"
+        },
+        {
+            "type": "domain",
+            "element": "notifications-pa.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "fpt.vn"
+        },
+        {
+            "type": "domain",
+            "element": "tapad.com"
+        },
+        {
+            "type": "domain",
+            "element": "umeng.com"
+        },
+        {
+            "type": "domain",
+            "element": "accuweather.com"
+        },
+        {
+            "type": "domain",
+            "element": "3gppnetwork.org"
+        },
+        {
+            "type": "domain",
+            "element": "lamssettings-pa.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "maps.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "stickyadstv.com"
+        },
+        {
+            "type": "domain",
+            "element": "autonavi.com"
+        },
+        {
+            "type": "domain",
+            "element": "zingmp3.vn"
+        },
+        {
+            "type": "domain",
+            "element": "shifen.com"
+        },
+        {
+            "type": "domain",
+            "element": "tongdun.net"
+        },
+        {
+            "type": "domain",
+            "element": "ichano.cn"
+        },
+        {
+            "type": "domain",
+            "element": "gos-gsp.io"
+        },
+        {
+            "type": "domain",
+            "element": "getpocket.com"
+        },
+        {
+            "type": "domain",
+            "element": "imotech.tech"
+        },
+        {
+            "type": "domain",
+            "element": "weibo.com"
+        },
+        {
+            "type": "domain",
+            "element": "xboxab.com"
+        },
+        {
+            "type": "domain",
+            "element": "skypeassets.com"
+        },
+        {
+            "type": "domain",
+            "element": "mwbsys.com"
+        },
+        {
+            "type": "domain",
+            "element": "jivox.com"
+        },
+        {
+            "type": "domain",
+            "element": "brand-display.com"
+        },
+        {
+            "type": "domain",
+            "element": "rezync.com"
+        },
+        {
+            "type": "domain",
+            "element": "nintendo.net"
+        },
+        {
+            "type": "domain",
+            "element": "ctobsnssdk.com"
+        },
+        {
+            "type": "domain",
+            "element": "pangle.io"
+        },
+        {
+            "type": "domain",
+            "element": "e-volution.ai"
+        },
+        {
+            "type": "domain",
+            "element": "publpush.com"
+        },
+        {
+            "type": "domain",
+            "element": "bigolive.tv"
+        },
+        {
+            "type": "domain",
+            "element": "chromesyncpasswords-pa.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "bdimg.com"
+        },
+        {
+            "type": "domain",
+            "element": "example.org"
+        },
+        {
+            "type": "domain",
+            "element": "rbxcdn.com"
+        },
+        {
+            "type": "domain",
+            "element": "revopush.com"
+        },
+        {
+            "type": "domain",
+            "element": "loopme.me"
+        },
+        {
+            "type": "domain",
+            "element": "dell.com"
+        },
+        {
+            "type": "domain",
+            "element": "tubecup.net"
+        },
+        {
+            "type": "domain",
+            "element": "51y5.net"
+        },
+        {
+            "type": "domain",
+            "element": "cognac-prod.appspot.com"
+        },
+        {
+            "type": "domain",
+            "element": "icloud.com.cn"
+        },
+        {
+            "type": "domain",
+            "element": "toutiao.com"
+        },
+        {
+            "type": "domain",
+            "element": "aniview.com"
+        },
+        {
+            "type": "domain",
+            "element": "vivo.com"
+        },
+        {
+            "type": "domain",
+            "element": "betrad.com"
+        },
+        {
+            "type": "domain",
+            "element": "zdassets.com"
+        },
+        {
+            "type": "domain",
+            "element": "thebrighttag.com"
+        },
+        {
+            "type": "domain",
+            "element": "bp.blogspot.com"
+        },
+        {
+            "type": "domain",
+            "element": "hik-connect.com"
+        },
+        {
+            "type": "domain",
+            "element": "secu100.com"
+        },
+        {
+            "type": "domain",
+            "element": "omnitagjs.com"
+        },
+        {
+            "type": "domain",
+            "element": "sc-prod.net"
+        },
+        {
+            "type": "domain",
+            "element": "gtimg.com"
+        },
+        {
+            "type": "domain",
+            "element": "ss2.us"
+        },
+        {
+            "type": "domain",
+            "element": "cnzz.com"
+        },
+        {
+            "type": "domain",
+            "element": "tencent-cloud.net"
+        },
+        {
+            "type": "domain",
+            "element": "skimresources.com"
+        },
+        {
+            "type": "domain",
+            "element": "launchdarkly.com"
+        },
+        {
+            "type": "domain",
+            "element": "bit.ly"
+        },
+        {
+            "type": "domain",
+            "element": "bilibili.com"
+        },
+        {
+            "type": "domain",
+            "element": "ackcdn.net"
+        },
+        {
+            "type": "domain",
+            "element": "polyfill.io"
+        },
+        {
+            "type": "domain",
+            "element": "sophosupd.com"
+        },
+        {
+            "type": "domain",
+            "element": "baomoi.com"
+        },
+        {
+            "type": "domain",
+            "element": "amazonalexa.com"
+        },
+        {
+            "type": "domain",
+            "element": "moatpixel.com"
+        },
+        {
+            "type": "domain",
+            "element": "line.me"
+        },
+        {
+            "type": "domain",
+            "element": "jwplayer.com"
+        },
+        {
+            "type": "domain",
+            "element": "adingo.jp"
+        },
+        {
+            "type": "domain",
+            "element": "firestore.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "nelreports.net"
+        },
+        {
+            "type": "domain",
+            "element": "gcloudcs.com"
+        },
+        {
+            "type": "domain",
+            "element": "citrix.com"
+        },
+        {
+            "type": "domain",
+            "element": "ad-m.asia"
+        },
+        {
+            "type": "domain",
+            "element": "samsungqbe.com"
+        },
+        {
+            "type": "domain",
+            "element": "ib-ibi.com"
+        },
+        {
+            "type": "domain",
+            "element": "riotgames.com"
+        },
+        {
+            "type": "domain",
+            "element": "tenable.com"
+        },
+        {
+            "type": "domain",
+            "element": "easytomessage.com"
+        },
+        {
+            "type": "domain",
+            "element": "nflximg.net"
+        },
+        {
+            "type": "domain",
+            "element": "advangelists.com"
+        },
+        {
+            "type": "domain",
+            "element": "semanticlocation-pa.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "deepintent.com"
+        },
+        {
+            "type": "domain",
+            "element": "dyntrk.com"
+        },
+        {
+            "type": "domain",
+            "element": "dp8.org"
+        },
+        {
+            "type": "domain",
+            "element": "jianzhiguan.com"
+        },
+        {
+            "type": "domain",
+            "element": "201980.com"
+        },
+        {
+            "type": "domain",
+            "element": "shaolianhu.com"
+        },
+        {
+            "type": "domain",
+            "element": "admicro.vn"
+        },
+        {
+            "type": "domain",
+            "element": "izooto.com"
+        },
+        {
+            "type": "domain",
+            "element": "fcm.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "douyincdn.com"
+        },
+        {
+            "type": "domain",
+            "element": "xb1.cc"
+        },
+        {
+            "type": "domain",
+            "element": "adobelogin.com"
+        },
+        {
+            "type": "domain",
+            "element": "itvitv.com"
+        },
+        {
+            "type": "domain",
+            "element": "corpscorp.online"
+        },
+        {
+            "type": "domain",
+            "element": "king.com"
+        },
+        {
+            "type": "domain",
+            "element": "qinghaigreen.com"
+        },
+        {
+            "type": "domain",
+            "element": "walmart.com"
+        },
+        {
+            "type": "domain",
+            "element": "daiyun88.net"
+        },
+        {
+            "type": "domain",
+            "element": "res998.com"
+        },
+        {
+            "type": "domain",
+            "element": "netcoresmartech.com"
+        },
+        {
+            "type": "domain",
+            "element": "santy-clean.com"
+        },
+        {
+            "type": "domain",
+            "element": "ixigua.com"
+        },
+        {
+            "type": "domain",
+            "element": "mi-img.com"
+        },
+        {
+            "type": "domain",
+            "element": "bcebos.com"
+        },
+        {
+            "type": "domain",
+            "element": "wsdvs.com"
+        },
+        {
+            "type": "domain",
+            "element": "worldfcdn.com"
+        },
+        {
+            "type": "domain",
+            "element": "omnithrottle.com"
+        },
+        {
+            "type": "domain",
+            "element": "v-mate.mobi"
+        },
+        {
+            "type": "domain",
+            "element": "cerrhgddd.com"
+        },
+        {
+            "type": "domain",
+            "element": "segment.com"
+        },
+        {
+            "type": "domain",
+            "element": "yandex.net"
+        },
+        {
+            "type": "domain",
+            "element": "opera-mini.net"
+        },
+        {
+            "type": "domain",
+            "element": "adentifi.com"
+        },
+        {
+            "type": "domain",
+            "element": "zendesk.com"
+        },
+        {
+            "type": "domain",
+            "element": "a2z.com"
+        },
+        {
+            "type": "domain",
+            "element": "thrtle.com"
+        },
+        {
+            "type": "domain",
+            "element": "cloudsink.net"
+        },
+        {
+            "type": "domain",
+            "element": "oauth2.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "truoptik.com"
+        },
+        {
+            "type": "domain",
+            "element": "disqus.com"
+        },
+        {
+            "type": "domain",
+            "element": "epicgames.com"
+        },
+        {
+            "type": "domain",
+            "element": "oath.com"
+        },
+        {
+            "type": "domain",
+            "element": "adotmob.com"
+        },
+        {
+            "type": "domain",
+            "element": "google.co.in"
+        },
+        {
+            "type": "domain",
+            "element": "like.video"
+        },
+        {
+            "type": "domain",
+            "element": "discord.gg"
+        },
+        {
+            "type": "domain",
+            "element": "liftoff.io"
+        },
+        {
+            "type": "domain",
+            "element": "jpush.io"
+        },
+        {
+            "type": "domain",
+            "element": "tapjoy.com"
+        },
+        {
+            "type": "domain",
+            "element": "netease.com"
+        },
+        {
+            "type": "domain",
+            "element": "adroll.com"
+        },
+        {
+            "type": "domain",
+            "element": "lazada.com"
+        },
+        {
+            "type": "domain",
+            "element": "symantecliveupdate.com"
+        },
+        {
+            "type": "domain",
+            "element": "lenovo.com"
+        },
+        {
+            "type": "domain",
+            "element": "google.co.th"
+        },
+        {
+            "type": "domain",
+            "element": "google.com.my"
+        },
+        {
+            "type": "domain",
+            "element": "districtm.io"
+        },
+        {
+            "type": "domain",
+            "element": "blismedia.com"
+        },
+        {
+            "type": "domain",
+            "element": "ctnsnet.com"
+        },
+        {
+            "type": "domain",
+            "element": "firebaseperusertopics-pa.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "impact-ad.jp"
+        },
+        {
+            "type": "domain",
+            "element": "wordpress.com"
+        },
+        {
+            "type": "domain",
+            "element": "sina.com.cn"
+        },
+        {
+            "type": "domain",
+            "element": "nwps.ws"
+        },
+        {
+            "type": "domain",
+            "element": "dbnnmmxo.com"
+        },
+        {
+            "type": "domain",
+            "element": "akstat.io"
+        },
+        {
+            "type": "domain",
+            "element": "acuityplatform.com"
+        },
+        {
+            "type": "domain",
+            "element": "evidon.com"
+        },
+        {
+            "type": "domain",
+            "element": "meizu.com"
+        },
+        {
+            "type": "domain",
+            "element": "amgdgt.com"
+        },
+        {
+            "type": "domain",
+            "element": "insightexpressai.com"
+        },
+        {
+            "type": "domain",
+            "element": "origin.com"
+        },
+        {
+            "type": "domain",
+            "element": "crazyegg.com"
+        },
+        {
+            "type": "domain",
+            "element": "paypalobjects.com"
+        },
+        {
+            "type": "domain",
+            "element": "ampproject.net"
+        },
+        {
+            "type": "domain",
+            "element": "sinaimg.cn"
+        },
+        {
+            "type": "domain",
+            "element": "adkernel.com"
+        },
+        {
+            "type": "domain",
+            "element": "lgtvsdp.com"
+        },
+        {
+            "type": "domain",
+            "element": "ultraviewer.net"
+        },
+        {
+            "type": "domain",
+            "element": "msidentity.com"
+        },
+        {
+            "type": "domain",
+            "element": "googlezip.net"
+        },
+        {
+            "type": "domain",
+            "element": "opentracker.xyz"
+        },
+        {
+            "type": "domain",
+            "element": "treasuredata.com"
+        },
+        {
+            "type": "domain",
+            "element": "kargo.com"
+        },
+        {
+            "type": "domain",
+            "element": "postrelease.com"
+        },
+        {
+            "type": "domain",
+            "element": "aralego.com"
+        },
+        {
+            "type": "domain",
+            "element": "networking.apple"
+        },
+        {
+            "type": "domain",
+            "element": "ofhappinyer.com"
+        },
+        {
+            "type": "domain",
+            "element": "dislanelibrar.top"
+        },
+        {
+            "type": "domain",
+            "element": "footprint.net"
+        },
+        {
+            "type": "domain",
+            "element": "onetag-sys.com"
+        },
+        {
+            "type": "domain",
+            "element": "avct.cloud"
+        },
+        {
+            "type": "domain",
+            "element": "tbcache.com"
+        },
+        {
+            "type": "domain",
+            "element": "myvisualiq.net"
+        },
+        {
+            "type": "domain",
+            "element": "wps.cn"
+        },
+        {
+            "type": "domain",
+            "element": "zopim.com"
+        },
+        {
+            "type": "domain",
+            "element": "samsunghealth.com"
+        },
+        {
+            "type": "domain",
+            "element": "moengage.com"
+        },
+        {
+            "type": "domain",
+            "element": "playstation.net"
+        },
+        {
+            "type": "domain",
+            "element": "youngjoygame.com"
+        },
+        {
+            "type": "domain",
+            "element": "sc-static.net"
+        },
+        {
+            "type": "domain",
+            "element": "adskeeper.com"
+        },
+        {
+            "type": "domain",
+            "element": "company-target.com"
+        },
+        {
+            "type": "domain",
+            "element": "aspnetcdn.com"
+        },
+        {
+            "type": "domain",
+            "element": "umengcloud.com"
+        },
+        {
+            "type": "domain",
+            "element": "ladsp.com"
+        },
+        {
+            "type": "domain",
+            "element": "device-provisioning.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "steamcommunity.com"
+        },
+        {
+            "type": "domain",
+            "element": "urbanairship.com"
+        },
+        {
+            "type": "domain",
+            "element": "xmsecu100.net"
+        },
+        {
+            "type": "domain",
+            "element": "mobilesystemservice.com"
+        },
+        {
+            "type": "domain",
+            "element": "roku.com"
+        },
+        {
+            "type": "domain",
+            "element": "imoim.app"
+        },
+        {
+            "type": "domain",
+            "element": "atwola.com"
+        },
+        {
+            "type": "domain",
+            "element": "a-mo.net"
+        },
+        {
+            "type": "domain",
+            "element": "stripe.com"
+        },
+        {
+            "type": "domain",
+            "element": "igamecj.com"
+        },
+        {
+            "type": "domain",
+            "element": "survata.com"
+        },
+        {
+            "type": "domain",
+            "element": "zapps.vn"
+        },
+        {
+            "type": "domain",
+            "element": "spotifycdn.com"
+        },
+        {
+            "type": "domain",
+            "element": "erne.co"
+        },
+        {
+            "type": "domain",
+            "element": "twilio.com"
+        },
+        {
+            "type": "domain",
+            "element": "dtscout.com"
+        },
+        {
+            "type": "domain",
+            "element": "recaptcha.net"
+        },
+        {
+            "type": "domain",
+            "element": "lync.com"
+        },
+        {
+            "type": "domain",
+            "element": "ad-stir.com"
+        },
+        {
+            "type": "domain",
+            "element": "hp.com"
+        },
+        {
+            "type": "domain",
+            "element": "oath.cloud"
+        },
+        {
+            "type": "domain",
+            "element": "photos.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "cryptauthenrollment.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "meetings.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "hivestreaming.com"
+        },
+        {
+            "type": "domain",
+            "element": "ip-api.com"
+        },
+        {
+            "type": "domain",
+            "element": "carriersignal.info"
+        },
+        {
+            "type": "domain",
+            "element": "tencent.com"
+        },
+        {
+            "type": "domain",
+            "element": "s-onetag.com"
+        },
+        {
+            "type": "domain",
+            "element": "appboy.com"
+        },
+        {
+            "type": "domain",
+            "element": "qualtrics.com"
+        },
+        {
+            "type": "domain",
+            "element": "bfmio.com"
+        },
+        {
+            "type": "domain",
+            "element": "byteoversea.net"
+        },
+        {
+            "type": "domain",
+            "element": "disquscdn.com"
+        },
+        {
+            "type": "domain",
+            "element": "fwmrm.net"
+        },
+        {
+            "type": "domain",
+            "element": "innovid.com"
+        },
+        {
+            "type": "domain",
+            "element": "offerimage.com"
+        },
+        {
+            "type": "domain",
+            "element": "netgear.com"
+        },
+        {
+            "type": "domain",
+            "element": "adrta.com"
+        },
+        {
+            "type": "domain",
+            "element": "cbcloud.sg"
+        },
+        {
+            "type": "domain",
+            "element": "ad4m.at"
+        },
+        {
+            "type": "domain",
+            "element": "certum.pl"
+        },
+        {
+            "type": "domain",
+            "element": "iqiyi.com"
+        },
+        {
+            "type": "domain",
+            "element": "duckduckgo.com"
+        },
+        {
+            "type": "domain",
+            "element": "realsrv.com"
+        },
+        {
+            "type": "domain",
+            "element": "kakao.com"
+        },
+        {
+            "type": "domain",
+            "element": "baishan-cloud.net"
+        },
+        {
+            "type": "domain",
+            "element": "redditstatic.com"
+        },
+        {
+            "type": "domain",
+            "element": "piojm.tech"
+        },
+        {
+            "type": "domain",
+            "element": "adx1.com"
+        },
+        {
+            "type": "domain",
+            "element": "lazada.vn"
+        },
+        {
+            "type": "domain",
+            "element": "ichano.com"
+        },
+        {
+            "type": "domain",
+            "element": "mob.com"
+        },
+        {
+            "type": "domain",
+            "element": "maribacaberita.com"
+        },
+        {
+            "type": "domain",
+            "element": "miwifi.com"
+        },
+        {
+            "type": "domain",
+            "element": "adhigh.net"
+        },
+        {
+            "type": "domain",
+            "element": "naver.com"
+        },
+        {
+            "type": "domain",
+            "element": "dutchtracking.nl"
+        },
+        {
+            "type": "domain",
+            "element": "clean.gg"
+        },
+        {
+            "type": "domain",
+            "element": "freefiremobile.com"
+        },
+        {
+            "type": "domain",
+            "element": "content.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "wmgtr.com"
+        },
+        {
+            "type": "domain",
+            "element": "msftauth.net"
+        },
+        {
+            "type": "domain",
+            "element": "ebay.com"
+        },
+        {
+            "type": "domain",
+            "element": "discordapp.com"
+        },
+        {
+            "type": "domain",
+            "element": "aliapp.org"
+        },
+        {
+            "type": "domain",
+            "element": "technoratimedia.com"
+        },
+        {
+            "type": "domain",
+            "element": "pullcf.com"
+        },
+        {
+            "type": "domain",
+            "element": "virtualearth.net"
+        },
+        {
+            "type": "domain",
+            "element": "sina.cn"
+        },
+        {
+            "type": "domain",
+            "element": "raw.githubusercontent.com"
+        },
+        {
+            "type": "domain",
+            "element": "imgur.com"
+        },
+        {
+            "type": "domain",
+            "element": "mozaws.net"
+        },
+        {
+            "type": "domain",
+            "element": "wbx2.com"
+        },
+        {
+            "type": "domain",
+            "element": "mobilemaps-pa-gz.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "line-scdn.net"
+        },
+        {
+            "type": "domain",
+            "element": "alipayobjects.com"
+        },
+        {
+            "type": "domain",
+            "element": "cylance.com"
+        },
+        {
+            "type": "domain",
+            "element": "imo.im"
+        },
+        {
+            "type": "domain",
+            "element": "msauth.net"
+        },
+        {
+            "type": "domain",
+            "element": "sjtu.edu.cn"
+        },
+        {
+            "type": "domain",
+            "element": "fcmconnection.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "likee.video"
+        },
+        {
+            "type": "domain",
+            "element": "getui.com"
+        },
+        {
+            "type": "domain",
+            "element": "jwpltx.com"
+        },
+        {
+            "type": "domain",
+            "element": "nsatc.net"
+        },
+        {
+            "type": "domain",
+            "element": "wikimedia.org"
+        },
+        {
+            "type": "domain",
+            "element": "paypal.com"
+        },
+        {
+            "type": "domain",
+            "element": "adtimaserver.vn"
+        },
+        {
+            "type": "domain",
+            "element": "cloudconfig.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "tidaltv.com"
+        },
+        {
+            "type": "domain",
+            "element": "google.com.hk"
+        },
+        {
+            "type": "domain",
+            "element": "s-microsoft.com"
+        },
+        {
+            "type": "domain",
+            "element": "ipstatp.com"
+        },
+        {
+            "type": "domain",
+            "element": "pullcm.com"
+        },
+        {
+            "type": "domain",
+            "element": "1post4all.com"
+        },
+        {
+            "type": "domain",
+            "element": "tiqcdn.com"
+        },
+        {
+            "type": "domain",
+            "element": "ssl.fastly.net"
+        },
+        {
+            "type": "domain",
+            "element": "inner-active.mobi"
+        },
+        {
+            "type": "domain",
+            "element": "hwcdn.net"
+        },
+        {
+            "type": "domain",
+            "element": "bldrdoc.gov"
+        },
+        {
+            "type": "domain",
+            "element": "steampowered.com"
+        },
+        {
+            "type": "domain",
+            "element": "ipredictive.com"
+        },
+        {
+            "type": "domain",
+            "element": "jd.com"
+        },
+        {
+            "type": "domain",
+            "element": "shopee.ph"
+        },
+        {
+            "type": "domain",
+            "element": "onaudience.com"
+        },
+        {
+            "type": "domain",
+            "element": "sentry.io"
+        },
+        {
+            "type": "domain",
+            "element": "google.com.ph"
+        },
+        {
+            "type": "domain",
+            "element": "ml314.com"
+        },
+        {
+            "type": "domain",
+            "element": "onedrive.com"
+        },
+        {
+            "type": "domain",
+            "element": "supersonic.com"
+        },
+        {
+            "type": "domain",
+            "element": "beyla.site"
+        },
+        {
+            "type": "domain",
+            "element": "samsungcloudsolution.com"
+        },
+        {
+            "type": "domain",
+            "element": "sc-cdn.net"
+        },
+        {
+            "type": "domain",
+            "element": "sonobi.com"
+        },
+        {
+            "type": "domain",
+            "element": "app.link"
+        },
+        {
+            "type": "domain",
+            "element": "pinduoduo.com"
+        },
+        {
+            "type": "domain",
+            "element": "special-offers.online"
+        },
+        {
+            "type": "domain",
+            "element": "google.co.id"
+        },
+        {
+            "type": "domain",
+            "element": "photosdata-pa.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "sgsnssdk.com"
+        },
+        {
+            "type": "domain",
+            "element": "discord.com"
+        },
+        {
+            "type": "domain",
+            "element": "alibabadns.com"
+        },
+        {
+            "type": "domain",
+            "element": "bdurl.net"
+        },
+        {
+            "type": "domain",
+            "element": "kochava.com"
+        },
+        {
+            "type": "domain",
+            "element": "global.fastly.net"
+        },
+        {
+            "type": "domain",
+            "element": "symcb.com"
+        },
+        {
+            "type": "domain",
+            "element": "glpals.com"
+        },
+        {
+            "type": "domain",
+            "element": "unpkg.com"
+        },
+        {
+            "type": "domain",
+            "element": "adcolony.com"
+        },
+        {
+            "type": "domain",
+            "element": "kaspersky-labs.com"
+        },
+        {
+            "type": "domain",
+            "element": "haplat.net"
+        },
+        {
+            "type": "domain",
+            "element": "tribalfusion.com"
+        },
+        {
+            "type": "domain",
+            "element": "wayfair.com"
+        },
+        {
+            "type": "domain",
+            "element": "cookielaw.org"
+        },
+        {
+            "type": "domain",
+            "element": "opera.com"
+        },
+        {
+            "type": "domain",
+            "element": "33across.com"
+        },
+        {
+            "type": "domain",
+            "element": "ssacdn.com"
+        },
+        {
+            "type": "domain",
+            "element": "semasio.net"
+        },
+        {
+            "type": "domain",
+            "element": "bdstatic.com"
+        },
+        {
+            "type": "domain",
+            "element": "cdn.fbsbx.com"
+        },
+        {
+            "type": "domain",
+            "element": "stackadapt.com"
+        },
+        {
+            "type": "domain",
+            "element": "samsungcloudsolution.net"
+        },
+        {
+            "type": "domain",
+            "element": "google.cn"
+        },
+        {
+            "type": "domain",
+            "element": "useinsider.com"
+        },
+        {
+            "type": "domain",
+            "element": "windscribe.com"
+        },
+        {
+            "type": "domain",
+            "element": "meraki.com"
+        },
+        {
+            "type": "domain",
+            "element": "phonedeviceverification-pa.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "flashtalking.com"
+        },
+        {
+            "type": "domain",
+            "element": "mdh-pa.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "apple-cloudkit.com"
+        },
+        {
+            "type": "domain",
+            "element": "grammarly.com"
+        },
+        {
+            "type": "domain",
+            "element": "snapkit.com"
+        },
+        {
+            "type": "domain",
+            "element": "rqmob.com"
+        },
+        {
+            "type": "domain",
+            "element": "createjs.com"
+        },
+        {
+            "type": "domain",
+            "element": "yieldmo.com"
+        },
+        {
+            "type": "domain",
+            "element": "dbankcloud.asia"
+        },
+        {
+            "type": "domain",
+            "element": "cdn.house"
+        },
+        {
+            "type": "domain",
+            "element": "footprintdns.com"
+        },
+        {
+            "type": "domain",
+            "element": "typekit.com"
+        },
+        {
+            "type": "domain",
+            "element": "jwpcdn.com"
+        },
+        {
+            "type": "domain",
+            "element": "dellsupportcenter.com"
+        },
+        {
+            "type": "domain",
+            "element": "grammarly.io"
+        },
+        {
+            "type": "domain",
+            "element": "adskeeper.co.uk"
+        },
+        {
+            "type": "domain",
+            "element": "chartbeat.net"
+        },
+        {
+            "type": "domain",
+            "element": "sharethis.com"
+        },
+        {
+            "type": "domain",
+            "element": "y5en.com"
+        },
+        {
+            "type": "domain",
+            "element": "securetoken.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "coccoc.com"
+        },
+        {
+            "type": "domain",
+            "element": "onetrust.com"
+        },
+        {
+            "type": "domain",
+            "element": "123c.vn"
+        },
+        {
+            "type": "domain",
+            "element": "amazonvideo.com"
+        },
+        {
+            "type": "domain",
+            "element": "owneriq.net"
+        },
+        {
+            "type": "domain",
+            "element": "digitalassetlinks.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "anticheatexpert.com"
+        },
+        {
+            "type": "domain",
+            "element": "tynt.com"
+        },
+        {
+            "type": "domain",
+            "element": "steamstatic.com"
+        },
+        {
+            "type": "domain",
+            "element": "roblox.com"
+        },
+        {
+            "type": "domain",
+            "element": "zeotap.com"
+        },
+        {
+            "type": "domain",
+            "element": "tiktok.com"
+        },
+        {
+            "type": "domain",
+            "element": "rkdms.com"
+        },
+        {
+            "type": "domain",
+            "element": "ipv4only.arpa"
+        },
+        {
+            "type": "domain",
+            "element": "wikipedia.org"
+        },
+        {
+            "type": "domain",
+            "element": "me.com"
+        },
+        {
+            "type": "domain",
+            "element": "voledevice-pa.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "vivo.com.cn"
+        },
+        {
+            "type": "domain",
+            "element": "dbankcloud.cn"
+        },
+        {
+            "type": "domain",
+            "element": "socdm.com"
+        },
+        {
+            "type": "domain",
+            "element": "appier.net"
+        },
+        {
+            "type": "domain",
+            "element": "mmstat.com"
+        },
+        {
+            "type": "domain",
+            "element": "jpush.cn"
+        },
+        {
+            "type": "domain",
+            "element": "typekit.net"
+        },
+        {
+            "type": "domain",
+            "element": "ssl-images-amazon.com"
+        },
+        {
+            "type": "domain",
+            "element": "cisco.com"
+        },
+        {
+            "type": "domain",
+            "element": "trustarc.com"
+        },
+        {
+            "type": "domain",
+            "element": "smaato.net"
+        },
+        {
+            "type": "domain",
+            "element": "shopee.vn"
+        },
+        {
+            "type": "domain",
+            "element": "firefox.com"
+        },
+        {
+            "type": "domain",
+            "element": "passwordsleakcheck-pa.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "cloudflare.net"
+        },
+        {
+            "type": "domain",
+            "element": "heytapimg.com"
+        },
+        {
+            "type": "domain",
+            "element": "phicdn.net"
+        },
+        {
+            "type": "domain",
+            "element": "naver.jp"
+        },
+        {
+            "type": "domain",
+            "element": "garenanow.com"
+        },
+        {
+            "type": "domain",
+            "element": "heytapdownload.com"
+        },
+        {
+            "type": "domain",
+            "element": "bttrack.com"
+        },
+        {
+            "type": "domain",
+            "element": "nflxvideo.net"
+        },
+        {
+            "type": "domain",
+            "element": "rapid7.com"
+        },
+        {
+            "type": "domain",
+            "element": "inmobi.com"
+        },
+        {
+            "type": "domain",
+            "element": "quantcount.com"
+        },
+        {
+            "type": "domain",
+            "element": "nvidia.com"
+        },
+        {
+            "type": "domain",
+            "element": "mfadsrvr.com"
+        },
+        {
+            "type": "domain",
+            "element": "dropboxapi.com"
+        },
+        {
+            "type": "domain",
+            "element": "eyeota.net"
+        },
+        {
+            "type": "domain",
+            "element": "id5-sync.com"
+        },
+        {
+            "type": "domain",
+            "element": "ksmobile.net"
+        },
+        {
+            "type": "domain",
+            "element": "truste.com"
+        },
+        {
+            "type": "domain",
+            "element": "eset.com"
+        },
+        {
+            "type": "domain",
+            "element": "telephonyspamprotect-pa.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "consensu.org"
+        },
+        {
+            "type": "domain",
+            "element": "dbankcdn.com"
+        },
+        {
+            "type": "domain",
+            "element": "addthisedge.com"
+        },
+        {
+            "type": "domain",
+            "element": "alexametrics.com"
+        },
+        {
+            "type": "domain",
+            "element": "wshareit.com"
+        },
+        {
+            "type": "domain",
+            "element": "360yield.com"
+        },
+        {
+            "type": "domain",
+            "element": "wbidder.online"
+        },
+        {
+            "type": "domain",
+            "element": "helpshift.com"
+        },
+        {
+            "type": "domain",
+            "element": "visualstudio.com"
+        },
+        {
+            "type": "domain",
+            "element": "mozgcp.net"
+        },
+        {
+            "type": "domain",
+            "element": "163.com"
+        },
+        {
+            "type": "domain",
+            "element": "slack.com"
+        },
+        {
+            "type": "domain",
+            "element": "licdn.com"
+        },
+        {
+            "type": "domain",
+            "element": "ads-twitter.com"
+        },
+        {
+            "type": "domain",
+            "element": "gumgum.com"
+        },
+        {
+            "type": "domain",
+            "element": "wp.com"
+        },
+        {
+            "type": "domain",
+            "element": "nflxext.com"
+        },
+        {
+            "type": "domain",
+            "element": "teamviewer.com"
+        },
+        {
+            "type": "domain",
+            "element": "sharethrough.com"
+        },
+        {
+            "type": "domain",
+            "element": "viber.com"
+        },
+        {
+            "type": "domain",
+            "element": "geller-pa.googleapis.com"
+        },
+        {
+            "type": "domain",
+            "element": "alipay.com"
+        },
+        {
+            "type": "domain",
+            "element": "snapchat.com"
+        },
+        {
+            "type": "domain",
+            "element": "adform.net"
+        },
+        {
+            "type": "domain",
+            "element": "qpic.cn"
+        },
+        {
+            "type": "domain",
+            "element": "ucweb.com"
         }
     ]
 }
