@@ -49,7 +49,11 @@ elif [ $PWD = "/tmp/tinycheck" ]; then
     if ! grep -q reboot_option /usr/share/tinycheck/config.yaml; then
         sed -i 's/frontend:/frontend:\n  reboot_option: true/g' /usr/share/tinycheck/config.yaml
     fi
-    
+
+    if ! grep -q user_lang /usr/share/tinycheck/config.yaml; then
+        sed -i 's/frontend:/frontend:\n  user_lang: en/g' /usr/share/tinycheck/config.yaml
+    fi
+
     if ! grep -q shutdown_option /usr/share/tinycheck/config.yaml; then
         sed -i 's/frontend:/frontend:\n  shutdown_option: true/g' /usr/share/tinycheck/config.yaml
     fi
