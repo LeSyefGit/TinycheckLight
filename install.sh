@@ -441,12 +441,12 @@ elif [[ -f /usr/share/tinycheck/config.yaml ]]; then
 	exit 1
 else
     welcome_screen
-    set_kioskmode
     check_operating_system
     check_interfaces
     create_directory
     set_userlang
     set_credentials
+    set_kioskmode
     check_dependencies
     configure_dnsmask
     configure_dhcpcd
