@@ -38,7 +38,7 @@
             </div>
             <div v-else  class="none-wrapper">
                 <div class="center">
-                    <h1 class="warning-title"v-html="$t("report.fine_msg")"></h1>
+                    <h1 class="warning-title" v-html="$t('report.fine_msg')"></h1>
                     <button class="btn btn-report-low-light" v-on:click="save_capture()">{{ $t("report.save_capture") }}</button>
                     <button class="btn btn-report-low" v-on:click="new_capture()">{{ $t("report.start_new_capture") }}</button>
                 </div>
