@@ -81,7 +81,7 @@ set_credentials() {
 }
 
 set_kioskmode() {
-    echo -n " [?] Do you want to start TinyCheck in fullscreen during the system startup (Kiosk mode)? [Yes/No] "
+    echo -n " [?] Do you want to start TinyCheck in fullscreen during the system startup (aka. Kiosk mode)? [Yes/No] "
     read answer
     if [[ "$answer" =~ ^([yY][eE][sS]|[yY])$ ]]
     then
