@@ -45,7 +45,7 @@ set_userlang() {
     # Set the user language.
     echo -e "\e[39m[+] Setting the user language...\e[39m"
     printf -v joined '%s/' "${LOCALES[@]}"
-    echo -n "    Please choose a language for the reports and the interface (${joined%/}): "
+    echo -n "    Please choose a language for the reports and the user interface (${joined%/}): "
     read lang
 
     if [[ " ${LOCALES[@]} " =~ " ${lang} " ]]; then
