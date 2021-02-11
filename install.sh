@@ -50,7 +50,7 @@ set_userlang() {
 
     if [[ " ${LOCALES[@]} " =~ " ${lang} " ]]; then
         sed -i "s/userlang/${lang}/g" /usr/share/tinycheck/config.yaml
-        echo -e "\e[92m    [✔] User language setted!\e[39m"
+        echo -e "\e[92m    [✔] User language settled!\e[39m"
     else 
         echo -e "\e[91m    [✘] You must choose between the languages proposed, let's retry.\e[39m"
         set_userlang
@@ -88,12 +88,12 @@ set_kioskmode() {
         sed -i "s/kioskmode/true/g" /usr/share/tinycheck/config.yaml
         sed -i "s/hidemouse/true/g" /usr/share/tinycheck/config.yaml
         sed -i "s/quitoption/true/g" /usr/share/tinycheck/config.yaml
-        echo -e "\e[92m    [✔] TinyCheck setted in Kiosk mode\e[39m"
+        echo -e "\e[92m    [✔] TinyCheck settled in kiosk mode\e[39m"
     else
         sed -i "s/kioskmode/false/g" /usr/share/tinycheck/config.yaml
         sed -i "s/hidemouse/false/g" /usr/share/tinycheck/config.yaml
         sed -i "s/quitoption/false/g" /usr/share/tinycheck/config.yaml
-        echo -e "\e[92m    [✔] TinyCheck setted in default mode, use the desktop icon to launch it.\e[39m"
+        echo -e "\e[92m    [✔] TinyCheck settled in default mode, use the desktop icon to launch it.\e[39m"
     fi
 }
 
@@ -353,7 +353,7 @@ check_interfaces(){
     then
         IFACES=( "${IFACES[@]/$ciface}" ) 
         IFACE_OUT=$ciface
-        echo -e "\e[92m    [✔] $ciface setted as a bridge to the Internet\e[39m"
+        echo -e "\e[92m    [✔] $ciface settled as a bridge to the Internet\e[39m"
     else
         IFACES=( "${IFACES[@]/$ciface}" )
         for iface in $IFACES;
@@ -365,7 +365,7 @@ check_interfaces(){
             then
                 IFACE_OUT=$iface
                 IFACES=( "${IFACES[@]/$iface}" ) 
-                echo -e "\e[92m    [✔] $iface setted as a bridge to the Internet\e[39m"
+                echo -e "\e[92m    [✔] $iface settled as a bridge to the Internet\e[39m"
                 break
             fi
         done
@@ -386,7 +386,7 @@ check_interfaces(){
                     if [[ "$answer" =~ ^([yY][eE][sS]|[yY])$ ]]
                     then
                         IFACE_IN="$iface"
-                        echo -e "\e[92m    [✔] $iface setted as an Access Point\e[39m"
+                        echo -e "\e[92m    [✔] $iface settled as an Access Point\e[39m"
                         break
                     fi
                 fi
@@ -394,7 +394,7 @@ check_interfaces(){
         fi
     done
     if [ "${IFACE_IN}" != "" ] && [ "${IFACE_OUT}" != "" ]; then
-        echo -e "\e[92m    [✔] Network configuration setted!\e[39m"
+        echo -e "\e[92m    [✔] Network configuration settled!\e[39m"
     else
         echo -e "\e[91m    [✘] You must select two interfaces, exiting.\e[39m"
         exit 1
