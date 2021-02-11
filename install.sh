@@ -80,6 +80,23 @@ set_credentials() {
     fi
 }
 
+set_kioskmode() {
+    echo -n " [?] Do you want to start TinyCheck in fullscreen during the system startup (Kiosk mode)? [Yes/No] "
+    read answer
+    if [[ "$answer" =~ ^([yY][eE][sS]|[yY])$ ]]
+    then
+        sed -i "s/kioskmode/true/g" /usr/share/tinycheck/config.yaml
+        sed -i "s/hidemouse/true/g" /usr/share/tinycheck/config.yaml
+        sed -i "s/quitoption/true/g" /usr/share/tinycheck/config.yaml
+        echo -e "\e[92m    [✔] TinyCheck setted in Kiosk mode\e[39m"
+    else
+        sed -i "s/kioskmode/false/g" /usr/share/tinycheck/config.yaml
+        sed -i "s/hidemouse/false/g" /usr/share/tinycheck/config.yaml
+        sed -i "s/quitoption/false/g" /usr/share/tinycheck/config.yaml
+        echo -e "\e[92m    [✔] TinyCheck setted in default mode, use the desktop icon to launch it.\e[39m"
+    fi
+}
+
 create_directory() {
     # Create the TinyCheck directory and move the whole stuff there.
     echo -e "[+] Creating TinyCheck folder under /usr/share/"
@@ -424,6 +441,7 @@ elif [[ -f /usr/share/tinycheck/config.yaml ]]; then
 	exit 1
 else
     welcome_screen
+    set_kioskmode
     check_operating_system
     check_interfaces
     create_directory
