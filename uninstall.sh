@@ -7,10 +7,10 @@ delete_folder(){
 delete_services(){
     echo "[+] Deleting TinyCheck services"
 
-    systemctl disable tinycheck-frontend
-    systemctl disable tinycheck-backend
-    systemctl disable tinycheck-kiosk
-    systemctl disable tinycheck-watchers
+    systemctl disable tinycheck-frontend &> /dev/null
+    systemctl disable tinycheck-backend &> /dev/null
+    systemctl disable tinycheck-kiosk &> /dev/null
+    systemctl disable tinycheck-watchers &> /dev/null
 
     rm /lib/systemd/system/tinycheck-frontend.service
     rm /lib/systemd/system/tinycheck-backend.service
@@ -39,7 +39,7 @@ delete_packages(){
           "sqlite3"
           "nodejs")
     
-    echo -n "[?] Do you want to remove the installed packages? [Y/n] "
+    echo -n "[?] Do you want to remove the installed packages? (Yes/no) "
     read answer
     if [[ "$answer" =~ ^([yY][eE][sS]|[yY])$ ]]
     then

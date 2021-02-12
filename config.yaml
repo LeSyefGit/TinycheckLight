@@ -41,10 +41,10 @@ backend:
 frontend:
   shutdown_option: false
   reboot_option: false
-  quit_option: true
+  quit_option: quitoption
   download_links: false
-  hide_mouse: false
-  kiosk_mode: false
+  hide_mouse: hidemouse
+  kiosk_mode: kioskmode
   remote_access: true
   sparklines: true
   virtual_keyboard: true

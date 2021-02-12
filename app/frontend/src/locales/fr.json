@@ -54,7 +54,7 @@
     "mac_address": "Adresse MAC :",
     "high": "elevee",
     "moderate": "moyenne",
-    "low": "base"
+    "low": "basse"
   },
   "wifi-select": {
     "already_connected_question": "Vous semblez être connecté à un réseau.<br />Voulez-vous utiliser cette connexion ?",
