@@ -6,7 +6,7 @@ HOST="$( hostname )"
 IFACES="$( ifconfig -a | grep -Eo '[a-z0-9]{4,14}\: ' | grep -oE [a-z0-9]+ )"
 IFACE_OUT=""
 IFACE_IN=""
-LOCALES=(en fr)
+LOCALES=(en fr cat es)
 
 welcome_screen() {
 cat << "EOF"

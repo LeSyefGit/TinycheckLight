@@ -1,0 +1,81 @@
+{
+    "home": {
+        "welcome_msg": "Benvingut a TinyCheck.",
+        "help_msg": "L´ajudarem a comprovar el seu dispositiu.",
+        "start_btn": "Començem!"
+    },
+    "analysis": {
+        "question": "Voleu analitzar les comunicacions capturades?",
+        "no_btn": "No, només deseu-los",
+        "yes_btn": "Sí, fem-ho",
+        "please_wait_msg": "Espereu durant l'anàlisi ...",
+        "some_time_msg": "Sí, pot trigar una mica ..."
+    },
+    "capture": {
+        "intercept_coms_msg": "Interceptant les comunicacions de",
+        "stop_btn": "Aturar la captura"
+    },
+    "generate-ap": {
+        "network_name": "Nom de la xarxa",
+        "network_password": "Contrasenya de xarxa",
+        "tap_msg": "Toqueu el marc blanc per generar una nova xarxa.",
+        "generate_ap_msg": "Generant una xarxa efímera.",
+        "error_msg1": "Malauradament, hem tingut alguns problemes <br /> durant la creació de l'AP.",
+        "error_msg2": "Verifiqueu que teniu dues interfícies WiFi al dispositiu <br /> i torneu-ho a provar reiniciant-lo.",
+        "restart_btn": "Reinicieu el dispositiu"
+    },
+    "report": {
+        "show_full_report": "Mostra l'informe complet",
+        "start_new_capture": "Inicieu una nova captura",
+        "save_capture": "Desa la captura",
+        "numbers": [
+            "zero",
+            "un",
+            "dos",
+            "tres",
+            "quatre",
+            "cinc",
+            "sis",
+            "set",
+            "vuit",
+            "nou",
+            "deu",
+            "onze"
+        ],
+        "stalkerware_msg": "Un Stalkerware posa en perill el <br /> vostre dispositiu, comproveu l'informe.",
+        "location_msg": "Una aplicació comparteix la vostra <br /> geolocalització actual amb un tercer.",
+        "fine_msg": "Tot sembla bé, zero alertes.",
+        "high_msg": "Teniu {nb} d'alerta alta, <br /> el dispositiu sembla estar compromès.",
+        "moderate_msg": "Teniu {nb} alertes moderades, <br /> és possible que el vostre dispositiu estigui compromès.",
+        "low_msg": "Només teniu {nb} alertes baixes, <br /> Si us plau comproveu-les.",
+        "save_report": "Desa l'informe",
+        "report_of": "Informe de",
+        "ip_address": "Adreça IP",
+        "mac_address": "Adreça MAC",
+        "high": "alt",
+        "moderat": "moderat",
+        "low": "baix"
+    },
+    "wifi-select": {
+        "already_connected_question": "Sembla que ja esteu connectat a una xarxa. <br /> Voleu utilitzar la connexió actual?",
+        "no_btn": "No, utilitzeu-ne un altre",
+        "yes_btn": "Sí, utilitzeu-la.",
+        "wifi_name": "Nom de la Wi-Fi",
+        "refresh_btn": "Actualitza la llista de xarxes",
+        "not_connected": "Sembla que no esteu connectat a Internet.",
+        "please_config": "Configureu la connexió Wi-Fi.",
+        "lets_do_btn": "D'acord, fem això.",
+        "wifi_connected": "Wi-Fi connectat",
+        "wifi_not_connected": "Wi-Fi no connectat. Torneu-ho a provar.",
+        "tap_keyboard": "Toqueu el teclat virtual per començar",
+        "wifi_password": "Contrasenya de Wi-Fi",
+        "connect_to_it": "Connecta-hi"
+    },
+    "save-capture": {
+        "please_connect": "Connecteu una clau USB per desar la captura.",
+        "we_are_saving": "Estem desant la vostra captura.",
+        "tap_msg": "Podeu tocar la tecla USB per iniciar una nova captura.",
+        "capture_download": "La descàrrega de la captura començarà ...",
+        "start_capture_btn": "Inicia una altra captura"
+    }
+}
