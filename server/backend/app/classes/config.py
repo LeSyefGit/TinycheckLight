@@ -62,7 +62,7 @@ class Config(object):
                     config[cat][key] = value
                 if key == "out":
                     config[cat][key] = value
-            elif re.match("^(nonet|eth[0-9]|en[a-z0-9]{20})$", value) and key == "out":
+            elif re.match("^(eth[0-9]|en[a-z0-9]{20})$", value) and key == "out":
                 config[cat][key] = value
             else:
                 return {"status": False,
@@ -137,7 +137,7 @@ class Config(object):
             :return: list of the interfaces
         """
         try:
-            return [i for i in os.listdir("/sys/class/net/") if i.startswith(("wl", "et"))]+["nonet"]
+            return [i for i in os.listdir("/sys/class/net/") if i.startswith(("wl", "et"))]
         except:
             return ["No network interfaces"]
 

@@ -65,6 +65,7 @@
         "not_connected": "Sembla que no esteu connectat a Internet.",
         "please_config": "Configureu la connexió Wi-Fi.",
         "lets_do_btn": "D'acord, fem això.",
+        "no_internet": "Utilitzeu-lo fora de línia",
         "wifi_connected": "Wi-Fi connectat",
         "wifi_not_connected": "Wi-Fi no connectat. Torneu-ho a provar.",
         "tap_keyboard": "Toqueu el teclat virtual per començar",

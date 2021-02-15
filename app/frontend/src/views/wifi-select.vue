@@ -31,7 +31,7 @@
                 <div v-else>
                     <p><strong>{{ $t("wifi-select.not_connected") }}</strong><br />{{ $t("wifi-select.please_config") }}</p>
                     <div class="empty-action">
-                        <button class="btn btn-primary" @click="enter_creds = true">{{ $t("wifi-select.lets_do_btn") }}</button>
+                    <button class="btn" v-on:click="force_ap()">{{ $t("wifi-select.no_internet") }}</button>  <button class="btn btn-primary" @click="enter_creds = true">{{ $t("wifi-select.lets_do_btn") }}</button>
                     </div>
                 </div>
             </div>
@@ -116,6 +116,9 @@ export default {
                         console.log(error)
                     });
             }
+        },
+        force_ap: function() {
+            router.push({ name: 'generate-ap' });
         },
         onChange(input) {
             this.input = input
