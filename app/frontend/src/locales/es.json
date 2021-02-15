@@ -26,7 +26,7 @@
     },
     "report": {
         "show_full_report": "Mostrar el informe completo",
-        "start_new_capture": "Iniciar una nueva captura",
+        "start_new_capture": "Nueva captura",
         "save_capture": "Guardar la captura",
         "numbers": [
             "cero",
@@ -63,6 +63,7 @@
         "wifi_name": "Nombre de Wi-Fi",
         "refresh_btn": "Actualizar lista de redes",
         "not_connected": "Parece que no estás conectado a Internet",
+        "no_internet": "Úselo sin conexión",
         "please_config": "Configure la conexión Wi-Fi.",
         "lets_do_btn": "Ok, hagámoslo",
         "wifi_connected": "Wi-Fi conectado",

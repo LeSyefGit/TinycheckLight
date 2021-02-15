@@ -4,35 +4,33 @@
             <div v-if="have_internet">
                 <p v-html="$t('wifi-select.already_connected_question')"></p>
                 <div class="empty-action">
-                    <button class="btn" @click="have_internet = false">{{ $t("wifi-select.no_btn") }}</button> &nbsp;
+                    <button class="btn" @click="have_internet = false; enter_creds = true">{{ $t("wifi-select.no_btn") }}</button> &nbsp;
                     <button class="btn" :class="[ connecting ? 'loading' : '', success ? 'btn-success' : 'btn-primary', ]" @click="$router.push({ name: 'generate-ap' })">{{ $t("wifi-select.yes_btn") }}</button>
                 </div>
             </div>
-            <div v-else>
-                <div v-if="enter_creds" class="wifi-login">
-                    <div class="form-group">
-                        <select class="form-select" id="ssid-select" v-model="ssid">
-                            <option value="" selected>{{ $t("wifi-select.wifi_name") }}</option>
-                            <option v-for="ssid in ssids" v-bind:key="ssid.ssid">
-                                {{ ssid.ssid }}
-                            </option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-input" type="password" id="password" v-model="password" :placeholder="$t('wifi-select.wifi_password')" v-on:click="keyboard = (virtual_keyboard)? true : false">
-                    </div>
-                    <div class="form-group">
-                        <button class="btn width-100" :class="[ connecting ? 'loading' : '', success ? 'btn-success' : 'btn-primary', ]" v-on:click="wifi_setup()">{{ btnval }}</button>
-                    </div>
-                    <div class="form-group">
-                        <button class="btn width-100" :class="[ refreshing ? 'loading' : '' ]" v-on:click="refresh_wifi_list()">{{ $t("wifi-select.refresh_btn") }}</button>
-                    </div>
+            <div v-if="!have_internet && !enter_creds">
+                <p><strong>{{ $t("wifi-select.not_connected") }}</strong><br />{{ $t("wifi-select.please_config") }}</p>
+                <div class="empty-action">
+                <button class="btn" v-on:click="force_ap()">{{ $t("wifi-select.no_internet") }}</button>  <button class="btn btn-primary" @click="enter_creds = true">{{ $t("wifi-select.lets_do_btn") }}</button>
                 </div>
-                <div v-else>
-                    <p><strong>{{ $t("wifi-select.not_connected") }}</strong><br />{{ $t("wifi-select.please_config") }}</p>
-                    <div class="empty-action">
-                        <button class="btn btn-primary" @click="enter_creds = true">{{ $t("wifi-select.lets_do_btn") }}</button>
-                    </div>
+            </div>
+            <div v-if="!have_internet && enter_creds" class="wifi-login">
+                <div class="form-group">
+                    <select class="form-select" id="ssid-select" v-model="ssid">
+                        <option value="" selected>{{ $t("wifi-select.wifi_name") }}</option>
+                        <option v-for="ssid in ssids" v-bind:key="ssid.ssid">
+                            {{ ssid.ssid }}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input class="form-input" type="password" id="password" v-model="password" :placeholder="$t('wifi-select.wifi_password')" v-on:click="keyboard = (virtual_keyboard)? true : false">
+                </div>
+                <div class="form-group">
+                    <button class="btn width-100" :class="[ connecting ? 'loading' : '', success ? 'btn-success' : 'btn-primary', ]" v-on:click="wifi_setup()">{{ btnval }}</button>
+                </div>
+                <div class="form-group">
+                    <button class="btn width-100" :class="[ refreshing ? 'loading' : '' ]" v-on:click="refresh_wifi_list()">{{ $t("wifi-select.refresh_btn") }}</button>
                 </div>
             </div>
         </div>
@@ -116,6 +114,9 @@ export default {
                         console.log(error)
                     });
             }
+        },
+        force_ap: function() {
+            router.push({ name: 'generate-ap' });
         },
         onChange(input) {
             this.input = input

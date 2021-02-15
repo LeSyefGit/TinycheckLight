@@ -32,7 +32,7 @@
                 <span v-html="$t('generate-ap.error_msg2')"></span>
                 <br /><br /> 
             </p>
-            <button v-if="window.config.reboot_option" class="btn" v-on:click="reboot()">{{ $t("generate-ap.restart_btn") }}</button>
+            <button v-if="reboot_option" class="btn" v-on:click="reboot()">{{ $t("generate-ap.restart_btn") }}</button>
         </div>
     </div>
     
@@ -54,7 +54,7 @@ export default {
             capture_start: false,
             interval: false,
             error: false,
-            reboot_option: false,
+            reboot_option: window.config.reboot_option,
             attempts: 3,
             translation: {}
         }

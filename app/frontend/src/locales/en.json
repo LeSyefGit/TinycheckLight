@@ -65,6 +65,7 @@
     "not_connected": "You seem to not be connected to Internet.",
     "please_config": "Please configure the Wi-Fi connection.",
     "lets_do_btn": "Ok, let's do that.",
+    "no_internet": "Use it offline",
     "wifi_connected": "Wi-Fi connected",
     "wifi_not_connected": "Wi-Fi not connected. Please retry.",
     "tap_keyboard": "Tap on the virtual keyboard to start",
