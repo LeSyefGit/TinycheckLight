@@ -26,7 +26,7 @@
     },
     "report": {
         "show_full_report": "Mostra l'informe complet",
-        "start_new_capture": "Inicieu una nova captura",
+        "start_new_capture": "Nova captura",
         "save_capture": "Desa la captura",
         "numbers": [
             "zero",
