@@ -23,7 +23,7 @@
                 axios.get('/api/network/status', { timeout: 10000 })
                     .then(response => {
                         if (response.data.internet) this.internet = true
-                        if (window.config.iface_out.charAt(0) == 'e') {
+                        if (window.config.iface_out.charAt(0) == 'e' || window.config.iface_out.charAt(0) == 'n') {
                             setTimeout(function () { this.goto_home(); }.bind(this), 1000);
                         } else {
                             this.get_wifi_networks();

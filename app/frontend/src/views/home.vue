@@ -22,7 +22,7 @@ export default {
             var saved_ssid = this.saved_ssid
             var list_ssids = this.list_ssids
             var internet = this.internet
-            if (window.config.iface_out.charAt(0) == "e"){
+            if (window.config.iface_out.charAt(0) == 'e' || window.config.iface_out.charAt(0) == 'n'){
                 router.push({ name: 'generate-ap' });
             } else {
                 router.push({ name: 'wifi-select', 
