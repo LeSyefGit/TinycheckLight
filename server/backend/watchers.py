@@ -44,7 +44,11 @@ def watch_iocs():
                 try:
                     res = requests.get(w["url"], verify=False)
                     if res.status_code == 200:
-                        iocs_list = json.loads(res.content)["iocs"]
+                        content = json.loads(res.content)
+                        iocs_list = content["iocs"] if "iocs" in content else [
+                        ]
+                        to_delete = content["to_delete"] if "to_delete" in content else [
+                        ]
                     else:
                         w["status"] = False
                 except:
@@ -54,6 +58,13 @@ def watch_iocs():
                     try:
                         iocs.add(ioc["type"], ioc["tag"],
                                  ioc["tlp"], ioc["value"], "watcher")
+                        w["status"] = True
+                    except:
+                        continue
+
+                for ioc in to_delete:
+                    try:
+                        iocs.delete_by_value(ioc["value"])
                         w["status"] = True
                     except:
                         continue
@@ -83,7 +94,11 @@ def watch_whitelists():
                 try:
                     res = requests.get(w["url"], verify=False)
                     if res.status_code == 200:
-                        elements = json.loads(res.content)["elements"]
+                        content = json.loads(res.content)
+                        elements = content["elements"] if "elements" in content else [
+                        ]
+                        to_delete = content["to_delete"] if "to_delete" in content else [
+                        ]
                     else:
                         w["status"] = False
                 except:
@@ -92,6 +107,13 @@ def watch_whitelists():
                 for elem in elements:
                     try:
                         whitelist.add(elem["type"], elem["element"], "watcher")
+                        w["status"] = True
+                    except:
+                        continue
+
+                for elem in to_delete:
+                    try:
+                        whitelist.delete_by_value(elem["element"])
                         w["status"] = True
                     except:
                         continue
