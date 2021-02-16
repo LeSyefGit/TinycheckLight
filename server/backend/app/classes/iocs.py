@@ -70,11 +70,26 @@ class IOCs(object):
     @staticmethod
     def delete(ioc_id):
         """
-            Delete an IOC by its id to the database.
+            Delete an IOC by its id in the database.
             :return: status of the operation in JSON
         """
         if db.session.query(exists().where(Ioc.id == ioc_id)).scalar():
             db.session.query(Ioc).filter_by(id=ioc_id).delete()
+            db.session.commit()
+            return {"status": True,
+                    "message": "IOC deleted"}
+        else:
+            return {"status": False,
+                    "message": "IOC not found"}
+
+    @staticmethod
+    def delete_by_value(ioc_value):
+        """
+            Delete an IOC by its value in the database.
+            :return: status of the operation in JSON
+        """
+        if db.session.query(exists().where(Ioc.value == ioc_value)).scalar():
+            db.session.query(Ioc).filter_by(value=ioc_value).delete()
             db.session.commit()
             return {"status": True,
                     "message": "IOC deleted"}

@@ -55,11 +55,26 @@ class WhiteList(object):
     @staticmethod
     def delete(elem_id):
         """
-            Delete an element by its id to the database.
+            Delete an element by its id in the database.
             :return: status of the operation in a dict
         """
         if db.session.query(exists().where(Whitelist.id == elem_id)).scalar():
             db.session.query(Whitelist).filter_by(id=elem_id).delete()
+            db.session.commit()
+            return {"status": True,
+                    "message": "Element deleted"}
+        else:
+            return {"status": False,
+                    "message": "Element not found"}
+
+    @staticmethod
+    def delete_by_value(elem_value):
+        """
+            Delete an element by its value in the database.
+            :return: status of the operation in a dict
+        """
+        if db.session.query(exists().where(Whitelist.element == elem_value)).scalar():
+            db.session.query(Whitelist).filter_by(element=elem_value).delete()
             db.session.commit()
             return {"status": True,
                     "message": "Element deleted"}

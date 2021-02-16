@@ -9,6 +9,7 @@ analysis:
   - CN=ZeroSSL RSA Domain Secure Site CA,O=ZeroSSL,C=AT
   - CN=R3,O=Let's Encrypt,C=US
   heuristics: true
+  active: true
   http_default_port: 80
   iocs: true
   max_alerts: 3

@@ -5,13 +5,14 @@
 from classes.parsezeeklogs import ParseZeekLogs
 from netaddr import IPNetwork, IPAddress
 from utils import get_iocs, get_config, get_whitelist
-from ipwhois import IPWhois
+from datetime import datetime
 import subprocess as sp
 import json
 import pydig
 import os
 import re
 import sys
+import whois
 
 
 class ZeekEngine(object):
@@ -30,6 +31,7 @@ class ZeekEngine(object):
         self.heuristics_analysis = get_config(("analysis", "heuristics"))
         self.iocs_analysis = get_config(("analysis", "iocs"))
         self.whitelist_analysis = get_config(("analysis", "whitelist"))
+        self.active_analysis = get_config(("analysis", "active"))
         self.userlang = get_config(("frontend", "user_lang"))
 
         # Load template language
@@ -213,22 +215,36 @@ class ZeekEngine(object):
                                             "host": c["resolution"],
                                             "level": "Low",
                                             "id": "IOC-06"})
-
-                # Check for use of suspect nameservers.
-                try:
+        if self.active_analysis:
+            for c in self.conns:
+                try:  # Domain nameservers check.
                     name_servers = pydig.query(c["resolution"], "NS")
+                    if len(name_servers):
+                        for ns in bl_nameservers:
+                            if name_servers[0].endswith(".{}.".format(ns[0])):
+                                c["alert_tiggered"] = True
+                                self.alerts.append({"title": self.template["ACT-01"]["title"].format(c["resolution"], name_servers[0]),
+                                                    "description": self.template["ACT-01"]["description"].format(c["resolution"]),
+                                                    "host": c["resolution"],
+                                                    "level": "Moderate",
+                                                    "id": "ACT-01"})
                 except:
-                    name_servers = []
+                    pass
 
-                if len(name_servers):
-                    for ns in bl_nameservers:
-                        if name_servers[0].endswith(".{}.".format(ns[0])):
-                            c["alert_tiggered"] = True
-                            self.alerts.append({"title": self.template["IOC-07"]["title"].format(c["resolution"], name_servers[0]),
-                                                "description": self.template["IOC-07"]["description"].format(c["resolution"]),
-                                                "host": c["resolution"],
-                                                "level": "Moderate",
-                                                "id": "IOC-07"})
+                try:  # Domain history check.
+                    whois_record = whois.whois(c["resolution"])
+                    creation_date = whois_record.creation_date if type(
+                        whois_record.creation_date) is not list else whois_record.creation_date[0]
+                    creation_days = abs((datetime.now() - creation_date).days)
+                    if creation_days < 365:
+                        c["alert_tiggered"] = True
+                        self.alerts.append({"title": self.template["ACT-02"]["title"].format(c["resolution"], creation_days),
+                                            "description": self.template["ACT-02"]["description"].format(c["resolution"]),
+                                            "host": c["resolution"],
+                                            "level": "Moderate",
+                                            "id": "ACT-02"})
+                except:
+                    pass
 
     def files_check(self, dir):
         """
@@ -260,11 +276,11 @@ class ZeekEngine(object):
                     if f["sha1"] == cert[0]:
                         host = self.resolve(f["ip_dst"])
                         c["alert_tiggered"] = True
-                        self.alerts.append({"title": self.template["IOC-08"]["title"].format(cert[1].upper(), host),
-                                            "description": self.template["IOC-08"]["description"].format(f["sha1"], host),
+                        self.alerts.append({"title": self.template["IOC-07"]["title"].format(cert[1].upper(), host),
+                                            "description": self.template["IOC-07"]["description"].format(f["sha1"], host),
                                             "host": host,
                                             "level": "High",
-                                            "id": "IOC-08"})
+                                            "id": "IOC-07"})
 
     def ssl_check(self, dir):
         """

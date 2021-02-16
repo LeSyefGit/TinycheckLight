@@ -12,12 +12,12 @@ import time
 from multiprocessing import Process
 
 """
-    This file is parsing the watchers present 
-    in the configuration file. This in order to get 
-    automatically new iocs / elements from remote 
+    This file is parsing the watchers present
+    in the configuration file. This in order to get
+    automatically new iocs / elements from remote
     sources without user interaction.
 
-    As of today the default export JSON format from 
+    As of today the default export JSON format from
     the backend and unauthenticated HTTP requests
     are accepted. The code is little awkward, it'll
     be better in a next version ;)
@@ -44,7 +44,9 @@ def watch_iocs():
                 try:
                     res = requests.get(w["url"], verify=False)
                     if res.status_code == 200:
-                        iocs_list = json.loads(res.content)["iocs"]
+                        content = json.loads(res.content)
+                        iocs_list = content["iocs"] if "iocs" in content else []
+                        to_delete = content["to_delete"] if "to_delete" in content else []
                     else:
                         w["status"] = False
                 except:
@@ -58,6 +60,13 @@ def watch_iocs():
                     except:
                         continue
 
+                for ioc in to_delete:
+                    try:
+                        iocs.delete_by_value(ioc["value"])
+                        w["status"] = True
+                    except:
+                        continue
+
         # If at least one URL haven't be parsed, let's retry in 1min.
         if False in [w["status"] for w in watchers]:
             time.sleep(60)
@@ -67,8 +76,8 @@ def watch_iocs():
 
 def watch_whitelists():
     """
-        Retrieve whitelist elements from the remote URLs 
-        defined in config/watchers. For each (new ?) element, 
+        Retrieve whitelist elements from the remote URLs
+        defined in config/watchers. For each (new ?) element,
         add it to the DB.
     """
 
@@ -83,7 +92,9 @@ def watch_whitelists():
                 try:
                     res = requests.get(w["url"], verify=False)
                     if res.status_code == 200:
-                        elements = json.loads(res.content)["elements"]
+                        content = json.loads(res.content)
+                        elements = content["elements"] if "elements" in content else []
+                        to_delete = content["to_delete"] if "to_delete" in content else []
                     else:
                         w["status"] = False
                 except:
@@ -92,6 +103,13 @@ def watch_whitelists():
                 for elem in elements:
                     try:
                         whitelist.add(elem["type"], elem["element"], "watcher")
+                        w["status"] = True
+                    except:
+                        continue
+
+                for elem in to_delete:
+                    try:
+                        whitelist.delete_by_value(elem["element"])
                         w["status"] = True
                     except:
                         continue

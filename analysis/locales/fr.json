@@ -45,12 +45,16 @@
             "description": "Le nom de domaine {} utilise une extension suspecte ({}). Même si cela n'est pas malveillant en-soi, l'utilisation d'une extension non générique est l'apanage d'acteurs cybercriminels et étatiques durant leurs opérations. Veuillez vérifier la pertinance de ce domaine en le recherchant sur un moteur de recherche Internet. Si d'autres alertes sont liées à ce dernier, veuillez le considérer comme très suspect."
         },
         "IOC-07": {
-            "title": "Le domaine {} utilise un serveur de noms suspect ({}).",
-            "description": "Le nom de domaine {} utilise un server de nom qui a été explicitement catégorisé comme associé à des activités malveillantes. Plusieurs cybercriminels et acteurs étatiques utilisent ce type de serveurs de noms car ils autorisent les paiements anonymes grâce aux cryptomonnaies. Il est conseillé d'investiguer sur ce domaine et l'application s'y connectant en réalisant une analyse post-mortem de l'appareil analysé."
-        },
-        "IOC-08": {
             "title": "Un certificat associé à des activités de {} a été vu lors de communications vers {}.",
             "description": "Le certificat ({}) associé au serveur {} a été explicitement catégorisé comme malveillant. Votre appareil est sûrement compromis et doit être investigué plus en détails par une équipe professionnelle."
+        },
+        "ACT-01": {
+            "title": "Le domaine {} utilise un serveur de noms suspect ({}).",
+            "description": "Le nom de domaine {} utilise un serveur de noms qui a été explicitement catégorisé comme associé à des activités malveillantes. Plusieurs cybercriminels et acteurs étatiques utilisent ce type de serveurs de noms car ils autorisent les paiements anonymes grâce aux cryptomonnaies. Il est conseillé d'investiguer sur ce domaine et l'application s'y connectant en réalisant une analyse post-mortem de l'appareil analysé."
+        },
+        "ACT-02": {
+            "title": "Le domaine {} a été créé récemment (il y a {} jours).",
+            "description": "Le nom de domaine {} est nouveau. Même ce n'est pas malveillant en soi, il est assez courant pour les attaquants de mettre en place une nouvelle infrastructure pour chaque campagne, ce qui peut conduire à l'utilisation de noms de domaine récemment enregistrés."
         },
         "SSL-01": {
             "title": "Connexion SSL utilisant un port non standard ({}) vers {}",

@@ -45,12 +45,16 @@
             "description": "El dominio {} está usando un dominio de primero nivel -TLD- ({}). Aunque no sea malicioso, este TLP no-genérico es usado por cibercriminales y otros actores de amenazas con regularidad. Verifique este dominio mediante su búsqueda en Internet. Si hay otras alertas relacionadas con este host, por favor considérelo como muy sospechoso."
         },
         "IOC-07": {
+            "title": "Un certificado asociado a actividades {} ha sido identificado en una comunicación hacia {}.",
+            "description": "El certificado ({}) asociado a {} ha sido explícitamente etiquetado como malicioso. Esto indica que su dispositivo está probablemente comprometido y necesita ser analizado en profundidad por un especialista forense."
+        },
+        "ACT-01": {
             "title": "El dominio {} está usando un servidor de nombres sospechoso ({}).",
             "description": "El nombre de dominio {} usa un servidor de nombres que ha sido explícitamente etiquetado como asociado a actividad maliciosa. Muchos ciberdelincuentes y otros actores de amenazas utilizan este tipo de registradores ya que aceptan criptomonedas y pagos anónimos. Se recomienda investigar este dominio y la aplicación en ejecución asociada mediante un análisis forense del dispositivo."
         },
-        "IOC-08": {
-            "title": "Un certificado asociado a actividades {} ha sido identificado en una comunicación hacia {}.",
-            "description": "El certificado ({}) asociado a {} ha sido explícitamente etiquetado como malicioso. Esto indica que su dispositivo está probablemente comprometido y necesita ser analizado en profundidad por un especialista forense."
+        "ACT-02": {
+            "title": "El dominio {} se creó recientemente (hay {} días).",
+            "description": "El nombre de dominio {} es nuevo. Incluso esto no es intrínsecamente malicioso, es bastante común que los atacantes configuren una nueva infraestructura para cada campaña, lo que puede llevar al uso de nombres de dominio recién registrados."
         },
         "SSL-01": {
             "title": "Conexión SSL realizada mediante un puerto no standard ({}) a {}",

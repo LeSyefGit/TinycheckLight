@@ -45,12 +45,16 @@
             "description": "El domini {} està utilitzant un domini de primer nivell -TLD- ({}). Encara que no sigui maliciós, aquest TLP no-genèric és usat per cibercriminals i altres actors d'amenaces amb regularitat. Comproveu aquest domini mitjançant la seva cerca a Internet. Si hi ha altres alertes relacionades amb aquest host, considereu-lo com a molt sospitós. "
         },
         "IOC-07": {
+            "title": "Un certificat associat a activitats {} ha estat identificat en una comunicació cap a {}.",
+            "description": "El certificat ({}) associat a {} ha estat explícitament etiquetat com a maliciós. Això indica que el seu dispositiu està probablement compromès i necessita ser analitzat en profunditat per un especialista forense."
+        },
+        "ACT-01": {
             "title": "El domini {} està utilitzant un servidor de noms sospitós ({}).",
             "description": "El nom de domini {} utilitza un servidor de noms que ha estat explícitament etiquetat i associat a activitat maliciosa. Molts ciberdelinqüents i altres actors d'amenaces utilitzen aquest tipus de registradors ja que accepten criptomonedes i pagaments anònims. Es recomana investigar aquest domini i l'aplicació en execució associada mitjançant un anàlisi forense de el dispositiu. "
         },
-        "IOC-08": {
-            "title": "Un certificat associat a activitats {} ha estat identificat en una comunicació cap a {}.",
-            "description": "El certificat ({}) associat a {} ha estat explícitament etiquetat com a maliciós. Això indica que el seu dispositiu està probablement compromès i necessita ser analitzat en profunditat per un especialista forense."
+        "ACT-02": {
+            "title": "El domini {} es va crear recentment (fa {} dies).",
+            "description": "El nom de domini {}és nou. Fins i tot això no és intrínsecament maliciós, és força habitual que els atacants configurin una nova infraestructura per a cada campanya, que pot conduir a l’ús de noms de domini registrats recentment. "
         },
         "SSL-01": {
             "title": "Connexió SSL realitzada mitjançant un port no estàndard ({}) a {}",
