@@ -62,6 +62,10 @@ elif [ $PWD = "/tmp/tinycheck" ]; then
         sed -i 's/frontend:/frontend:\n  quit_option: true/g' /usr/share/tinycheck/config.yaml
     fi
 
+    if ! grep -q active /usr/share/tinycheck/config.yaml; then
+        sed -i 's/analysis:/analysis:\n  active: true/g' /usr/share/tinycheck/config.yaml
+    fi
+
     if ! grep -q "CN=R3,O=Let's Encrypt,C=US" /usr/share/tinycheck/config.yaml; then
         sed -i "s/free_issuers:/free_issuers:\n  - CN=R3,O=Let's Encrypt,C=US/g" /usr/share/tinycheck/config.yaml
     fi
