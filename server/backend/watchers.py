@@ -12,12 +12,12 @@ import time
 from multiprocessing import Process
 
 """
-    This file is parsing the watchers present 
-    in the configuration file. This in order to get 
-    automatically new iocs / elements from remote 
+    This file is parsing the watchers present
+    in the configuration file. This in order to get
+    automatically new iocs / elements from remote
     sources without user interaction.
 
-    As of today the default export JSON format from 
+    As of today the default export JSON format from
     the backend and unauthenticated HTTP requests
     are accepted. The code is little awkward, it'll
     be better in a next version ;)
@@ -45,10 +45,8 @@ def watch_iocs():
                     res = requests.get(w["url"], verify=False)
                     if res.status_code == 200:
                         content = json.loads(res.content)
-                        iocs_list = content["iocs"] if "iocs" in content else [
-                        ]
-                        to_delete = content["to_delete"] if "to_delete" in content else [
-                        ]
+                        iocs_list = content["iocs"] if "iocs" in content else []
+                        to_delete = content["to_delete"] if "to_delete" in content else []
                     else:
                         w["status"] = False
                 except:
@@ -78,8 +76,8 @@ def watch_iocs():
 
 def watch_whitelists():
     """
-        Retrieve whitelist elements from the remote URLs 
-        defined in config/watchers. For each (new ?) element, 
+        Retrieve whitelist elements from the remote URLs
+        defined in config/watchers. For each (new ?) element,
         add it to the DB.
     """
 
@@ -95,10 +93,8 @@ def watch_whitelists():
                     res = requests.get(w["url"], verify=False)
                     if res.status_code == 200:
                         content = json.loads(res.content)
-                        elements = content["elements"] if "elements" in content else [
-                        ]
-                        to_delete = content["to_delete"] if "to_delete" in content else [
-                        ]
+                        elements = content["elements"] if "elements" in content else []
+                        to_delete = content["to_delete"] if "to_delete" in content else []
                     else:
                         w["status"] = False
                 except:
