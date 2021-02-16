@@ -45,12 +45,16 @@
             "description": "The domain name {} is using a suspect Top Level Domain ({}). Even not malicious, this non-generic TLD is used regularly by cybercrime or state-sponsored operations. Please check this domain by searching it on an internet search engine. If other alerts are related to this host, please consider it as very suspicious."
         },
         "IOC-07": {
+            "title": "A certificate associated to {} activities have been found in the communication to {}.",
+            "description": "The certificate ({}) associated to {} has been explicitly tagged as malicious. This indicates that your device is likely compromised and need a forensic analysis."
+        },
+        "ACT-01": {
             "title": "The domain {} is using a suspect nameserver ({}).",
             "description": "The domain name {} is using a nameserver that has been explicitly tagged to be associated to malicious activities. Many cybercriminals and state-sponsored threat actors are using this kind of registrars because they allow cryptocurrencies and anonymous payments. It is adviced to investigate on this domain and the associated running application by doing a forensic analysis of the phone."
         },
-        "IOC-08": {
-            "title": "A certificate associated to {} activities have been found in the communication to {}.",
-            "description": "The certificate ({}) associated to {} has been explicitly tagged as malicious. This indicates that your device is likely compromised and need a forensic analysis."
+        "ACT-02": {
+            "title": "The domain {} have been created quite recently ({} days ago).",
+            "description": "The domain name {} is quite new. Even this is not malicious by itself, its quite common for attackers to set up new infrastructure for each campaign which can lead to the use of recently registered domain names."
         },
         "SSL-01": {
             "title": "SSL connection done on a non standard port ({}) to {}",
