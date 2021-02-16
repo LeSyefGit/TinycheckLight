@@ -81,7 +81,7 @@ set_credentials() {
 }
 
 set_kioskmode() {
-    echo -n " [?] Do you want to start TinyCheck in fullscreen during the system startup (aka. Kiosk mode)? [Yes/No] "
+    echo -n "[?] Do you want to start TinyCheck in fullscreen during the system startup (aka. Kiosk mode)? [Yes/No] "
     read answer
     if [[ "$answer" =~ ^([yY][eE][sS]|[yY])$ ]]
     then
@@ -347,7 +347,7 @@ check_interfaces(){
 
     # Setup of iface_out which can be any interface, 
     # but needs to be connected now or in the future.
-    echo -n " [?] The interface $ciface is connected. Do you want to use it as a bridge to Internet (network/out) ? [Yes/No] "
+    echo -n "[?] The interface $ciface is connected. Do you want to use it as a bridge to Internet (network/out) ? [Yes/No] "
     read answer
     if [[ "$answer" =~ ^([yY][eE][sS]|[yY])$ ]]
     then
@@ -359,7 +359,7 @@ check_interfaces(){
         for iface in $IFACES;
         do
             config="$(ifconfig $iface)"
-            echo -n " [?] Do you want to use $iface as a bridge to Internet (network/out) ? [Y/n] "
+            echo -n "[?] Do you want to use $iface as a bridge to Internet (network/out) ? [Y/n] "
             read answer
             if [[ "$answer" =~ ^([yY][eE][sS]|[yY])$ ]]
             then
@@ -381,7 +381,7 @@ check_interfaces(){
                 hw="$(iw $iface info | grep wiphy | cut -d" " -f2)" # Get the iface hardware id.
                 info="$(iw phy$hw info)"                            # Get the iface hardware infos.
                 if echo "$info" | grep -qE "* AP$"; then            # Know if the iface has the AP mode available.
-                    echo -n " [?] The interface $iface can be used for the Wi-Fi Access Point. Do you want to use it for the TinyCheck Access Point ? [Yes/No] "
+                    echo -n "[?] The interface $iface can be used for the Wi-Fi Access Point. Do you want to use it for the TinyCheck Access Point ? [Yes/No] "
                     read answer
                     if [[ "$answer" =~ ^([yY][eE][sS]|[yY])$ ]]
                     then
