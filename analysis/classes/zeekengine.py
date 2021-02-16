@@ -217,7 +217,7 @@ class ZeekEngine(object):
                                             "id": "IOC-06"})
         if self.active_analysis:
             for c in self.conns:
-                try:
+                try:  # Domain nameservers check.
                     name_servers = pydig.query(c["resolution"], "NS")
                     if len(name_servers):
                         for ns in bl_nameservers:
