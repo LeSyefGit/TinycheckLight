@@ -14,3 +14,4 @@ wifi
 qrcode
 netifaces
 weasyprint
+python-whois
