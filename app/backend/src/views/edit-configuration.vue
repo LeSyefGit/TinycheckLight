@@ -86,6 +86,10 @@
                     <input type="checkbox" @change="local_analysis('analysis', 'whitelist')" v-model="config.analysis.whitelist">
                     <i class="form-icon"></i> Use whitelist to prevent false positives.
                 </label>
+                <label class="form-switch">
+                    <input type="checkbox" @change="local_analysis('analysis', 'active')" v-model="config.analysis.active">
+                    <i class="form-icon"></i> Use active analysis (Dig, Whois).
+                </label>
             </div>
             <h5 class="s-subtitle">User credentials</h5>
             <div class="form-group">
