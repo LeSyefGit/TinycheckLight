@@ -40,12 +40,7 @@ elif [ $PWD = "/tmp/tinycheck" ]; then
     cd /usr/share/tinycheck/app/frontend/ && npm install && npm run build
     cd /usr/share/tinycheck/app/backend/ && npm install && npm run build
 
-    echo "[+] Restarting services"
-    service tinycheck-backend restart
-    service tinycheck-frontend restart
-    service tinycheck-watchers restart
-
-    # Updating configuration with new values.
+    echo "[+] Updating current configuration with new values."
     if ! grep -q reboot_option /usr/share/tinycheck/config.yaml; then
         sed -i 's/frontend:/frontend:\n  reboot_option: true/g' /usr/share/tinycheck/config.yaml
     fi
@@ -69,6 +64,14 @@ elif [ $PWD = "/tmp/tinycheck" ]; then
     if ! grep -q "CN=R3,O=Let's Encrypt,C=US" /usr/share/tinycheck/config.yaml; then
         sed -i "s/free_issuers:/free_issuers:\n  - CN=R3,O=Let's Encrypt,C=US/g" /usr/share/tinycheck/config.yaml
     fi
+
+    echo "[+] Restarting services"
+    service tinycheck-backend restart
+    service tinycheck-frontend restart
+    service tinycheck-watchers restart
+
+    echo "[+] Updating the TinyCheck version"
+    cd /tmp/tinycheck && git tag | tail -n 1 > /usr/share/tinycheck/VERSION
 
     echo "[+] TinyCheck updated!"
 fi

@@ -104,6 +104,10 @@ create_directory() {
     cp -Rf ./* /usr/share/tinycheck
 }
 
+get_version() {
+    git tag | tail -n 1 > /usr/share/tinycheck/VERSION
+}
+
 generate_certificate() {
     # Generating SSL certificate for the backend.
     echo -e "[+] Generating SSL certificate for the backend"
@@ -444,6 +448,7 @@ else
     check_operating_system
     check_interfaces
     create_directory
+    get_version
     set_userlang
     set_credentials
     set_kioskmode
