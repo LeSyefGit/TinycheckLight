@@ -97,6 +97,19 @@ set_kioskmode() {
     fi
 }
 
+set_update() {
+    echo -n "[?] Do you want to be able to update TinyCheck from the frontend interface? [Yes/No] "
+    read answer
+    if [[ "$answer" =~ ^([yY][eE][sS]|[yY])$ ]]
+    then
+        sed -i "s/updateoption/true/g" /usr/share/tinycheck/config.yaml
+        echo -e "\e[92m    [✔] You'll be able to update it from the frontend!\e[39m"
+    else
+        sed -i "s/updateoption/false/g" /usr/share/tinycheck/config.yaml
+        echo -e "\e[92m    [✔] You'll need to pass by the console script to update TinyCheck.\e[39m"
+    fi
+}
+
 create_directory() {
     # Create the TinyCheck directory and move the whole stuff there.
     echo -e "[+] Creating TinyCheck folder under /usr/share/"

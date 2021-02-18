@@ -7,7 +7,7 @@ fi
 if [ $PWD = "/usr/share/tinycheck" ]; then
     echo "[+] Cloning the current repository to /tmp/"
     rm -rf /tmp/tinycheck/ &> /dev/null 
-    cd /tmp/ && git clone https://github.com/KasperskyLab/tinycheck
+    cd /tmp/ && git clone --branch update-feature https://github.com/KasperskyLab/tinycheck
     cd /tmp/tinycheck && bash update.sh
 elif [ $PWD = "/tmp/tinycheck" ]; then
 
@@ -59,6 +59,10 @@ elif [ $PWD = "/tmp/tinycheck" ]; then
 
     if ! grep -q active /usr/share/tinycheck/config.yaml; then
         sed -i 's/analysis:/analysis:\n  active: true/g' /usr/share/tinycheck/config.yaml
+    fi
+
+    if ! grep -q update /usr/share/tinycheck/config.yaml; then
+        sed -i 's/frontend:/frontend:\n  update: true/g' /usr/share/tinycheck/config.yaml
     fi
 
     if ! grep -q "CN=R3,O=Let's Encrypt,C=US" /usr/share/tinycheck/config.yaml; then
