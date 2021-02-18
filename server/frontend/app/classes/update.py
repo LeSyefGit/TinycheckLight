@@ -23,16 +23,20 @@ class Update(object):
             tag with the VERSION file content.
         """
         if read_config(("frontend", "update")):
-            res = requests.get(self.project_url)
-            res = json.loads(res.content.decode("utf8"))
+            try:
+                res = requests.get(self.project_url)
+                res = json.loads(res.content.decode("utf8"))
 
-            with open(os.path.join(self.app_path, "VERSION")) as f:
-                if f.read() != res[0]["name"]:
-                    return {"status": True,
-                            "message": "A new version is available"}
-                else:
-                    return {"status": True,
-                            "message": "This is the latest version"}
+                with open(os.path.join(self.app_path, "VERSION")) as f:
+                    if f.read() != res[0]["name"]:
+                        return {"status": True,
+                                "message": "A new version is available"}
+                    else:
+                        return {"status": True,
+                                "message": "This is the latest version"}
+            except:
+                return {"status": False,
+                        "message": "Something went wrong (no internet nor version file)"}
         else:
             return {"status": False,
                     "message": "You don't have rights to do this operation."}
