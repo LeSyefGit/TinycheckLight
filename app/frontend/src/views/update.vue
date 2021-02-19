@@ -24,7 +24,7 @@
         },
         methods: {
             check_update: function() {
-                axios.get('/api/update/check-version', { timeout: 60000 })
+                axios.get('/api/update/get-version', { timeout: 60000 })
                 .then(response => { 
                     if(response.data.status) {
                         if(response.data.current_version == window.next_version){
