@@ -80,10 +80,10 @@
     "start_capture_btn": "Lancer une nouvelle capture"
   },
   "update": {
-    "tinycheck_needs": "TinyCheck doit être mis à jour",
+    "tinycheck_needs": "Une nouvelle mise à jour de TinyCheck est disponible",
     "please_click": "Cliquez sur le bouton ci-dessous pour le mettre à jour",
     "the_process": "La mise à jour peut prendre plusieurs minutes, merci d'attendre...",
-    "update_finished": "Mise à jour finie, vous allez être redirigé...",
-    "update_it": "Mettre TinyCheck bà jour"
+    "update_finished": "Mise à jour terminée, vous allez être redirigé...",
+    "update_it": "Mettre TinyCheck à jour"
   }
 }
