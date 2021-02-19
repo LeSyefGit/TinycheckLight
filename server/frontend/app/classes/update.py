@@ -29,15 +29,16 @@ class Update(object):
                 res = json.loads(res.content.decode("utf8"))
 
                 with open(os.path.join(self.app_path, "VERSION")) as f:
-                    if f.read() != res[0]["name"]:
+                    cv = f.read()
+                    if cv != res[0]["name"]:
                         return {"status": True,
                                 "message": "A new version is available",
-                                "current_version": f.read(),
+                                "current_version": cv,
                                 "next_version": res[0]["name"]}
                     else:
                         return {"status": True,
                                 "message": "This is the latest version",
-                                "current_version": f.read()}
+                                "current_version": cv}
             except:
                 return {"status": False,
                         "message": "Something went wrong (no API access nor version file)"}
