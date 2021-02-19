@@ -144,8 +144,7 @@ export default {
             usb: false,
             saved: false,
             save_usb: false,
-            init: false,
-            translation: {}
+            init: false
         }
     },
     props: {
