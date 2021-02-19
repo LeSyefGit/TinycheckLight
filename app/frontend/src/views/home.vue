@@ -1,6 +1,6 @@
 <template>
     <div class="center">
-        <h3 class="lobster">{{ $t("home.welcome_msg") }}</h3>
+        <h3 class="lobster">{{ $t("home.welcome_msg") }}<sup>{{current_version}}</sup></h3>
         <p>{{ $t("home.help_msg") }}</p>
         <button class="btn btn-primary" v-on:click="next()">{{ $t("home.start_btn") }}</button>
     </div>
@@ -15,6 +15,7 @@ export default {
      data() {
         return {
             translation: {},
+            current_version:"" 
         }
     },
     methods: {
@@ -31,6 +32,10 @@ export default {
                                         internet: internet } });
             }
         }
+    },
+    created: function() {
+        if ('current_version' in window)
+            this.current_version = window.current_version
     }
 }
 </script>

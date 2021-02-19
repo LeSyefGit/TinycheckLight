@@ -1,6 +1,6 @@
 <template>
     <div class="center">
-        <p><strong>TinyCheck needs to be updated from the version {{current_version}} to the version {{next_version}}.</strong><br />
+        <p><strong>TinyCheck needs to be updated to the next version ({{next_version}}).</strong><br />
             <span v-if="!update_launched">Please click on the button below to update it.</span>
             <span v-else>The process can take few minutes, please wait...</span>
         </p>
@@ -60,7 +60,6 @@
             } else {
                 window.location.href = "/";
             }
-
         }
     }
 </script>
