@@ -20,7 +20,7 @@
         },
         methods: {
             internet_check: function() {
-                axios.get('/api/network/status', { timeout: 10000 })
+                axios.get('/api/network/status', { timeout: 30000 })
                     .then(response => {
                         if (response.data.internet) this.internet = true
                         if (window.config.iface_out.charAt(0) == 'e') {
@@ -32,7 +32,7 @@
                     .catch(err => (console.log(err)))
             },
             get_wifi_networks: function() {
-                axios.get('/api/network/wifi/list', { timeout: 10000 })
+                axios.get('/api/network/wifi/list', { timeout: 30000 })
                     .then(response => { 
                         this.list_ssids = response.data.networks
                         this.goto_home();

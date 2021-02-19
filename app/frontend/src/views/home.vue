@@ -14,7 +14,6 @@ export default {
     props: { saved_ssid: String, list_ssids: Array, internet: Boolean },
      data() {
         return {
-            translation: {},
             current_version:"" 
         }
     },

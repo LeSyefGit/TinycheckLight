@@ -1,11 +1,11 @@
 <template>
     <div class="center">
-        <p><strong>TinyCheck needs to be updated to the next version ({{next_version}}).</strong><br />
-            <span v-if="!update_launched">Please click on the button below to update it.</span>
-            <span v-if="update_launched&&!update_finished">The process can take few minutes, please wait...</span>
-            <span v-if="update_launched&&update_finished" class="color-green">✓ Update finished, let's refresh the interface...</span>
+        <p><strong>{{ $t("update.tinycheck_needs") }} ({{next_version}}).</strong><br />
+            <span v-if="!update_launched">{{ $t("update.please_click") }}</span>
+            <span v-if="update_launched&&!update_finished">{{ $t("update.the_process") }}</span>
+            <span v-if="update_launched&&update_finished" class="color-green">✓ {{ $t("update.update_finished") }}</span>
         </p>
-        <button class="btn btn-primary" :class="[ update_launched ? 'loading' : '' ]" v-on:click="launch_update()" v-if="!update_finished">Update it now</button>
+        <button class="btn btn-primary" :class="[ update_launched ? 'loading' : '' ]" v-on:click="launch_update()" v-if="!update_finished">{{ $t("update.update_it") }}</button>
     </div>
 </template>
 
@@ -45,7 +45,7 @@
                     if(response.data.status) {
                         if(response.data.message == "Update successfully launched"){
                             this.update_launched = true
-                            this.check_interval = setInterval(function(){ this.check_version(); }.bind(this), 1000);
+                            this.check_interval = setInterval(function(){ this.check_version(); }.bind(this), 3000);
                         }
                     }
                 })
