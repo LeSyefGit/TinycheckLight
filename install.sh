@@ -118,7 +118,7 @@ create_directory() {
 }
 
 get_version() {
-    git tag | tail -n 1 > /usr/share/tinycheck/VERSION
+    git tag | tail -n 1 | xargs echo -n > /usr/share/tinycheck/VERSION
 }
 
 generate_certificate() {

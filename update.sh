@@ -7,7 +7,7 @@ fi
 if [ $PWD = "/usr/share/tinycheck" ]; then
     echo "[+] Cloning the current repository to /tmp/"
     rm -rf /tmp/tinycheck/ &> /dev/null 
-    cd /tmp/ && git clone https://github.com/KasperskyLab/tinycheck
+    cd /tmp/ && git clone --branch update-feature https://github.com/KasperskyLab/tinycheck
     cd /tmp/tinycheck && bash update.sh
 elif [ $PWD = "/tmp/tinycheck" ]; then
 
