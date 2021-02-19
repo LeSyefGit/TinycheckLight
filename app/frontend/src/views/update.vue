@@ -2,9 +2,10 @@
     <div class="center">
         <p><strong>TinyCheck needs to be updated to the next version ({{next_version}}).</strong><br />
             <span v-if="!update_launched">Please click on the button below to update it.</span>
-            <span v-else>The process can take few minutes, please wait...</span>
+            <span v-if="update_launched&&!update_finished">The process can take few minutes, please wait...</span>
+            <span v-if="update_launched&&update_finished" class="color-green">✓ Update finished, let's refresh the interface...</span>
         </p>
-        <button class="btn btn-primary" :class="[ update_launched ? 'loading' : '' ]" v-on:click="launch_update()">Update it now</button>
+        <button class="btn btn-primary" :class="[ update_launched ? 'loading' : '' ]" v-on:click="launch_update()" v-if="!update_finished">Update it now</button>
     </div>
 </template>
 
@@ -19,7 +20,8 @@
                 update_launched: null,
                 check_interval: null,
                 next_version: null,
-                current_version: null
+                current_version: null,
+                update_finished: false
             }
         },
         methods: {
@@ -29,6 +31,7 @@
                     if(response.data.status) {
                         if(response.data.current_version == window.next_version){
                             window.current_version = response.data.current_version
+                            this.update_finished = true
                             clearInterval(this.check_interval);
                             setTimeout(function () { window.location.href = "/"; }, 10000)
                             
