@@ -50,7 +50,8 @@ frontend:
   sparklines: true
   virtual_keyboard: true
   user_lang: userlang
-
+  update: updateoption
+  
 # NETWORK -
 # Some elements related to the network configuration, such as
 # the interfaces (updated during the install), the list of SSIDs

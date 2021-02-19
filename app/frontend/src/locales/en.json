@@ -78,5 +78,12 @@
     "tap_msg": "You can tap the USB key to start a new capture.",
     "capture_download": "The capture download is going to start...",
     "start_capture_btn": "Start another capture"
+  },
+  "update": {
+    "tinycheck_needs": "TinyCheck needs to be updated to the next version",
+    "please_click": "Please click on the button below to update it.",
+    "the_process": "The process can take few minutes, please wait...",
+    "update_finished": "Update finished, let's refresh the interface...",
+    "update_it": "Update it now"
   }
 }

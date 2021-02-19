@@ -29,8 +29,7 @@ export default {
             loading: false,
             stats_interval: false,
             chrono_interval: false,
-            sparklines: false,
-            translation: {}
+            sparklines: false
         }
     },
     props: {

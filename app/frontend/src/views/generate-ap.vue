@@ -55,8 +55,7 @@ export default {
             interval: false,
             error: false,
             reboot_option: window.config.reboot_option,
-            attempts: 3,
-            translation: {}
+            attempts: 3
         }
     },
     methods: {

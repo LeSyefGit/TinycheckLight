@@ -55,11 +55,19 @@
               this.set_lang();
             })
             .catch(error => { console.log(error) });
+        },
+        get_version: function() {
+                axios.get('/api/update/get-version', { timeout: 60000 })
+                .then(response => { 
+                    if(response.data.status) window.current_version = response.data.current_version
+                })
+                .catch(error => { console.log(error) });
         }
     },
     created: function() {
         window.config = {}
         this.get_config();
+        this.get_version();
     }
   }
 </script>
