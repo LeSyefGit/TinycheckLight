@@ -20,7 +20,8 @@ class Update(object):
         """
             Check if a new version of TinyCheck is available 
             by quering the Github api and comparing the last
-            tag with the VERSION file content.
+            tag inside the VERSION file.
+            :return: dict containing the available versions.
         """
         if read_config(("frontend", "update")):
             try:
@@ -30,21 +31,41 @@ class Update(object):
                 with open(os.path.join(self.app_path, "VERSION")) as f:
                     if f.read() != res[0]["name"]:
                         return {"status": True,
-                                "message": "A new version is available"}
+                                "message": "A new version is available",
+                                "current_version": f.read(),
+                                "next_version": res[0]["name"]}
                     else:
                         return {"status": True,
-                                "message": "This is the latest version"}
+                                "message": "This is the latest version",
+                                "current_version": f.read()}
             except:
                 return {"status": False,
-                        "message": "Something went wrong (no internet nor version file)"}
+                        "message": "Something went wrong (no API access nor version file)"}
+        else:
+            return {"status": False,
+                    "message": "You don't have rights to do this operation."}
+
+    def get_current_version(self):
+        """
+            Get the current version of the TinyCheck instance
+            :return: dict containing the current version or error.
+        """
+        if read_config(("frontend", "update")):
+            try:
+                with open(os.path.join(self.app_path, "VERSION")) as f:
+                    return {"status": True,
+                            "current_version": f.read()}
+            except:
+                return {"status": False,
+                        "message": "Something went wrong - no version file ?"}
         else:
             return {"status": False,
                     "message": "You don't have rights to do this operation."}
 
     def update_instance(self):
         """
-            Update the instance by executing 
-            the update script.
+            Update the instance by executing the update script.
+            :return: dict containing the update status.
         """
         if read_config(("frontend", "update")):
             try:

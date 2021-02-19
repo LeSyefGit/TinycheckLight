@@ -13,6 +13,12 @@ def check():
     return jsonify(Update().check_version())
 
 
+@update_bp.route("/get-version", methods=["GET"])
+def get_version():
+    """ Check the current version """
+    return jsonify(Update().get_current_version())
+
+
 @update_bp.route("/process", methods=["GET"])
 def process():
     """ Check the presence of new version """
