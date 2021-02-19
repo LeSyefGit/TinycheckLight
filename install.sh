@@ -465,6 +465,7 @@ else
     set_userlang
     set_credentials
     set_kioskmode
+    set_update
     check_dependencies
     configure_dnsmask
     configure_dhcpcd
