@@ -30,7 +30,8 @@
                         if(response.data.current_version == window.next_version){
                             window.current_version = response.data.current_version
                             clearInterval(this.check_interval);
-                            window.location.href = "/";
+                            setTimeout(function () { window.location.href = "/"; }, 10000)
+                            
                         }
                     }
                 })
@@ -42,7 +43,7 @@
                     if(response.data.status) {
                         if(response.data.message == "Update successfully launched"){
                             this.update_launched = true
-                            this.check_interval = setInterval(function(){ this.check_version(); }.bind(this), 3000);
+                            this.check_interval = setInterval(function(){ this.check_version(); }.bind(this), 1000);
                         }
                     }
                 })
