@@ -33,8 +33,7 @@
                             window.current_version = response.data.current_version
                             this.update_finished = true
                             clearInterval(this.check_interval);
-                            setTimeout(function () { window.location.href = "/"; }, 10000)
-                            
+                            setTimeout(function () { window.location.href = "/"; }, 10000) 
                         }
                     }
                 })
