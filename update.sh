@@ -75,7 +75,7 @@ elif [ $PWD = "/tmp/tinycheck" ]; then
     service tinycheck-watchers restart
 
     echo "[+] Updating the TinyCheck version"
-    cd /tmp/tinycheck && git tag | tail -n 1 > /usr/share/tinycheck/VERSION
+    cd /tmp/tinycheck && git tag | tail -n 1 | xargs echo -n > /usr/share/tinycheck/VERSION
 
     echo "[+] TinyCheck updated!"
 fi
