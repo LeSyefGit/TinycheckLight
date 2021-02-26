@@ -78,5 +78,12 @@
     "tap_msg": "Vous pouvez appuyer sur l'animation pour lancer une nouvelle capture.",
     "capture_download": "Le téléchargement de la capture va se lancer...",
     "start_capture_btn": "Lancer une nouvelle capture"
+  },
+  "update": {
+    "tinycheck_needs": "Une nouvelle mise à jour de TinyCheck est disponible",
+    "please_click": "Cliquez sur le bouton ci-dessous pour le mettre à jour",
+    "the_process": "La mise à jour peut prendre plusieurs minutes, merci d'attendre...",
+    "update_finished": "Mise à jour terminée, vous allez être redirigé...",
+    "update_it": "Mettre TinyCheck à jour"
   }
 }

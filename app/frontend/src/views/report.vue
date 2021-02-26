@@ -99,8 +99,7 @@ export default {
     name: 'report',   
     data() {
         return {
-            results: true,
-            translation: {}
+            results: true
         }
     },
     props: {

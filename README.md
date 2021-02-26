@@ -40,15 +40,6 @@ Once installed, you can connect yourself to the TinyCheck backend by browsing th
 
 The backend allows you to edit the configuration of TinyCheck, add extended IOCs and whitelisted elements in order to prevent false positives. Several IOCs are already provided such as few suricata rules, FreeDNS, Name servers, CIDRs known to host malicious servers and so on.
 
-### Questions & Answers
-
-**Your project seem very cool, does it send data to Kaspersky or any telemetry server?**<br /><br />
-No, at all. You can look to the sources, the only data sent by TinyCheck is an HTTP GET request to a website that you can specify in the config, as well as the watchers URLs. Kaspersky don't - and will not - receive any telemetry from your TinyCheck device.<br /><br />
-**Can you list some hardware which can be used with this project (touch screen, wifi dongle etc.)?**<br /><br />
-Unfortunately, we prefer to not promote any hardware/constructor/website on this page. Do not hesitate to contact us if you want specific references. <br /><br />
-**I'm not very confortable with the concept of "watchers" as the IOCs downloaded are public. Do you plan to develop a server to centralize AMBER/RED IOCs?**<br /><br />
-Yes, if the demand is felt by NGOs (contact us!). Is it possible to develop this kind of thing, allowing you to centralize your IOCs and managing your fleet of TinyCheck instances on a server that you host. The server can also embed better detection rules thanks to the telemetry that it will receive from devices.<br />
-
 ### Special thanks
 
 **Guys who provided some IOCs**

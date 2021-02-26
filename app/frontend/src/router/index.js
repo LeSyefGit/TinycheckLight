@@ -18,6 +18,12 @@ const routes = [
     props: true
   },
   {
+    path: '/update',
+    name: 'update',
+    component: () => import('../views/update.vue'),
+    props: true
+  },
+  {
     path: '/wifi-select',
     name: 'wifi-select',
     component: () => import('../views/wifi-select.vue'),

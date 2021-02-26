@@ -72,8 +72,7 @@ export default {
             virtual_keyboard: window.config.virtual_keyboard,
             have_internet: false,
             enter_creds: false,
-            refreshing: false,
-            translation: {}
+            refreshing: false
         }
     },
     props: {

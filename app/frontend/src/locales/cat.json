@@ -78,5 +78,12 @@
         "tap_msg": "Podeu tocar la tecla USB per iniciar una nova captura.",
         "capture_download": "La descàrrega de la captura començarà ...",
         "start_capture_btn": "Inicia una altra captura"
+    },
+    "update": {
+        "tinycheck_needs": "TinyCheck ha d´actualitzar-se a la propera versió",
+        "please_click": "Feu click al botó de sota per actualitzar",
+        "the_process": "El procés pot trigar uns minuts, si us plau esperi ...",
+        "update_finished": "Actualització finalitzada, actualitzant la interfície...",
+        "update_it": "Actualitzar ara"
     }
 }
