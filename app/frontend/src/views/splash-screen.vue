@@ -46,7 +46,7 @@
             }
         },
         created: function() {
-            setTimeout(function () { this.internet_check(); }.bind(this), 1000);
+            setTimeout(function () { this.internet_check(); }.bind(this), 5000);
         }
     }
 </script>
