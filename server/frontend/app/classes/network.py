@@ -290,8 +290,14 @@ class Network(object):
         try:
             sp.Popen("echo 1 > /proc/sys/net/ipv4/ip_forward",
                      shell=True).wait()
+
+            # Enable forwarding.
             sp.Popen(["iptables", "-A", "POSTROUTING", "-t", "nat", "-o",
                       self.iface_out, "-j", "MASQUERADE"]).wait()
+
+            # Prevent the device to reach the 80 of TinyCheck.
+            sp.Popen(["iptables", "-A", "INPUT", "-i", self.iface_in, "-d",
+                      "192.168.100.1", "-p", "tcp", "--dport", "80", "-j" "DROP"]).wait()
             return True
         except:
             return False
