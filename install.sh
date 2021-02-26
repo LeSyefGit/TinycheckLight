@@ -283,7 +283,7 @@ install_package() {
        rm Release.key && sudo apt-get update
        apt-get install zeek -y
     elif [[ $1 == "nodejs" ]]; then
-       curl -sL https://deb.nodesource.com/setup_12.x | bash
+       curl -sL https://deb.nodesource.com/setup_14.x | bash
        apt-get install -y nodejs
     elif [[ $1 == "dig" ]]; then
        apt-get install -y dnsutils
@@ -436,7 +436,7 @@ change_configs() {
 }
 
 feeding_iocs() {
-    echo -e "\e[39m[+] Feeding your TinyCheck instance with fresh IOCs and whitelist."
+    echo -e "\e[39m[+] Feeding your TinyCheck instance with fresh IOCs and whitelist, please wait."
     python3 /usr/share/tinycheck/server/backend/watchers.py
 }
 
