@@ -2,7 +2,7 @@
     <div class="controls" v-if="display">
         <i class="off-icon" v-on:click="action('shutdown')" v-if="off_available"></i>
         <i class="quit-icon" v-on:click="action('quit')" v-if="quit_available"></i>
-        <i class="home-icon" @click="$router.push({ name: 'home' })"></i>
+        <i class="home-icon" @click="$router.push({ name: 'loader' })"></i>
         <i class="update-icon" v-if="update_available&&update_possible" @click="$router.push({ name: 'update' })"></i>
     </div>
 </template>
