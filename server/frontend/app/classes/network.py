@@ -295,9 +295,10 @@ class Network(object):
             sp.Popen(["iptables", "-A", "POSTROUTING", "-t", "nat", "-o",
                       self.iface_out, "-j", "MASQUERADE"]).wait()
 
-            # Prevent the device to reach the 80 of TinyCheck.
+            # Prevent the device to reach the 80 and 443 of TinyCheck.
             sp.Popen(["iptables", "-A", "INPUT", "-i", self.iface_in, "-d",
-                      "192.168.100.1", "-p", "tcp", "--dport", "80", "-j" "DROP"]).wait()
+                      "192.168.100.1", "-p", "tcp", "--match", "multiport", "--dports", "80,443", "-j" "DROP"]).wait()
+
             return True
         except:
             return False
