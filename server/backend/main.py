@@ -34,7 +34,7 @@ def get_token():
     """
     token = jwt.encode({"exp": datetime.datetime.now() +
                         datetime.timedelta(hours=24)}, app.config["SECRET_KEY"])
-    return jsonify({"token": token.decode("utf8")})
+    return jsonify({"token": token})
 
 
 @app.route("/<p>/<path:path>", methods=["GET"])
