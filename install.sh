@@ -6,7 +6,7 @@ HOST="$( hostname )"
 IFACES="$( ifconfig -a | grep -Eo '[a-z0-9]{4,14}\: ' | grep -oE [a-z0-9]+ )"
 IFACE_OUT=""
 IFACE_IN=""
-LOCALES=(en fr cat es)
+LOCALES=(en fr cat es ru pt de it)
 
 welcome_screen() {
 cat << "EOF"
@@ -51,7 +51,7 @@ set_userlang() {
     if [[ " ${LOCALES[@]} " =~ " ${lang} " ]]; then
         sed -i "s/userlang/${lang}/g" /usr/share/tinycheck/config.yaml
         echo -e "\e[92m    [✔] User language settled!\e[39m"
-    else 
+    else
         echo -e "\e[91m    [✘] You must choose between the languages proposed, let's retry.\e[39m"
         set_userlang
     fi
@@ -131,7 +131,7 @@ create_services() {
     # Create services to launch the two servers.
 
     echo -e "\e[39m[+] Creating services\e[39m"
-    
+
     echo -e "\e[92m    [✔] Creating frontend service\e[39m"
     cat >/lib/systemd/system/tinycheck-frontend.service <<EOL
 [Unit]
@@ -200,10 +200,10 @@ WantedBy=multi-user.target
 EOL
 
    echo -e "\e[92m    [✔] Enabling services\e[39m"
-   systemctl enable tinycheck-frontend &> /dev/null 
-   systemctl enable tinycheck-backend &> /dev/null 
-   systemctl enable tinycheck-kiosk &> /dev/null 
-   systemctl enable tinycheck-watchers &> /dev/null 
+   systemctl enable tinycheck-frontend &> /dev/null
+   systemctl enable tinycheck-backend &> /dev/null
+   systemctl enable tinycheck-kiosk &> /dev/null
+   systemctl enable tinycheck-watchers &> /dev/null
 }
 
 configure_dnsmask() {
@@ -221,7 +221,7 @@ configure_dnsmask() {
 interface=${IFACE_IN}
 dhcp-range=192.168.100.2,192.168.100.3,255.255.255.0,24h
 EOL
-    else 
+    else
         echo -e "\e[91m    [✘] /etc/dnsmasq.conf doesn't exist, configuration not updated.\e[39m"
     fi
 }
@@ -229,7 +229,7 @@ EOL
 configure_dhcpcd() {
     # Configure DHCPCD by appending few lines to his configuration.
     # Allows to prevent the interface to stick to wpa_supplicant config.
-    
+
     echo -e "\e[39m[+] Configuring dhcpcd\e[39m"
     echo -e "\e[92m    [✔] Changing dhcpcd configuration\e[39m"
     if [[ -f "/etc/dhcpcd.conf" ]]; then
@@ -241,7 +241,7 @@ interface ${IFACE_IN}
    static ip_address=192.168.100.1/24
    nohook wpa_supplicant
 EOL
-    else 
+    else
         echo -e "\e[91m    [✘] /etc/dhcpcd.conf doesn't exist, configuration not updated.\e[39m"
     fi
 }
@@ -354,7 +354,7 @@ cleaning() {
     systemctl disable suricata.service &> /dev/null
 
     # Removing some useless dependencies.
-    sudo apt autoremove -y &> /dev/null 
+    sudo apt autoremove -y &> /dev/null
 }
 
 check_interfaces(){
@@ -362,13 +362,13 @@ check_interfaces(){
     # Get the current connected interface name.
     ciface="$(route | grep default | head -1 | grep -Eo '[a-z0-9]+$')"
 
-    # Setup of iface_out which can be any interface, 
+    # Setup of iface_out which can be any interface,
     # but needs to be connected now or in the future.
     echo -n "[?] The interface $ciface is connected. Do you want to use it as a bridge to Internet (network/out) ? [Yes/No] "
     read answer
     if [[ "$answer" =~ ^([yY][eE][sS]|[yY])$ ]]
     then
-        IFACES=( "${IFACES[@]/$ciface}" ) 
+        IFACES=( "${IFACES[@]/$ciface}" )
         IFACE_OUT=$ciface
         echo -e "\e[92m    [✔] $ciface settled as a bridge to the Internet\e[39m"
     else
@@ -381,14 +381,14 @@ check_interfaces(){
             if [[ "$answer" =~ ^([yY][eE][sS]|[yY])$ ]]
             then
                 IFACE_OUT=$iface
-                IFACES=( "${IFACES[@]/$iface}" ) 
+                IFACES=( "${IFACES[@]/$iface}" )
                 echo -e "\e[92m    [✔] $iface settled as a bridge to the Internet\e[39m"
                 break
             fi
         done
     fi
 
-    # Setup of iface_in which can be a only a 
+    # Setup of iface_in which can be a only a
     # Wi-Fi interface with AP mode available.
     for iface in $IFACES;
     do

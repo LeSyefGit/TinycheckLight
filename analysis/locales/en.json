@@ -54,7 +54,7 @@
         },
         "ACT-02": {
             "title": "The domain {} have been created quite recently ({} days ago).",
-            "description": "The domain name {} is quite new. Even this is not malicious by itself, its quite common for attackers to set up new infrastructure for each campaign which can lead to the use of recently registered domain names."
+            "description": "The domain name {} is quite new. Even this is not malicious by itself, its quite common for attackers to set up new infrastructure for each attack campaign which can lead to the use of recently registered domain names."
         },
         "SSL-01": {
             "title": "SSL connection done on a non standard port ({}) to {}",
