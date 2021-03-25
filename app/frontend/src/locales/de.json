@@ -1,0 +1,89 @@
+{
+  "home": {
+    "welcome_msg": "Willkommen bei TinyCheck!",
+    "help_msg": "Wir helfen Ihnen bei der Überprüfung Ihres Geräts.",
+    "start_btn": "Fangen wir an!"
+  },
+  "analysis": {
+    "question": "Möchten Sie die erfassten Kommunikationsverbindungen analysieren?",
+    "no_btn": "Nein, nur speichern",
+    "yes_btn": "Ja, analysieren",
+    "please_wait_msg": "Bitte warten Sie, während die Analyse läuft …",
+    "some_time_msg": "Dies kann eine Weile dauern …"
+  },
+  "capture": {
+    "intercept_coms_msg": "Abfangen der Kommunikationsverbindungen von ",
+    "stop_btn": "Aufnahme beenden"
+  },
+  "generate-ap": {
+    "network_name": "Netzwerkname",
+    "network_password": "Netzwerkpasswort",
+    "tap_msg": "Tippen Sie auf den weißen Rahmen, um ein neues Netzwerk zu erstellen.",
+    "generate_ap_msg": "Wir erstellen ein temporäres Netzwerk für Sie.",
+    "error_msg1": "Leider sind während der AP-Erstellung <br>einige Fehler aufgetreten.",
+    "error_msg2": "Bitte stellen Sie sicher, dass Ihr Gerät zwei WLAN-Schnittstellen besitzt,<br> und starten Sie es neu, um es erneut zu versuchen.",
+    "restart_btn": "Gerät neu starten"
+  },
+  "report": {
+    "show_full_report": "Vollständigen Bericht anzeigen",
+    "start_new_capture": "Neue Aufnahme starten",
+    "save_capture": "Aufnahme speichern",
+    "numbers": [
+      "null",
+      "eine",
+      "zwei",
+      "drei",
+      "vier",
+      "fünf",
+      "sechs",
+      "sieben",
+      "acht",
+      "neun",
+      "zehn",
+      "elf"
+    ],
+    "stalkerware_msg": "Ihr Gerät ist durch Stalkerware<br>kompromittiert; bitte sehen Sie sich den Bericht an.",
+    "location_msg": "Eine Anwendung teilt Ihren<br> aktuellen Standort mit Dritten.",
+    "fine_msg": "Alles sieht gut aus – kein Warnungen.",
+    "high_msg": "Sie haben {nb} Warnung der Stufe \"Hoch\":<br>Ihr Gerät scheint kompromittiert zu sein.",
+    "moderate_msg": "Sie haben {nb} Warnungen der Stufe \"Mittel\":<br>Ihr Gerät könnte kompromittiert sein.",
+    "low_msg": "Sie haben nur {nb} Warnungen der Stufe \"Niedrig\":<br> Überprüfen Sie sie gerne.",
+    "save_report": "Bericht speichern",
+    "report_of": "Bericht zu",
+    "ip_address": "IP-Adresse",
+    "mac_address": "MAC-Adresse",
+    "high": "Hoch",
+    "moderate": "Mittel",
+    "low": "Niedrig"
+  },
+  "wifi-select": {
+    "already_connected_question": "Sie scheinen bereits mit einem Netzwerk verbunden zu sein.<br>Möchten Sie die aktuelle Verbindung nutzen?",
+    "no_btn": "Nein, eine andere nutzen",
+    "yes_btn": "Ja, diese nutzen.",
+    "wifi_name": "WLAN-Name",
+    "refresh_btn": "Netzwerkliste aktualisieren",
+    "not_connected": "Sie scheinen nicht mit dem Internet verbunden zu sein.",
+    "please_config": "Bitte konfigurieren Sie die WLAN-Verbindung.",
+    "lets_do_btn": "OK, jetzt machen",
+    "no_internet": "Verwendung ohne Internet",
+    "wifi_connected": "WLAN verbunden",
+    "wifi_not_connected": "WLAN nicht verbunden. Bitte versuchen Sie es erneut.",
+    "tap_keyboard": "Tippen Sie auf die virtuelle Tastatur, um zu starten",
+    "wifi_password": "WLAN-Passwort",
+    "connect_to_it": "Damit verbinden"
+  },
+  "save-capture": {
+    "please_connect": "Bitte schließen Sie einen USB-Stick an, um Ihre Aufnahme zu speichern.",
+    "we_are_saving": "Wir speichern Ihre Aufnahme.",
+    "tap_msg": "Sie können den USB-Stick antippen, um eine neue Aufnahme zu starten.",
+    "capture_download": "Der Download der Aufnahme beginnt …",
+    "start_capture_btn": "Noch eine Aufnahme starten"
+  },
+  "update": {
+    "tinycheck_needs": "Ein neues Update von TinyCheck ist verfügbar",
+    "please_click": "Klicken Sie auf die Schaltfläche unten, um es zu aktualisieren",
+    "the_process": "Das Update kann einige Minuten dauern, bitte warten Sie ...",
+    "update_finished": "Update abgeschlossen, Sie werden weitergeleitet ...",
+    "update_it": "Aktualisieren Sie TinyCheck"
+  }
+}

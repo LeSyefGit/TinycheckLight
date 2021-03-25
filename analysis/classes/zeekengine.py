@@ -353,7 +353,7 @@ class ZeekEngine(object):
                 self.alerts.append({"title": self.template["ADV-01"]["title"].format(host),
                                     "description": self.template["ADV-01"]["description"].format(host, nb),
                                     "host": host,
-                                    "level": "High",
+                                    "level": "Moderate",
                                     "id": "ADV-01"})
 
     def resolve(self, ip_addr):
