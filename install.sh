@@ -282,11 +282,13 @@ install_package() {
        apt-key add - < Release.key
        rm Release.key && sudo apt-get update
        apt-get install zeek -y
-    elif [[ $1 == "nodejs" ]]; then
+    elif [[ $1 == "node" ]]; then
        curl -sL https://deb.nodesource.com/setup_14.x | bash
        apt-get install -y nodejs
     elif [[ $1 == "dig" ]]; then
        apt-get install -y dnsutils
+    elif [[ $1 == "pip" ]]; then
+       apt-get install -y python3-pip
    fi
 }
 
@@ -300,7 +302,9 @@ check_dependencies() {
          "/usr/bin/dig"
          "/usr/bin/suricata"
          "/usr/bin/unclutter"
-         "/usr/bin/sqlite3")
+         "/usr/bin/sqlite3"
+         "/usr/bin/pip"
+         "/usr/bin/node")
 
    echo -e "\e[39m[+] Checking dependencies...\e[39m"
    for bin in "${bins[@]}"
@@ -312,8 +316,6 @@ check_dependencies() {
            install_package ${bin##*/}
       fi
    done
-   echo -e "\e[39m[+] Install NodeJS...\e[39m"
-   install_package nodejs
    echo -e "\e[39m[+] Install Python packages...\e[39m"
    python3 -m pip install -r "$SCRIPT_PATH/assets/requirements.txt"
 }
