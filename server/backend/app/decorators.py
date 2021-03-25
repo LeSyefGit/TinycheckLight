@@ -42,7 +42,7 @@ def require_header_token(f):
     def decorated(*args, **kwargs):
         try:
             token = request.headers['X-Token']
-            jwt.decode(token, app.config["SECRET_KEY"])
+            jwt.decode(token, app.config["SECRET_KEY"], "HS256")
             return f(*args, **kwargs)
         except:
             return jsonify({"message": "JWT verification failed"})
@@ -58,7 +58,7 @@ def require_get_token(f):
     def decorated(*args, **kwargs):
         try:
             token = request.args.get("token")
-            jwt.decode(token, app.config["SECRET_KEY"])
+            jwt.decode(token, app.config["SECRET_KEY"], "HS256")
             return f(*args, **kwargs)
         except:
             return jsonify({"message": "JWT verification failed"})
