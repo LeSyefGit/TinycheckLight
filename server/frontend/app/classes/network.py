@@ -92,7 +92,8 @@ class Network(object):
                     net = {}
                     for line in block.splitlines():
                         if line and line != "}":
-                            key, val = line.strip().split("=")
+                            if "priority=10" not in line.strip():
+                                key, val = line.strip().split("=")
                             if key != "disabled":
                                 net[key] = val.replace("\"", "")
                     networks.append(net)
@@ -100,13 +101,15 @@ class Network(object):
                 for net in networks:
                     if net["ssid"] == ssid:
                         net["psk"] = password.replace('"', '\\"')
+                        net["priority"] = "10"
                         found = True
 
                 if not found:
                     networks.append({
                         "ssid": ssid,
                         "psk": password.replace('"', '\\"'),
-                        "key_mgmt": "WPA-PSK"
+                        "key_mgmt": "WPA-PSK",
+                        "priority": "10"
                     })
 
             with open("/etc/wpa_supplicant/wpa_supplicant.conf", "w+") as f:
