@@ -327,6 +327,7 @@ compile_vuejs() {
 
 create_desktop() {
     # Create desktop icon to lauch TinyCheck in a browser
+    if [[ -d "/home/$CURRENT_USER/Desktop/" ]]; then
     echo -e "\e[39m[+] Create Desktop icon under /home/${CURRENT_USER}/Desktop\e[39m"
     cat >"/home/$CURRENT_USER/Desktop/tinycheck.desktop" <<EOL
 #!/usr/bin/env xdg-open
@@ -340,6 +341,7 @@ Name=TinyCheck
 Comment=Launcher for the TinyCheck frontend
 Icon=/usr/share/tinycheck/app/frontend/src/assets/icon.png
 EOL
+     fi
 }
 
 cleaning() {
