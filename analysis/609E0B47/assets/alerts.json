@@ -1,0 +1,13 @@
+{
+    "high": [],
+    "moderate": [
+        {
+            "title": "An SSL connection to ds.shalltry.com is using a free certificate.",
+            "description": "Free certificates \u2014 such as Let's Encrypt \u2014 are wildly used by command and control servers associated to malicious implants or phishing web pages. We recommend to check the host associated to this certificate, by looking at the domain name, its creation date, or by checking its reputation on the internet.",
+            "host": "ds.shalltry.com",
+            "level": "Moderate",
+            "id": "SSL-02"
+        }
+    ],
+    "low": []
+}

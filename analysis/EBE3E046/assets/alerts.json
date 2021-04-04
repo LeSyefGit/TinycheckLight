@@ -1,0 +1,13 @@
+{
+    "high": [],
+    "moderate": [],
+    "low": [
+        {
+            "title": "HTTP communications have been done to the host www.checkip.org",
+            "description": "Your device exchanged with the host www.checkip.org by using HTTP, an unencrypted protocol. Even if this behavior is not malicious by itself, it is unusual to see HTTP communications issued from smartphone applications running in the background. Please check the host reputation by searching it on the internet.",
+            "host": "www.checkip.org",
+            "level": "Low",
+            "id": "PROTO-03"
+        }
+    ]
+}

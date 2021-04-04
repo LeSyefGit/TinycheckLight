@@ -60,6 +60,7 @@ class Report(object):
         content += self.generate_uncat_conns_block()
         content += self.generate_whitelist_block()
 
+        print(vars(content))
         htmldoc = HTML(string=content, base_url="").write_pdf()
         Path(os.path.join(self.capture_directory,
                           "report.pdf")).write_bytes(htmldoc)

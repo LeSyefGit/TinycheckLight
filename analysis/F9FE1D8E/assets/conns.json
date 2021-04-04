@@ -1,0 +1,18 @@
+[
+    {
+        "ip_dst": "66.228.35.203",
+        "proto": "tcp",
+        "port_dst": 80,
+        "service": "http",
+        "alert_tiggered": true,
+        "resolution": "www.cerberusapp.com"
+    },
+    {
+        "ip_dst": "66.228.35.203",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "ssl",
+        "alert_tiggered": true,
+        "resolution": "www.cerberusapp.com"
+    }
+]
