@@ -53,8 +53,11 @@ class Report(object):
         content2 = self.generate_alerts() 
         content3 = {"suspect_communication":self.generate_suspect_conns_block()}
         content4 = {"whitelist":self.generate_whitelist_block()}
+       
         content = {**content1, **content2, **content3, **content4}
         return json.dumps(content)
+        
+        
        
     def generate_warning(self):
         """
@@ -76,7 +79,7 @@ class Report(object):
             return msg
         else:
            
-            msg = self.template["none_msg"]
+            msg = {"warning":self.template["none_msg"]}
             return msg
 
     def nb_translate(self, nb):
@@ -107,7 +110,7 @@ class Report(object):
             :return: string
         """
         alert1={}
-        alert3={}
+        alert2={}
         alert3={}
         for alert in self.alerts["high"]:
             alert1= {
