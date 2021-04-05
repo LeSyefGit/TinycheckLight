@@ -9,6 +9,9 @@ from app.utils import read_config
 
 app = Flask(__name__)
 
+UPLOAD_FOLDER = "./../../analysis/capture/"
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
 @app.errorhandler(404)
 def page_not_found(e):
     return redirect("/")
@@ -21,6 +24,6 @@ app.register_blueprint(update_bp, url_prefix='/api/update')
 
 if __name__ == '__main__':
     if read_config(("frontend", "remote_access")):
-        app.run(host="0.0.0.0", port=80)
+        app.run(host="0.0.0.0", port=8080, debug=True)
     else:
         app.run(port=80)
