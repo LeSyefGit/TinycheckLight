@@ -1,0 +1,314 @@
+[
+    {
+        "ip_dst": "172.217.17.131",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "",
+        "alert_tiggered": false,
+        "resolution": "beacons2.gvt2.com"
+    },
+    {
+        "ip_dst": "216.58.204.237",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "ssl",
+        "alert_tiggered": false,
+        "resolution": "accounts.google.com"
+    },
+    {
+        "ip_dst": "216.58.212.206",
+        "proto": "tcp",
+        "port_dst": 80,
+        "service": "http",
+        "alert_tiggered": false,
+        "resolution": "clients3.google.com"
+    },
+    {
+        "ip_dst": "172.217.169.4",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "",
+        "alert_tiggered": false,
+        "resolution": "www.google.com"
+    },
+    {
+        "ip_dst": "172.217.169.35",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "ssl",
+        "alert_tiggered": false,
+        "resolution": "beacons.gvt2.com"
+    },
+    {
+        "ip_dst": "216.58.204.10",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "",
+        "alert_tiggered": false,
+        "resolution": "android.googleapis.com"
+    },
+    {
+        "ip_dst": "216.239.32.116",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "",
+        "alert_tiggered": false,
+        "resolution": "beacons5.gvt2.com"
+    },
+    {
+        "ip_dst": "162.125.6.20",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "ssl",
+        "alert_tiggered": false,
+        "resolution": "api-d.dropbox.com"
+    },
+    {
+        "ip_dst": "172.217.169.3",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "",
+        "alert_tiggered": false,
+        "resolution": "beacons.gcp.gvt2.com"
+    },
+    {
+        "ip_dst": "172.217.169.46",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "ssl",
+        "alert_tiggered": false,
+        "resolution": "books.google.com"
+    },
+    {
+        "ip_dst": "216.58.212.206",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "ssl",
+        "alert_tiggered": false,
+        "resolution": "clients3.google.com"
+    },
+    {
+        "ip_dst": "172.217.17.131",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "ssl",
+        "alert_tiggered": false,
+        "resolution": "beacons2.gvt2.com"
+    },
+    {
+        "ip_dst": "216.58.206.131",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "ssl",
+        "alert_tiggered": false,
+        "resolution": "id.google.com"
+    },
+    {
+        "ip_dst": "162.125.1.19",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "ssl",
+        "alert_tiggered": false,
+        "resolution": "api.dropbox.com"
+    },
+    {
+        "ip_dst": "216.58.213.14",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "",
+        "alert_tiggered": false,
+        "resolution": "encrypted-tbn0.gstatic.com"
+    },
+    {
+        "ip_dst": "239.255.255.250",
+        "proto": "udp",
+        "port_dst": 1900,
+        "service": "",
+        "alert_tiggered": false,
+        "resolution": "239.255.255.250"
+    },
+    {
+        "ip_dst": "216.58.212.234",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "",
+        "alert_tiggered": false,
+        "resolution": "people-pa.googleapis.com"
+    },
+    {
+        "ip_dst": "216.58.212.234",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "ssl",
+        "alert_tiggered": false,
+        "resolution": "people-pa.googleapis.com"
+    },
+    {
+        "ip_dst": "216.58.204.10",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "ssl",
+        "alert_tiggered": false,
+        "resolution": "android.googleapis.com"
+    },
+    {
+        "ip_dst": "216.58.212.206",
+        "proto": "tcp",
+        "port_dst": 80,
+        "service": "",
+        "alert_tiggered": false,
+        "resolution": "clients3.google.com"
+    },
+    {
+        "ip_dst": "216.58.204.237",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "",
+        "alert_tiggered": false,
+        "resolution": "accounts.google.com"
+    },
+    {
+        "ip_dst": "172.217.169.3",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "ssl",
+        "alert_tiggered": false,
+        "resolution": "beacons.gcp.gvt2.com"
+    },
+    {
+        "ip_dst": "216.239.32.116",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "ssl",
+        "alert_tiggered": false,
+        "resolution": "beacons5.gvt2.com"
+    },
+    {
+        "ip_dst": "173.194.202.188",
+        "proto": "tcp",
+        "port_dst": 5228,
+        "service": "ssl",
+        "alert_tiggered": false,
+        "resolution": "alt6-mtalk.google.com"
+    },
+    {
+        "ip_dst": "172.217.169.4",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "ssl",
+        "alert_tiggered": false,
+        "resolution": "www.google.com"
+    },
+    {
+        "ip_dst": "255.255.255.255",
+        "proto": "udp",
+        "port_dst": 67,
+        "service": "dhcp",
+        "alert_tiggered": false,
+        "resolution": "255.255.255.255"
+    },
+    {
+        "ip_dst": "216.58.213.14",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "ssl",
+        "alert_tiggered": false,
+        "resolution": "encrypted-tbn0.gstatic.com"
+    },
+    {
+        "ip_dst": "216.58.210.227",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "ssl",
+        "alert_tiggered": false,
+        "resolution": "clientservices.googleapis.com"
+    },
+    {
+        "ip_dst": "216.58.210.193",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "ssl",
+        "alert_tiggered": false,
+        "resolution": "lh3.googleusercontent.com"
+    },
+    {
+        "ip_dst": "216.58.211.170",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "ssl",
+        "alert_tiggered": false,
+        "resolution": "userlocation.googleapis.com"
+    },
+    {
+        "ip_dst": "172.217.169.35",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "",
+        "alert_tiggered": false,
+        "resolution": "beacons.gvt2.com"
+    },
+    {
+        "ip_dst": "192.168.100.1",
+        "proto": "udp",
+        "port_dst": 67,
+        "service": "dhcp",
+        "alert_tiggered": false,
+        "resolution": "192.168.100.1"
+    },
+    {
+        "ip_dst": "173.194.202.188",
+        "proto": "tcp",
+        "port_dst": 5228,
+        "service": "",
+        "alert_tiggered": false,
+        "resolution": "alt6-mtalk.google.com"
+    },
+    {
+        "ip_dst": "172.217.169.66",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "ssl",
+        "alert_tiggered": false,
+        "resolution": "adservice.google.com"
+    },
+    {
+        "ip_dst": "142.250.178.10",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "ssl",
+        "alert_tiggered": false,
+        "resolution": "geomobileservices-pa.googleapis.com"
+    },
+    {
+        "ip_dst": "34.249.224.143",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "ssl",
+        "alert_tiggered": false,
+        "resolution": "pafc-ms.samsungapps.com"
+    },
+    {
+        "ip_dst": "192.168.100.1",
+        "proto": "udp",
+        "port_dst": 53,
+        "service": "dns",
+        "alert_tiggered": false,
+        "resolution": "192.168.100.1"
+    },
+    {
+        "ip_dst": "172.217.169.14",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "ssl",
+        "alert_tiggered": false,
+        "resolution": "encrypted.google.com"
+    },
+    {
+        "ip_dst": "216.58.212.206",
+        "proto": "tcp",
+        "port_dst": 443,
+        "service": "",
+        "alert_tiggered": false,
+        "resolution": "clients3.google.com"
+    }
+]
