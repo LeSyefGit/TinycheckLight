@@ -6,12 +6,12 @@ import json
 import sys
 import re
 import os
-
+from flask import current_app
 
 class Analysis(object):
 
-    def __init__(self, token):
-        self.token = token if re.match(r"[A-F0-9]{8}", token) else None
+    # def __init__(self, token):
+    #     self.token = token if re.match(r"[A-F0-9]{8}", token) else None
 
     def start(self):
         """
@@ -21,17 +21,15 @@ class Analysis(object):
             :return: dict containing the analysis status
         """
 
-        if self.token is not None:
-            parent = "/".join(sys.path[0].split("/")[:-2])
-            sp.Popen(
-                [sys.executable, "{}/analysis/analysis.py".format(parent), "/tmp/{}".format(self.token)])
-            return {"status": True,
-                    "message": "Analysis started",
-                    "token": self.token}
-        else:
-            return {"status": False,
-                    "message": "Bad token provided",
-                    "token": "null"}
+       
+        # parent = "/".join(sys.path[0].split("/")[:-2])
+        parent = current_app.root_path+"/../../"
+        sp.Popen(
+            [sys.executable, "{}/analysis/analysis.py".format(parent),"{}/analysis/capture".format(parent)])
+        return {"status": True,
+                "message": "Analysis started",
+                }
+    
 
     def get_report(self):
         """
@@ -41,20 +39,20 @@ class Analysis(object):
             :return: dict containing the report or error message.
         """
 
-        device, alerts = {}, {}
+        alerts = {}, {}
 
-        # Getting device configuration.
-        if os.path.isfile("/tmp/{}/assets/device.json".format(self.token)):
-            with open("/tmp/{}/assets/device.json".format(self.token), "r") as f:
-                device = json.load(f)
+        # # Getting device configuration.
+        # if os.path.isfile("/tmp/{}/assets/device.json".format(self.token)):
+        #     with open("/tmp/{}/assets/device.json".format(self.token), "r") as f:
+        #         device = json.load(f)
 
         # Getting alerts configuration.
-        if os.path.isfile("/tmp/{}/assets/alerts.json".format(self.token)):
-            with open("/tmp/{}/assets/alerts.json".format(self.token), "r") as f:
+        parent = "/".join(sys.path[0].split("/")[:-2])
+        if os.path.isfile("{}/analysis/capture/alerts.json".format(parent)):
+            with open("{}/analysis/capture/alerts.json".format(parent), "r") as f:
                 alerts = json.load(f)
 
-        if device != {} and alerts != {}:
-            return {"alerts": alerts,
-                    "device": device}
+        if alerts != {}:
+            return {"alerts": alerts}
         else:
             return {"message": "No report yet"}

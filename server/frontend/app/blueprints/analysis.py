@@ -51,4 +51,6 @@ def api_start_analysis():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(current_app.config["UPLOAD_FOLDER"], filename))
+            # print(repr(current_app.root_path))
+            Analysis().start()
             return {"success":True}
