@@ -26,9 +26,12 @@ class Analysis(object):
         parent = current_app.root_path+"/../../"
         sp.Popen(
             [sys.executable, "{}/analysis/analysis.py".format(parent),"{}/analysis/capture".format(parent)])
-        return {"status": True,
-                "message": "Analysis started",
-                }
+        
+        # Load the report 
+        if os.path.isfile("{}/analysis/capture/report.json".format(parent)):
+            with open("{}/analysis/capture/report.json".format(parent), "r") as f:
+                report = json.load(f)
+        return report
     
 
     def get_report(self):
