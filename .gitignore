@@ -135,3 +135,6 @@ dmypy.json
 # Node.js
 node_modules/
 npm-debug.log
+
+
+analysis/capture/

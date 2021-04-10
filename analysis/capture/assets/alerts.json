@@ -1,36 +1,13 @@
 {
-    "high": [
-        {
-            "title": "A DNS request have been done to fileexplorer.mobile-tracker-free.fr which is tagged as STALKERWARE.",
-            "description": "The domain name fileexplorer.mobile-tracker-free.fr seen in the capture has been explicitly tagged as malicious. This indicates that your device is likely compromised and needs to be investigated deeply.",
-            "host": "fileexplorer.mobile-tracker-free.fr",
-            "level": "High",
-            "id": "IOC-03"
-        },
-        {
-            "title": "A DNS request have been done to mobile-tracker-data.com which is tagged as STALKERWARE.",
-            "description": "The domain name mobile-tracker-data.com seen in the capture has been explicitly tagged as malicious. This indicates that your device is likely compromised and needs to be investigated deeply.",
-            "host": "mobile-tracker-data.com",
-            "level": "High",
-            "id": "IOC-03"
-        }
-    ],
+    "high": [],
     "moderate": [
         {
-            "title": "An SSL connection to mobile-tracker-data.com is using a free certificate.",
+            "title": "An SSL connection to ds.shalltry.com is using a free certificate.",
             "description": "Free certificates \u2014 such as Let's Encrypt \u2014 are wildly used by command and control servers associated to malicious implants or phishing web pages. We recommend to check the host associated to this certificate, by looking at the domain name, its creation date, or by checking its reputation on the internet.",
-            "host": "mobile-tracker-data.com",
+            "host": "ds.shalltry.com",
             "level": "Moderate",
             "id": "SSL-02"
         }
     ],
-    "low": [
-        {
-            "title": "HTTP communications have been done to the host skslm.swiftkey.net",
-            "description": "Your device exchanged with the host skslm.swiftkey.net by using HTTP, an unencrypted protocol. Even if this behavior is not malicious by itself, it is unusual to see HTTP communications issued from smartphone applications running in the background. Please check the host reputation by searching it on the internet.",
-            "host": "skslm.swiftkey.net",
-            "level": "Low",
-            "id": "PROTO-03"
-        }
-    ]
+    "low": []
 }

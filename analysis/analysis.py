@@ -69,7 +69,10 @@ if __name__ == "__main__":
             # Generate the report
             report = Report(capture_directory)
             report =  report.generate_report()
-            # print(report)
+
+            #write the result in a json file
+            with open(os.path.join(capture_directory,"report.json"),"w") as r:
+                r.write(report)
         else:
             print("The directory doesn't exist.")
     else:
