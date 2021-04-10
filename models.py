@@ -1,38 +1,38 @@
-from .run import db
+# from .run import db
 
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(255), primary_key=True, unique=True, nullable=False)
-    password = db.Column(db.String(255), nullable=False)
-    captures = db.relationship('Capture', backref='user',lazy=True)
+# class User(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     email = db.Column(db.String(255), primary_key=True, unique=True, nullable=False)
+#     password = db.Column(db.String(255), nullable=False)
+#     captures = db.relationship('Capture', backref='user',lazy=True)
 
-    def __repr__(self):
-        return self.email
-
-
-class Capture(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
-    path = db.Column(db.String(100),nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-
-    def __repr__(self):
-        return self.name
-
-class IOC(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    value = db.Column(db.Text, nullable=False)
-    type = db.Column(db.Text, nullable=False)
-    tlp = db.Column(db.Text, nullable=False)
-    tag = db.Column(db.Text, nullable=False)
-    source = db.Column(db.Text, nullable=False)
-    added_on = db.Column(db.Numeric, nullable=False)
+#     def __repr__(self):
+#         return self.email
 
 
-class Whitelist(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    element = db.Column(db.Text, nullable=False, unique=True)
-    type = db.Column(db.Text, nullable=False)
-    source = db.Column(db.Text, nullable=False)
-    added_on = db.Column(db.Integer, nullable=False)
+# class Capture(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     name = db.Column(db.String(100), nullable=False)
+#     path = db.Column(db.String(100),nullable=False)
+#     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+
+#     def __repr__(self):
+#         return self.name
+
+# class IOC(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     value = db.Column(db.Text, nullable=False)
+#     type = db.Column(db.Text, nullable=False)
+#     tlp = db.Column(db.Text, nullable=False)
+#     tag = db.Column(db.Text, nullable=False)
+#     source = db.Column(db.Text, nullable=False)
+#     added_on = db.Column(db.Numeric, nullable=False)
+
+
+# class Whitelist(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     element = db.Column(db.Text, nullable=False, unique=True)
+#     type = db.Column(db.Text, nullable=False)
+#     source = db.Column(db.Text, nullable=False)
+#     added_on = db.Column(db.Integer, nullable=False)
 
