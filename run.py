@@ -62,7 +62,6 @@ class IOC(db.Model):
 
 
 class Whitelist(db.Model):
-    __tablename__="whitelists"
     id = db.Column(db.Integer, primary_key=True)
     element = db.Column(db.Text, nullable=False, unique=True)
     type = db.Column(db.Text, nullable=False)
