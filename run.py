@@ -2,12 +2,17 @@
 # -*- coding: utf-8 -*-
 
 from flask import Flask, render_template, send_from_directory, jsonify, redirect
+from flask_sqlalchemy import SQLAlchemy
+from flask_bcrypt import Bcrypt
 from app.blueprints.analysis import analysis_bp
 from app.blueprints.misc import misc_bp
 from app.blueprints.update import update_bp
 from app.utils import read_config
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///tinycheck.sqlite3'
+db = SQLAlchemy(app)
+bcrypt = Bcrypt(app)
 
 UPLOAD_FOLDER = "analysis/capture/"
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER

@@ -10,8 +10,8 @@ from flask import current_app
 
 class Analysis(object):
 
-    # def __init__(self, token):
-    #     self.token = token if re.match(r"[A-F0-9]{8}", token) else None
+    def __init__(self, token):
+        self.token = token if re.match(r"[A-F0-9]{8}", token) else None
 
     def start(self):
         """
