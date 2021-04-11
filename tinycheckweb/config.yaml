@@ -1,0 +1,81 @@
+# ANALYSIS -
+# All the things related to the analysis engine.
+# Some configuration keys aren't accessible from the backend
+# but can be edited here...
+#
+analysis:
+  free_issuers:
+  - CN=Let's Encrypt Authority X3,O=Let's Encrypt,C=US
+  - CN=ZeroSSL RSA Domain Secure Site CA,O=ZeroSSL,C=AT
+  - CN=R3,O=Let's Encrypt,C=US
+  heuristics: true
+  active: true
+  http_default_port: 80
+  iocs: true
+  max_alerts: 3
+  max_ports: 1024
+  remote: false
+  ssl_default_ports:
+  - 443
+  - 465
+  - 636
+  - 989
+  - 990
+  - 993
+  - 995
+  - 5223
+  whitelist: true
+
+# BACKEND -
+# Backend login / password and the possibility to
+# access to it from remote location.
+#
+backend:
+  login: userlogin
+  password: userpassword
+  remote_access: true
+
+# FRONTEND -
+# Some elements related to the frontend configuration & ergonomy
+# you can change them via the backend.
+#
+frontend:
+  shutdown_option: false
+  reboot_option: false
+  quit_option: quitoption
+  download_links: false
+  hide_mouse: hidemouse
+  kiosk_mode: kioskmode
+  remote_access: true
+  sparklines: true
+  virtual_keyboard: true
+  user_lang: userlang
+  update: updateoption
+  
+# NETWORK -
+# Some elements related to the network configuration, such as
+# the interfaces (updated during the install), the list of SSIDs
+# the URL to check internet and the tokenization of SSIDs.
+#
+network:
+  in: iface_in
+  internet_check: http://example.com
+  out: iface_out
+  ssids:
+  - wireless
+  - skynet
+  - network
+  - wifi
+  tokenized_ssids: true
+
+# WATCHERS -
+# They are used to grab automatically new IOCs or whitelisted
+# elements from files containing IOCs export. You can add your
+# own URL and it will be parsed at each TinyCheck reboot.
+#
+watchers:
+  iocs:
+  - https://raw.githubusercontent.com/KasperskyLab/TinyCheck/main/assets/iocs.json
+  - https://raw.githubusercontent.com/Te-k/stalkerware-indicators/master/indicators-for-tinycheck.json
+  whitelists:
+  - https://raw.githubusercontent.com/KasperskyLab/TinyCheck/main/assets/whitelist.json
