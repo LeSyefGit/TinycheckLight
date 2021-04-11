@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from flask_jwt_extended import create_access_token
+from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_required
 from tinycheckweb import db, bcrypt
 from tinycheckweb.models import User
 
@@ -37,3 +37,10 @@ def login():
             return jsonify(message="Login succeeded !", access_token=access_token), 200
         return jsonify(message="Bad email or password !"), 401
     return jsonify(message="Bad request !"), 401
+
+@users.route("/protected", methods=["GET"])
+@jwt_required()
+def protected():
+    # Access the identity of the current user with get_jwt_identity
+    current_user = get_jwt_identity()
+    return jsonify(logged_in_as=current_user), 200

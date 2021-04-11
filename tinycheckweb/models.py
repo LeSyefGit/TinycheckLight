@@ -14,8 +14,7 @@ class User(db.Model):
 class Capture(db.Model):
     __tablename__="captures"
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
-    path = db.Column(db.String(100),nullable=False)
+    path = db.Column(db.String(255), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
     def __repr__(self):
