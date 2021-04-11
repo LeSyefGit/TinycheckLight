@@ -1,4 +1,5 @@
 from flask import Blueprint, request, jsonify
+from flask_jwt_extended import create_access_token
 from tinycheckweb import db, bcrypt
 from tinycheckweb.models import User
 
@@ -22,4 +23,17 @@ def register():
 
     return jsonify(message="Bad request"), 400
 
+@users.route("/login", methods=['POST'])
+def login():
+    if request.is_json:
+        email = request.json['email']
+        password = request.json['password']
+        
+        # Check if user already exist
+        user = User.query.filter_by(email=email).first()
 
+        if user and bcrypt.check_password_hash(user.password,password) :
+            access_token = create_access_token(identity=user.email)
+            return jsonify(message="Login succeeded !", access_token=access_token), 200
+        return jsonify(message="Bad email or password !"), 401
+    return jsonify(message="Bad request !"), 401
