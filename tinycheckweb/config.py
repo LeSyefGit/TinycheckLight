@@ -3,4 +3,5 @@ class Config:
     SQLALCHEMY_DATABASE_URI = 'sqlite:///tinycheck.sqlite3'
     JWT_SECRET_KEY = SECRET_KEY
     UPLOAD_FOLDER = '/medias/captures/'
+    SQLALCHEMY_TRACK_MODIFICATIONS = True
     
