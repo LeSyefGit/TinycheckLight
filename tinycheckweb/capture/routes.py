@@ -69,11 +69,9 @@ def start_analysis():
         token = user.email.split('@')[0]
 
         #Delete a directory corresponding to the username of user if exist
-        try:
+        if os.path.exists(analyse_path+token):
             shutil.rmtree(analyse_path+token)
-        except:
-            pass
-
+            
         # Create arborescence for analysing
         directory = analyse_path+token+"/assets"
         os.makedirs(directory)
