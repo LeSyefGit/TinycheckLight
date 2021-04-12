@@ -36,12 +36,11 @@ class SuricataEngine():
             :return: nothing.
         """
 
-        print(repr(get_iocs("snort")))
         # Generate the rule file an launch suricata.
        
-        # if self.generate_rule_file():
-        #     sp.Popen(["suricata", "-S", self.rules_file, "-r",
-        #               self.pcap_path, "-l", "/tmp/"]).wait()
+        if self.generate_rule_file():
+            sp.Popen(["suricata", "-S", self.rules_file, "-r",
+                      self.pcap_path, "-l", "/tmp/"]).wait()
         # else:
         #     print("error")
         # Let's parse the log file.
