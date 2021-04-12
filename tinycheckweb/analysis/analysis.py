@@ -13,9 +13,8 @@ sys.path.append(os.path.abspath('./'))
 from run import return_app
 
 """
-    This file is called by the frontend but the analysis
-    can be done in standalone by just submitting the directory
-    containing a capture.pcap file.
+    Like this file is not a part of a flask application, we must get the app_context and execute this 
+    file within it
 """
 
 # Get the app context
@@ -76,7 +75,6 @@ with app.app_context():
                 report = Report(capture_directory)
                 report =  report.generate_report()
 
-                # print(report)
                 #write the result in a json file
                 with open(os.path.join(capture_directory,"report.json"),"w") as r:
                     r.write(report)

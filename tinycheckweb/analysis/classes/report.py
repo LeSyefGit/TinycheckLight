@@ -46,8 +46,8 @@ class Report(object):
 
     def generate_report(self):
         """
-            Generate the full report in PDF
-            :return: nothing
+            Generate the full report in Json format
+            :return: Json
         """
         content1 = self.generate_warning()
         content2 = self.generate_alerts() 

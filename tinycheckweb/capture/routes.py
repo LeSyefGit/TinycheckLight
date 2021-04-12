@@ -1,4 +1,4 @@
-import os, uuid, shutil, touch, sys,json
+import os, uuid, shutil,sys,json
 import subprocess as sp
 from flask import Blueprint, jsonify, request, current_app
 from sqlalchemy import desc
@@ -37,19 +37,19 @@ def upload_pcap():
             # Path where we will store our file
             upload_path = current_app.root_path+current_app.config["UPLOAD_FOLDER"]
 
-            #filename of the pcap file    
+            # Get the filename of the uploaded file    
             filename = secure_filename(file.filename)
+            # Save the file in our server
             file.save(os.path.join(upload_path, filename))
 
+            # Rename the uploaded file with the unique identifier
             source_path = upload_path+filename
-            new_filename = str(uuid.uuid4())+'.pcap'
-            dest_path = upload_path+ new_filename
-
-            # rename the uploaded file in the destination to have 
-            # a file with a unique identifier
+            new_name = str(uuid.uuid4())+'.pcap'
+            dest_path = upload_path+ new_name
             os.rename(source_path, dest_path)
             
-            capture = Capture(path=new_filename, user_id=user.id)
+            # Save the file within the database 
+            capture = Capture(path=new_name, user_id=user.id)
             db.session.add(capture)
             db.session.commit()
 
@@ -61,36 +61,50 @@ def upload_pcap():
 def start_analysis():
     user = User.query.filter_by(email=get_jwt_identity()).first()
 
+    # Path where we will do our analyse
     analyse_path = "/tmp/"
 
     if user :
+        # Get the first part of the name of user to make his username
         token = user.email.split('@')[0]
 
-        #Delete a directory
+        #Delete a directory corresponding to the username of user if exist
         try:
             shutil.rmtree(analyse_path+token)
         except:
             pass
-        # create different directory
-        first = analyse_path+token+"/assets"
-        os.makedirs(first)
-        touch.touch([first+"/alerts.json",first+"/conns.json",first+"/whitelist.json"])
+
+        # Create arborescence for analysing
+        directory = analyse_path+token+"/assets"
+        os.makedirs(directory)
         
+        # Get the latest pcap file of user to analyse
         capture = Capture.query.order_by(Capture.id.desc()).filter_by(user_id=user.id).first()
 
-        upload_path = current_app.root_path+current_app.config["UPLOAD_FOLDER"]
-        source_path = upload_path+capture.path
-        new_filename = '/capture.pcap'
-        dest_path = '/tmp/'+token + new_filename
-        shutil.copyfile(source_path, dest_path)
-        
-        return jsonify(Analysis(token).start())
+        if capture :
+            upload_path = current_app.root_path+current_app.config["UPLOAD_FOLDER"]
+
+            # Copy the latest uploaded pcap file of user into /tmp for analysing
+            # and rename it in capture.pcap
+            source_path = upload_path+capture.path
+            new_filename = '/capture.pcap'
+            dest_path = '/tmp/'+token + new_filename
+            shutil.copyfile(source_path, dest_path)
+            
+            return jsonify(Analysis(token).start())
+        else:
+            return jsonify(message="No pcap file found ! Try to upload one")
 
 @capture.route('/get-report', methods=['GET'])
 @jwt_required()
 def get_report():
     user = User.query.filter_by(email=get_jwt_identity()).first()
+    token = user.email.split('@')[0]
 
-    if user :
+    analyse_path = "/tmp/"+token
+
+    if user and os.path.exists(analyse_path) :
         token = user.email.split('@')[0]
         return jsonify(Analysis(token).get_report())
+    else:
+        return jsonify(message="No report found ! Try to make analysis")

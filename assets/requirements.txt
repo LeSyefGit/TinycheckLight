@@ -24,7 +24,6 @@ PyYAML==5.4.1
 six==1.15.0
 SQLAlchemy==1.4.7
 tinycss2==1.1.0
-touch==2020.12.3
 values==2020.12.3
 WeasyPrint==52.4
 webencodings==0.5.1

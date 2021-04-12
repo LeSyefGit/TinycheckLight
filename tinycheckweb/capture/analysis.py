@@ -1,11 +1,14 @@
-import os,sys,json
+import os
+import sys
+import json
 import subprocess as sp
 from flask import current_app, jsonify
+
 
 class Analysis(object):
 
     def __init__(self, token):
-        self.token = token 
+        self.token = token
 
     def start(self):
         """
@@ -16,25 +19,21 @@ class Analysis(object):
         """
 
         if self.token is not None:
-            # parent = "/".join(sys.path[0].split("/")[:-2])
             parent = current_app.root_path
             sp.Popen(
                 [sys.executable, "{}/analysis/analysis.py".format(parent), "/tmp/{}".format(self.token)])
-            
-            return {"status": True,
-                    "message": "Analysis started",
-                    "token": self.token}
+
+            return {"message": "Analysis started"}
         else:
-            return {"status": False,
-                    "message": "Bad token provided",
-                    "token": "null"}
+            return {"message": "Bad token provided"}
 
     def get_report(self):
+        """Get the full report in JSON Format"""
         report = {}
         if os.path.isfile("/tmp/{}/report.json".format(self.token)):
             with open("/tmp/{}/report.json".format(self.token), "r") as f:
                 report = json.load(f)
         else:
             return jsonify(message="No report yet !")
-      
+
         return report

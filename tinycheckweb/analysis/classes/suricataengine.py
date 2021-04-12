@@ -36,24 +36,11 @@ class SuricataEngine():
             :return: nothing.
         """
 
-        # Generate the rule file an launch suricata.
+        # Generate the rule file and launch suricata.
         if self.generate_rule_file():
             sp.Popen(["suricata", "-S", self.rules_file, "-r",
                       self.pcap_path, "-l", "/tmp/"]).wait()
-        # else:
-        #     print("error")
-        # Let's parse the log file.
-        # for line in open("/tmp/fast.log", "r").readlines():
-        #     if "[**]" in line:
-        #         s = line.split("[**]")[1].strip()
-        #         m = re.search(
-        #             r"\[\d+\:(?P<sid>\d+)\:(?P<rev>\d+)\] (?P<title>[ -~]+)", s)
-        #         self.alerts.append({"title": self.template["SNORT-01"]["title"].format(m.group('title')),
-        #                             "description": self.template["SNORT-01"]["description"],
-        #                             "level": "High",
-        #                             "id": "SNORT-01"})
-        # # Remove fast.log
-        # os.remove("/tmp/fast.log")
+
 
     def generate_rule_file(self):
         """
