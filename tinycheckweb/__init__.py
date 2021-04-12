@@ -21,7 +21,7 @@ def create_app(config_class=Config):
          
     from tinycheckweb.users.routes import users
     from tinycheckweb.capture.routes import capture
-
+    
     app.register_blueprint(users, url_prefix="/api/auth")
     app.register_blueprint(capture, url_prefix="/api/capture")
 

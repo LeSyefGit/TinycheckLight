@@ -9,6 +9,8 @@ import sys
 import re
 import json
 import os
+sys.path.append(os.path.abspath('./'))
+from run import return_app
 
 """
     This file is called by the frontend but the analysis
@@ -16,65 +18,68 @@ import os
     containing a capture.pcap file.
 """
 
-if __name__ == "__main__":
-    if len(sys.argv) == 2:
-        capture_directory = sys.argv[1]
-        if os.path.isdir(capture_directory):
+app = return_app()
 
-            manager = Manager()
-            alerts = manager.dict()
+with app.app_context():
+    if __name__ == "__main__":
+        if len(sys.argv) == 2:
+            capture_directory = sys.argv[1]
+            if os.path.isdir(capture_directory):
 
-            def zeekengine(alerts):
-                zeek = ZeekEngine(capture_directory)
-                zeek.start_zeek()
-                alerts["zeek"] = zeek.retrieve_alerts()
+                manager = Manager()
+                alerts = manager.dict()
 
-                # whitelist.json writing.
-                with open(os.path.join(capture_directory, "assets/whitelist.json"), "w") as f:
-                    f.write(json.dumps(zeek.retrieve_whitelist(),
-                                       indent=4, separators=(',', ': ')))
+                def zeekengine(alerts):
+                    zeek = ZeekEngine(capture_directory)
+                    zeek.start_zeek()
+                    alerts["zeek"] = zeek.retrieve_alerts()
 
-                # conns.json writing.
-                with open(os.path.join(capture_directory, "assets/conns.json"), "w") as f:
-                    f.write(json.dumps(zeek.retrieve_conns(),
-                                       indent=4, separators=(',', ': ')))
+                    # whitelist.json writing.
+                    with open(os.path.join(capture_directory, "assets/whitelist.json"), "w") as f:
+                        f.write(json.dumps(zeek.retrieve_whitelist(),
+                                        indent=4, separators=(',', ': ')))
 
-            def snortengine(alerts):
-                suricata = SuricataEngine(capture_directory)
-                suricata.start_suricata()
-                alerts["suricata"] = suricata.get_alerts()
+                    # conns.json writing.
+                    with open(os.path.join(capture_directory, "assets/conns.json"), "w") as f:
+                        f.write(json.dumps(zeek.retrieve_conns(),
+                                        indent=4, separators=(',', ': ')))
 
-            # Start the engines.
-            p1 = Process(target=zeekengine, args=(alerts,))
-            p2 = Process(target=snortengine, args=(alerts,))
-            p1.start()
-            p2.start()
+                def snortengine(alerts):
+                    suricata = SuricataEngine(capture_directory)
+                    suricata.start_suricata()
+                    alerts["suricata"] = suricata.get_alerts()
 
-            # Wait to their end.
-            p1.join()
-            p2.join()
+                # Start the engines.
+                p1 = Process(target=zeekengine, args=(alerts,))
+                p2 = Process(target=snortengine, args=(alerts,))
+                p1.start()
+                p2.start()
 
-            # Some formating and alerts.json writing.
-            with open(os.path.join(capture_directory, "assets/alerts.json"), "w") as f:
-                report = {"high": [], "moderate": [], "low": []}
-                for alert in (alerts["zeek"] + alerts["suricata"]):
-                    if alert["level"] == "High":
-                        report["high"].append(alert)
-                    if alert["level"] == "Moderate":
-                        report["moderate"].append(alert)
-                    if alert["level"] == "Low":
-                        report["low"].append(alert)
-                f.write(json.dumps(report, indent=4, separators=(',', ': ')))
+                # Wait to their end.
+                p1.join()
+                p2.join()
 
-            # Generate the report
-            report = Report(capture_directory)
-            report =  report.generate_report()
+                # Some formating and alerts.json writing.
+                with open(os.path.join(capture_directory, "assets/alerts.json"), "w") as f:
+                    report = {"high": [], "moderate": [], "low": []}
+                    for alert in (alerts["zeek"] + alerts["suricata"]):
+                        if alert["level"] == "High":
+                            report["high"].append(alert)
+                        if alert["level"] == "Moderate":
+                            report["moderate"].append(alert)
+                        if alert["level"] == "Low":
+                            report["low"].append(alert)
+                    f.write(json.dumps(report, indent=4, separators=(',', ': ')))
 
-            # print(report)
-            #write the result in a json file
-            with open(os.path.join(capture_directory,"report.json"),"w") as r:
-                r.write(report)
+                # Generate the report
+                report = Report(capture_directory)
+                report =  report.generate_report()
+
+                # print(report)
+                #write the result in a json file
+                with open(os.path.join(capture_directory,"report.json"),"w") as r:
+                    r.write(report)
+            else:
+                print("The directory doesn't exist.")
         else:
-            print("The directory doesn't exist.")
-    else:
-        print("Please specify a capture directory in argument.")
+            print("Please specify a capture directory in argument.")

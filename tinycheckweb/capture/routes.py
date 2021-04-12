@@ -85,3 +85,5 @@ def start_analysis():
         shutil.copyfile(source_path, dest_path)
         
         return jsonify(Analysis(token).start())
+
+        # return jsonify(os.path.abspath("./"))

@@ -2,6 +2,7 @@ import os,sys,json
 import subprocess as sp
 from flask import current_app
 
+
 class Analysis(object):
 
     def __init__(self, token):
