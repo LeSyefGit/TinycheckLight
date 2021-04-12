@@ -18,6 +18,7 @@ from run import return_app
     containing a capture.pcap file.
 """
 
+# Get the app context
 app = return_app()
 
 with app.app_context():

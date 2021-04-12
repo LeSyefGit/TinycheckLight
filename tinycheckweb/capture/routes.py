@@ -86,4 +86,11 @@ def start_analysis():
         
         return jsonify(Analysis(token).start())
 
-        # return jsonify(os.path.abspath("./"))
+@capture.route('/get-report', methods=['GET'])
+@jwt_required()
+def get_report():
+    user = User.query.filter_by(email=get_jwt_identity()).first()
+
+    if user :
+        token = user.email.split('@')[0]
+        return jsonify(Analysis(token).get_report())
